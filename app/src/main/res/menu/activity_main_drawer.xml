@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@mipmap/quiz"
+            android:title="Quiz" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@mipmap/question"
+            android:title="Question Answer" />
+        <item
+            android:id="@+id/more"
+            android:icon="@mipmap/more"
+            android:title="More Apps" />
+        <item
+            android:id="@+id/rate"
+            android:icon="@mipmap/rate"
+            android:title="Rate This App" />
+        <item
+            android:id="@+id/exit"
+            android:icon="@mipmap/exit"
+            android:title="Exit" />
+    </group>
+    <item android:title="Share &amp; Feedback">
+        <menu>
+            <item
+                android:id="@+id/share"
+                android:icon="@mipmap/share"
+                android:title="Share" />
+            <item
+                android:id="@+id/feedback"
+                android:icon="@mipmap/feedback"
+                android:title="Feedback" />
+        </menu>
+    </item>
+</menu>

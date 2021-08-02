@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.meet.learnpython">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:hardwareAccelerated="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".PY_34" />
+        <activity android:name=".PY_33" />
+        <activity android:name=".PY_32" />
+        <activity android:name=".PY_31" />
+        <activity android:name=".PY_30" />
+        <activity android:name=".PY_29" />
+        <activity android:name=".PY_28" />
+        <activity android:name=".PY_27" />
+        <activity android:name=".PY_26" />
+        <activity android:name=".PY_25" />
+        <activity android:name=".PY_24" />
+        <activity android:name=".PY_23" />
+        <activity android:name=".PY_22" />
+        <activity android:name=".PY_21" />
+        <activity android:name=".PY_20" />
+        <activity android:name=".PY_19" />
+        <activity android:name=".PY_18" />
+        <activity android:name=".PY_17" />
+        <activity android:name=".PY_16" />
+        <activity android:name=".PY_15" />
+        <activity android:name=".PY_14" />
+        <activity android:name=".PY_13" />
+        <activity android:name=".PY_12" />
+        <activity android:name=".PY_11" />
+        <activity android:name=".PY_10" />
+        <activity android:name=".PY_9" />
+        <activity android:name=".PY_8" />
+        <activity android:name=".PY_7" />
+        <activity android:name=".PY_6" />
+        <activity android:name=".PY_5" />
+        <activity android:name=".PY_4" />
+        <activity android:name=".PY_3" />
+        <activity android:name=".PY_2" />
+        <activity android:name=".PY_1" />
+        <activity android:name=".py_quiz_12" />
+        <activity android:name=".py_quiz_11" />
+        <activity android:name=".py_quiz_10" />
+        <activity android:name=".py_quiz_9" />
+        <activity android:name=".py_quiz_8" />
+        <activity android:name=".py_quiz_7" />
+        <activity android:name=".py_quiz_6" />
+        <activity android:name=".py_quiz_5" />
+        <activity android:name=".py_quiz_4" />
+        <activity android:name=".py_quiz_3" />
+        <activity android:name=".py_quiz_2" />
+        <activity android:name=".py_quiz_1" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

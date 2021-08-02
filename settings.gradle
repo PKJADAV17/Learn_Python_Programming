@@ -1,0 +1,2 @@
+rootProject.name='Learn Python Programming'
+include ':app'

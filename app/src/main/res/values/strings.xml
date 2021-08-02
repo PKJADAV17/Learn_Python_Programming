@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Learn Python</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Learn Python Programming</string>
+    <string name="menu_gallery">Quiz</string>
+    <string name="menu_slideshow">Question Answer</string>
+
+    <string name="home_second">Home Second</string>
+
+    <!--  <string name="bannerid_PY">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY1">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY2">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY3">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY4">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY5">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY6">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY7">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY8">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="bannerid_PY9">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+      <string name="interstitial_PY">YOUR_PLACEMENT_ID</string>-->
+
+       <string name="bannerid_PY">149514980637904_149515243971211</string>
+       <string name="bannerid_PY1">149514980637904_149515423971193</string>
+       <string name="bannerid_PY2">149514980637904_149515490637853</string>
+       <string name="bannerid_PY3">149514980637904_149515547304514</string>
+       <string name="bannerid_PY4">149514980637904_149515603971175</string>
+       <string name="bannerid_PY5">149514980637904_149515640637838</string>
+       <string name="bannerid_PY6">149514980637904_149515700637832</string>
+       <string name="bannerid_PY7">149514980637904_149515740637828</string>
+       <string name="bannerid_PY8">149514980637904_149515807304488</string>
+       <string name="bannerid_PY9">149514980637904_149515847304484</string>
+       <string name="interstitial_PY">149514980637904_149515940637808</string>
+ </resources>
