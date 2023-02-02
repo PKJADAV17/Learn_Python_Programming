@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="mystyle1.css">
+</head>
+<body>
+<b class="element">Example</b>
+<br>
+<p>Let us take an example of the following elements.</p>
+<b class="element">75  35  42  13  87  24  64  57</b>
+<p>Here apply the Selection sort algorithm to sort the elements.
+</p>
+<img src="4_selection_img.png" alt="Selection sort">
+
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="15"  id="myTextarea" disabled>
+def selection_sort(list):
+   for i in range(len(list)):
+       min = i
+       for j in range(i+1, len(list)):
+           if list[min] > list[j]:
+               min = j
+  
+       temp = list[i]
+       list[i] = list[min]
+       list[min] = temp
+   
+list=[75,35,42,13,87,24,64,57]
+selection_sort(list)
+print(list)
+</textarea>
+<button onclick="myFunction2()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo2" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction2() {
+  document.getElementById("demo2").innerHTML ="13, 24, 35, 42, 57, 64, 75, 87";
+}
+</script>
+</body>
+</html>

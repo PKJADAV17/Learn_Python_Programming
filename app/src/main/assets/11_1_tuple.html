@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="mystyle1.css">
+</head>
+<body>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="9"  id="myTextarea" disabled>
+tuple = ( 'abc', 123 , 'hi', 10.12 , 10 )
+
+print (tuple)          
+print (tuple[0])       
+print (tuple[2:4])      
+print (tuple[3:])      
+print (tuple * 2) 
+print (tuple + tuple)
+</textarea>
+<button onclick="myFunction()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "('abc', 123, 'hi', 10.12, 10)<br>abc<br>('hi', 10.12)<br>(10.12, 10)<br>('abc', 123, 'hi', 10.12, 10, 'abc', 123, 'hi', 10.12, 10)<br>('abc', 123, 'hi', 10.12, 10, 'abc', 123, 'hi', 10.12, 10)";
+}
+</script>
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Accessing Tuple</div>
+<p>Accessing of tuple is prity easy, we can access tuple in the same way as List.
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="7"  id="myTextarea" disabled>
+tuple = ( 'abc', 123 , 'hi', 10.12 , 10 )
+
+print (tuple[0])       
+print (tuple[2:4])      
+print (tuple[3:])      
+print (tuple[-3:-1])
+</textarea>
+<button onclick="myFunction1()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo1" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction1() {
+  document.getElementById("demo1").innerHTML = "abc<br>('hi', 10.12)<br>(10.12, 10)<br>('hi', 10.12)";
+}
+</script>
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Adding Tuples</div>
+<p>Tuple can be added by using the concatenation operator(+) to join two tuples.</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="5"  id="myTextarea" disabled>
+tuple = ( 'abc', 123 )
+tuple1 = ('hi', 10.12 , 10)
+
+print (tuple+tuple1)
+</textarea>
+<button onclick="myFunction2()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo2" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction2() {
+  document.getElementById("demo2").innerHTML = "('abc', 123, 'hi', 10.12, 10)";
+}
+</script>
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Replicating Tuple</div>
+<p>Replicating means repeating. It can be performed by using '*' operator by a specific number of time.</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+tuple = ( 'abc', 123 )
+
+print (tuple*2)
+</textarea>
+<button onclick="myFunction3()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo3" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction3() {
+  document.getElementById("demo3").innerHTML = "('abc', 123, 'abc', 123)";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Tuple Slicing</div>
+<p>A subpart of a tuple can be retrieved on the basis of index. This subpart is known as tuple slice.
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="7"  id="myTextarea" disabled>
+tuple = ( 'abc', 123 , 'hi', 10.12 , 10 )
+
+print (tuple[0])       
+print (tuple[2:4])      
+print (tuple[3:])      
+print (tuple[-3:-1])
+</textarea>
+<button onclick="myFunction4()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo4" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction4() {
+  document.getElementById("demo4").innerHTML = "abc<br>('hi', 10.12)<br>(10.12, 10)<br>('hi', 10.12)";
+}
+</script>
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Tuple Deleting </div>
+<p>Deleting individual element from a tuple is not supported. However the whole of the tuple can be deleted using the del statement.</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="5"  id="myTextarea" disabled>
+tuple = ( 'abc', 123 , 'hi', 10.12 , 10 )
+print tuple
+del tuple
+print tuple
+</textarea>
+<button onclick="myFunction5()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo5" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction5() {
+  document.getElementById("demo5").innerHTML = "('abc', 123, 'hi', 10.12, 10)<br>&lt;type 'tuple'&gt;";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">min(tuple) Method</div>
+<p>This method is used to get min value from the sequence of tuple.
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+tuple = ( 1, 123, 30, 10.12, 10 )
+
+print (min(tuple))
+</textarea>
+<button onclick="myFunction6()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo6" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction6() {
+  document.getElementById("demo6").innerHTML = "1";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">max(tuple) Method</div>
+<p>This method is used to get max value from the sequence of tuple.
+
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+tuple = ( 1, 123, 30, 10.12, 10 )
+
+print (max(tuple))
+</textarea>
+<button onclick="myFunction7()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo7" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction7() {
+  document.getElementById("demo7").innerHTML = "123";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">len(tuple) Method</div>
+<p>This method is used to get length of the tuple.
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+tuple = ( 123 , 10.12 , 10 )
+
+print (len(tuple))
+</textarea>
+<button onclick="myFunction8()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo8" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction8() {
+  document.getElementById("demo8").innerHTML = "3";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">cmp(tuple1,tuple2) Method</div>
+<p>This method is used to compare tuples.
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="6"  id="myTextarea" disabled>
+tuple = ( 123 , 10.12 , 10 )
+tuple1 = (1, 2 , 3)
+
+print cmp(tuple,tuple1)
+print cmp(tuple1,tuple)
+</textarea>
+<button onclick="myFunction9()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo9" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction9() {
+  document.getElementById("demo9").innerHTML = "1<br>-1";
+}
+</script>
+
+
+</body>
+</html>

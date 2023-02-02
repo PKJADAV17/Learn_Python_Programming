@@ -1,15 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
 
     defaultConfig {
         applicationId "com.meet.learnpython"
-        minSdkVersion 14
-        targetSdkVersion 30
-        versionCode 7
-        versionName "1.6"
+        minSdkVersion 19
+        targetSdkVersion 31
+        versionCode 8
+        versionName "1.7"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,7 +28,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 ext.versionCodes = ['armeabi': 1, 'armeabi-v7a': 2, 'arm64-v8a': 3, mips: 4, 'x86': 5, 'x86_64': 6]
 import com.android.build.OutputFile
@@ -49,7 +53,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'com.github.barteksc:android-pdf-viewer:2.0.3'
-    implementation 'com.facebook.android:audience-network-sdk:6.+'
+    implementation 'com.google.android.gms:play-services-ads:21.4.0'
+    implementation project(':nativetemplates')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

@@ -5,9 +5,9 @@
     android:id="@+id/label"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="10dip"
+    android:padding="13dip"
     android:textColor="#000000"
     android:textSize="18dp"
-    android:background="@drawable/listview_border"
-    >
+    android:textStyle="bold"
+    android:background="@drawable/listview_border">
 </TextView>

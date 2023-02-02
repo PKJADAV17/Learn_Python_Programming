@@ -21,12 +21,15 @@
         android:gravity="center"
         android:numColumns="auto_fit"
         android:paddingBottom="50dp"/>
-    <LinearLayout
-        android:id="@+id/banner_container"
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/PY_banner">
+    </com.google.android.gms.ads.AdView>
+
 </RelativeLayout>

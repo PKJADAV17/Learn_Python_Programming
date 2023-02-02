@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="mystyle1.css">
+</head>
+<body>
+<b class="element">Example</b>
+<br>
+<p>Let us take an example of the following elements.</p>
+<b class="element">82  42  49  8  92  25  59  52</b>
+<p>Here apply the insertion sort algorithm to sort the elements.
+</p>
+<img src="2_img.png" alt="Insertion sort">
+
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="14"  id="myTextarea" disabled>
+def insertion_sort(list):
+   for i in range(1,len(list)):
+     key = list[i]
+     j = i
+     while j>0 and list[j-1]>key:
+         list[j]=list[j-1]
+         j = j-1
+
+     list[j]=key
+
+list = [82,42,49,8,92,25,59,52]
+insertion_sort(list)
+print(list)
+</textarea>
+<button onclick="myFunction2()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo2" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction2() {
+  document.getElementById("demo2").innerHTML ="8, 25, 42, 49, 52, 59, 82, 92";
+}
+</script>
+</body>
+</html>

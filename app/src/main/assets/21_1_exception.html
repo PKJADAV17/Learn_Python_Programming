@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="mystyle1.css">
+</head>
+<body>
+<br>
+<hr class="new3">
+<div class="subhead1">Common Exceptions</div>
+<ul>
+<li><b class="element">ZeroDivisionError</b> - Occurs when a number is divided by zero.</li>
+<li><b class="element">NameError</b> - It occurs when a name is not found. It may be local or global.</li>
+<li><b class="element">IndentationError</b> - If incorrect indentation is given.</li>
+<li><b class="element">IOError</b> - It occurs when Input Output operation fails.</li>
+<li><b class="element">EOFError</b> - It occurs when end of the file is reached and yet operations are being performed.</li>
+</ul>
+<p>If you have some suspicious code that may raise an exception, you can defend your program by placing the suspicious code in a try: block. After the try: block, include an except: statement, followed by a block of code which handles the problem as much as possible.
+</p>
+
+
+<div class="subhead">Syntax</div>
+<textarea wrap="off" rows="13"  id="myTextarea" disabled>
+try:  
+    statement  
+except Exception1:  
+    statement  
+except Exception2:  
+    statement  
+....  
+....  
+except ExceptionN:  
+    statement  
+else:  
+    execute code if exception is not found 
+</textarea>
+
+<br>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="7"  id="myTextarea" disabled>
+try:  
+    print (a)  
+except NameError:  
+        print ("a is not defined")  
+else:  
+    print ("Value of a is",a) 
+</textarea>
+<button onclick="myFunction()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "a is not defined";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">Except with no Exception</div>
+<p>Except statement can also be used without specifying Exception
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="7"  id="myTextarea" disabled>
+try:  
+    print (a)  
+except:  
+        print ("a is not defined")  
+else:  
+    print ("Value of a is",a) 
+</textarea>
+<button onclick="myFunction1()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo1" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction1() {
+  document.getElementById("demo1").innerHTML = "a is not defined";
+}
+</script>
+<br>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="8"  id="myTextarea" disabled>
+try:  
+    a=1/0
+    print (a)
+except:  
+        print ("Divide by zero exception")        
+else:  
+    print ("Value of a is",a) 
+</textarea>
+<button onclick="myFunction2()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo2" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction2() {
+  document.getElementById("demo2").innerHTML = "Divide by zero exception";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">Handling Multiple Exception with single except statement</div>
+<p>We can also use the same except statement to handle multiple exceptions.</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="8"  id="myTextarea" disabled>
+try:  
+    a=1/0
+    print (a)
+except ArithmeticError,NameError:  
+        print ("Divide by zero exception")        
+else:  
+    print ("Value of a is",a)
+</textarea>
+<button onclick="myFunction3()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo3" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction3() {
+  document.getElementById("demo3").innerHTML = "Divide by zero exception";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">Finally Block</div>
+<p>We can use a finally: block along with a try: block. The finally block is a place to put any code that must execute, whether the try-block raised an exception or not.
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="6"  id="myTextarea" disabled>
+try:  
+    a=1/0
+    print ("Divide by zero exception")        
+finally:  
+    print ("finally block is executed")
+</textarea>
+<button onclick="myFunction4()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo4" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction4() {
+  document.getElementById("demo4").innerHTML = "finally block is executed<br>Traceback (most recent call last):<br>File \"main.py\", line 4, in &lt;module&gt;<br>a=1/0<br>ZeroDivisionError: division by zero";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">Raise an Exceptions</div>
+<p>In Python programming, exceptions are raised when corresponding errors occur at run time, but we can forcefully raise it using the keyword raise.
+</p>
+<i class="element">raise Exception,&lt:args&gt;</i>
+<br><br>
+<p>Here, Exception is the type of exception (for example, NameError) and argument is a value for the exception argument. The argument is optional; if not supplied, the exception argument is None.
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="5"  id="myTextarea" disabled>
+try:
+    raise NameError('Exception')
+except NameError:
+    print('exception is raised')
+</textarea>
+<button onclick="myFunction5()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo5" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction5() {
+  document.getElementById("demo5").innerHTML = "exception is raised";
+}
+</script>
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">User-Defined Exceptions</div>
+
+<p>Python also allows you to create your own exceptions by deriving classes from the standard built-in exceptions.
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="8"  id="myTextarea" disabled>
+class CustomError(Exception):
+     def __init__(self, data):  
+        self.data = data  
+try:  
+    raise CustomError("Exception")  
+except CustomError as e:  
+    print ("User defined Exception:", e.data)
+</textarea>
+<button onclick="myFunction6()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo6" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction6() {
+  document.getElementById("demo6").innerHTML = "User defined Exception: Exception";
+}
+</script>
+
+</body>
+</html>

@@ -18,15 +18,15 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.facebook.ads.AdSize;
-import com.facebook.ads.AdView;
-
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.meet.learnpython.R;
 import com.meet.learnpython.*;
 
 public class GalleryFragment extends Fragment {
     ListView listView;
-    private AdView adView;
+    AdView mAdview;
+    AdRequest adRequest;
     GridView androidGridView;
     myDbAdapter helper;
     String data;
@@ -63,10 +63,10 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        adView = new AdView(getActivity(), getString(R.string.bannerid_PY), AdSize.BANNER_HEIGHT_50);
-        LinearLayout adContainer = (LinearLayout) root.findViewById(R.id.banner_container);
-        adContainer.addView(adView);
-        adView.loadAd();
+
+        mAdview = (AdView) root.findViewById(R.id.adView);
+        adRequest=new AdRequest.Builder().build();
+        mAdview.loadAd(adRequest);
 /*
         listView = (ListView) root.findViewById(R.id.listView);
 

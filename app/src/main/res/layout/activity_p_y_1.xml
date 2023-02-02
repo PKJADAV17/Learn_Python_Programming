@@ -5,22 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PY_1">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="50dp">
-        <com.github.barteksc.pdfviewer.PDFView
-            android:id="@+id/pdfView"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp">
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <com.google.android.ads.nativetemplates.TemplateView
+                android:id="@+id/my_template"
+                app:gnt_template_type="@layout/gnt_small_template_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <WebView
+                android:id="@+id/webView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <com.google.android.ads.nativetemplates.TemplateView
+                android:id="@+id/my_template1"
+                app:gnt_template_type="@layout/gnt_small_template_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/banner_container"
-        android:layout_width="match_parent"
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/PY_banner" />
 </RelativeLayout>

@@ -7,8 +7,7 @@ import android.view.View;
 import android.view.Menu;
 
 
-import com.facebook.ads.AdSettings;
-import com.facebook.ads.AudienceNetworkAds;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -35,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        AudienceNetworkAds.initialize(this);
         //AdSettings.setTestMode(true);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

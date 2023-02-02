@@ -14,9 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.facebook.ads.AdSize;
-import com.facebook.ads.AdView;
-
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.meet.learnpython.ExpandableListAdapter;
 import com.meet.learnpython.ExpandableListDataPump;
 import com.meet.learnpython.R;
@@ -26,7 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SlideshowFragment extends Fragment {
-    private AdView adView;
+    AdView mAdview;
+    AdRequest adRequest;
 
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
@@ -36,10 +36,10 @@ public class SlideshowFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        adView = new AdView(getActivity(), getString(R.string.bannerid_PY), AdSize.BANNER_HEIGHT_50);
-        LinearLayout adContainer = (LinearLayout) root.findViewById(R.id.banner_container);
-        adContainer.addView(adView);
-        adView.loadAd();
+
+        mAdview = (AdView) root.findViewById(R.id.adView);
+        adRequest=new AdRequest.Builder().build();
+        mAdview.loadAd(adRequest);
 
         expandableListView = (ExpandableListView) root.findViewById(R.id.expandableListView);
         expandableListDetail = ExpandableListDataPump.getData();

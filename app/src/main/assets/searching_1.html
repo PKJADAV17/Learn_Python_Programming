@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="mystyle1.css">
+</head>
+<body>
+<br> 
+<hr class="new3">
+<div class="subhead1">Linear Search</div>
+<p>This is the simplest of all searching techniques. In this technique, an ordered or unordered list will be searched one by one from the beginning until the desired element is found. If the desired element is found in the list then the search is successful otherwise unsuccessful.
+</p>
+<br>
+<b class="element">Example</b>
+<p>Suppose we have the following unsorted list.
+</p>
+<img src="search_linear.png" alt="Linear Search">
+<p>Searching different elements is as follows.</p>
+<ul>
+<li>Searching for x = 40 Search successful, data found 	at 	6th position. </li>
+<li>Searching for x = 90 Search successful, data found 	at 0th position. 
+</li>
+<li>Searching for x = 55 Search un-successful, data not found.</li>
+</ul>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="12"  id="myTextarea" disabled>
+def linear_search(item):
+    pos = 0
+    list=[90,70,80,10,50,20,40,30,100,60]
+    for i in list:
+        if i == item:
+            print ('element is found at index',pos)
+        else:
+            pos = pos + 1
+    
+linear_search(40)
+linear_search(90)
+</textarea>
+<button onclick="myFunction2()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo2" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction2() {
+  document.getElementById("demo2").innerHTML ="element is found at index 6<br>element is found at index 0";
+}
+</script>
+
+<br><br> 
+<hr class="new3">
+<div class="subhead1">Binary Search</div>
+<p>The binary search approach is different from the linear search. The binary search technique is used to search for a particular element in a sorted array or list. In this technique, two partitions of lists are made and then the given element is searched and hence, it is known as binary search.
+</p>
+<b class="element">Example</b>
+<p>Suppose we have the following sorted list.
+</p>
+<img src="search_binary.png" alt="Binary Search">
+<p>The number of comparisons required for searching different elements is as follows.</p>
+<br>
+<p>If we are searching for x = 20: (This needs 2 comparisons)
+</p>
+<p>low = 1, high = 10, mid = 11/2 = 5, check 50</p>
+<p>low = 1, high = 4, mid = 5/2 = 2, check 20,found
+</p>
+
+<br>
+<p>If we are searching for x = 80: (This needs 2 comparisons)</p>
+<p>low = 1, high = 10, mid = 11/2 = 5, check 50
+</p>
+<p>low = 6, high = 10, mid = 16/2 = 8, check 80,found
+</p>
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="16"  id="myTextarea" disabled>
+def binary_search(x): 
+    list = [10,20,30,40,50,60,70,80,90,100] 
+    l=0
+    r=len(list)-1
+    while l <= r: 
+        mid = (l +r)/2; 
+        if list[mid] == x: 
+            print 'Element is found at index',mid
+            return 0
+        elif list[mid] < x: 
+            l = mid + 1
+        else: 
+            r = mid - 1
+binary_search(20)
+binary_search(80)
+</textarea>
+<button onclick="myFunction3()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo3" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction3() {
+  document.getElementById("demo3").innerHTML ="Element is found at index 1<br>Element is found at index 7";
+}
+</script>
+</body>
+</html>

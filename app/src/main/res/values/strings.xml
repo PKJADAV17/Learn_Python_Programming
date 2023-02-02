@@ -12,28 +12,16 @@
     <string name="menu_slideshow">Question Answer</string>
 
     <string name="home_second">Home Second</string>
+    <!--
+        <string name="PY_banner">ca-app-pub-3940256099942544/6300978111</string>
+        <string name="PY_interstitial">ca-app-pub-3940256099942544/1033173712</string>
+        <string name="PY_native">ca-app-pub-3940256099942544/2247696110</string>
+        <string name="PY_native1">ca-app-pub-3940256099942544/2247696110</string>
+      -->
 
-    <!--  <string name="bannerid_PY">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY1">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY2">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY3">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY4">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY5">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY6">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY7">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY8">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="bannerid_PY9">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
-      <string name="interstitial_PY">YOUR_PLACEMENT_ID</string>-->
+            <string name="PY_banner">ca-app-pub-2402841896446890/2832876424</string>
+            <string name="PY_interstitial">ca-app-pub-2402841896446890/2801086838</string>
+            <string name="PY_native">ca-app-pub-2402841896446890/6967546644</string>
+            <string name="PY_native1">ca-app-pub-2402841896446890/8384586007</string>
 
-       <string name="bannerid_PY">149514980637904_149515243971211</string>
-       <string name="bannerid_PY1">149514980637904_149515423971193</string>
-       <string name="bannerid_PY2">149514980637904_149515490637853</string>
-       <string name="bannerid_PY3">149514980637904_149515547304514</string>
-       <string name="bannerid_PY4">149514980637904_149515603971175</string>
-       <string name="bannerid_PY5">149514980637904_149515640637838</string>
-       <string name="bannerid_PY6">149514980637904_149515700637832</string>
-       <string name="bannerid_PY7">149514980637904_149515740637828</string>
-       <string name="bannerid_PY8">149514980637904_149515807304488</string>
-       <string name="bannerid_PY9">149514980637904_149515847304484</string>
-       <string name="interstitial_PY">149514980637904_149515940637808</string>
  </resources>

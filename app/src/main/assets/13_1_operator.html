@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="mystyle1.css">
+</head>
+<body>
+<br>
+<hr class="new3">
+<div class="subhead1">Arithmetic Operators</div>
+<p>An arithmetic operator performs mathematical operations such as addition, subtraction and multiplication on numerical values.
+</p>
+
+<table width="100%">
+<tbody><tr>
+<th>Operator</th>
+<th>Name</th>
+<th>Example</th>
+
+</tr>
+<tr>
+<td>+</td>
+<td>Addition</td>
+<td>x + y</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Subtraction</td>
+<td>x - y</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Multiplication</td>
+<td>x * y</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Division</td>
+<td>x / y</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Modulus</td>
+<td>x % y</td>
+</tr>
+  <tr>
+<td>**</td>
+<td>Exponentiation</td>
+<td>x ** y</td>
+  </tr>
+<tr>
+<td>//</td>
+<td>Floor division</td>
+<td>x // y</td>
+</tr>
+</tbody></table>
+
+<br>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="10"  id="myTextarea" disabled>
+a=10
+b=5
+
+print("Addition = ",(a+b));
+print("Substraction = ",(a-b));
+print("Multiplication = ",(a*b));
+print("Division = ",(a/b));
+print("Exponent = ",(a**b));
+print("Floor division = ",(a//b));
+</textarea>
+<button onclick="myFunction()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Addition =  15<br>Substraction =  5<br>Multiplication =  50<br>Division =  2.0<br>Exponent =  100000<br>Floor division =  2";
+}
+</script>
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Relational Operators</div>
+<p>A relational operator checks the relationship between two operands. If the relation is true, it returns 1 or true; if the relation is false, it returns value 0 or false.</p>
+
+<table width="100%">
+<tbody><tr>
+<th>Operator</th>
+<th>Name</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>==</td>
+<td>Equal</td>
+<td>x == y</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Not equal</td>
+<td>x != y</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than</td>
+<td>x &gt; y</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>Less than</td>
+<td>x &lt; y</td>
+</tr>
+  <tr>
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+<td>x &gt;= y</td>
+  </tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+<td>x &lt;= y</td>
+</tr>
+</tbody></table>
+
+
+<br>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="10"  id="myTextarea" disabled>
+a=10
+b=5
+
+print (a==b);
+print (a!=b);
+print (a>b);
+print (a<b);
+print (a>=b);
+print (a<=b);
+</textarea>
+<button onclick="myFunction1()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo1" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction1() {
+  document.getElementById("demo1").innerHTML = "False<br>True<br>True<br>False<br>True<br>False";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Assignment Operators</div>
+<p>An assignment operator is used for assigning a value to a variable. The most common assignment operator is =.
+</p>
+
+<table width="100%"><tbody><tr><th>Operator</th>
+<th>Name</th>
+<th>Example</th>
+</tr><tr><td>=</td>
+<td>Assignment Operator</td>
+<td>a = 7</td>
+</tr><tr><td>+=</td>
+<td>Addition Assignment</td>
+<td>a += 1 # a = a + 1</td>
+</tr><tr><td>-=</td>
+<td>Subtraction Assignment</td>
+<td>a -= 3 # a = a - 3</td>
+</tr><tr><td>*=</td>
+<td>Multiplication Assignment</td>
+<td>a *= 4 # a = a * 4</td>
+</tr><tr><td>/=</td>
+<td>Division Assignment</td>
+<td>a /= 3 # a = a / 3</td>
+</tr><tr><td>%=</td>
+<td>Remainder Assignment</td>
+<td>a %= 10 # a = a % 10</td>
+</tr><tr><td>**=</td>
+<td>Exponent Assignment</td>
+<td>a **= 10 # a = a ** 10</td>
+</tr></tbody></table>
+
+<br>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="26"  id="myTextarea" disabled>
+a = 10
+b = 5
+c = 0
+
+c = a + b
+print ("c=a+b=", c);
+
+c += a
+print ("c=c+a=", c); 
+
+c *= a
+print ("c=c*a=", c); 
+
+c /= a 
+print ("c=c/a=", c); 
+
+c %= a
+print ("c=c%a=", c); 
+
+c=2
+c **= a
+print ("c=c**a=", c);
+
+c //= a
+print ("c=c//a=", c);
+</textarea>
+<button onclick="myFunction2()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo2" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction2() {
+  document.getElementById("demo2").innerHTML = "c=a+b= 15<br>c=c+a= 25<br>c=c*a= 250<br>c=c/a= 25.0<br>c=c%a= 5.0<br>c=c**a= 1024<br>c=c//a= 102";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Logical Operators</div>
+<p>The logical operators are used primarily in the expression evaluation to make a decision. Python supports the following logical operators.
+</p>
+
+<table width="100%">
+<tbody><tr>
+<th>Operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+<tr>
+<td>and&nbsp;</td>
+<td>Returns True if both statements are true</td>
+<td>x &lt; 5 and&nbsp; x &lt; 10</td>
+</tr>
+<tr>
+<td>or</td>
+<td>Returns True if one of the statements is true</td>
+<td>x &lt; 5 or x &lt; 4</td>
+</tr>
+<tr>
+<td>not</td>
+<td>Reverse the result, returns False if the result is true</td>
+<td>not(x &lt; 5 and x &lt; 10)</td>
+</tr>
+</tbody></table>
+
+
+<br>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="5"  id="myTextarea" disabled>
+a = 5
+b = 6
+
+print((a > 2) and (b >= 6))
+</textarea>
+<button onclick="myFunction3()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo3" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction3() {
+  document.getElementById("demo3").innerHTML = "True";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Bitwise Operators</div>
+<p>The bitwise operators perform bit by bit operation on the values of the two operands.
+</p>
+
+<table width="100%">
+<tbody><tr>
+<th>Operator</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+  <tr>
+<td>&amp;&nbsp;</td>
+<td>AND</td>
+<td>Sets each bit to 1 if both bits are 1</td>
+  </tr>
+  <tr>
+<td>|</td>
+<td>OR</td>
+<td>Sets each bit to 1 if one of two bits is 1</td>
+  </tr>
+  <tr>
+<td>^</td>
+<td>XOR</td>
+<td>Sets each bit to 1 if only one of two bits is 1</td>
+  </tr>
+<tr>
+<td>~</td>
+<td>NOT</td>
+<td>Inverts all the bits</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>Zero fill left shift</td>
+<td>Shift left by pushing zeros in from the right and let the leftmost bits fall 
+off</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>Signed right shift</td>
+<td>Shift right by pushing copies of the leftmost bit in from the left, and let 
+the rightmost bits fall off</td>
+</tr>
+</tbody></table>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Membership Operators</div>
+
+<p>Python membership operators are used to check the membership of value inside a data structure. If the value is present in the data structure, then the resulting value is true otherwise it returns false.
+</p>
+
+<table width="100%">
+<tbody><tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+  <tr>
+<td>in</td>
+<td>
+The result of this operation becomes True if it finds a value in a specified sequence & False otherwise.</td>
+  </tr>
+  <tr>
+<td>not in</td>
+<td>
+result of this operation becomes True if it doesn't find a value in a specified sequence & False otherwise.
+
+</td>
+  </tr>
+</tbody></table>
+
+
+<br>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="19"  id="myTextarea" disabled>
+a = 10
+b = 5
+l = [1, 2, 3, 4, 5 ];
+
+if ( a in l ):
+   print ("true")
+else:
+   print ("false")
+   
+if ( a not in l ):
+   print ("true")
+else:
+   print ("false")
+  
+if ( b in l ):
+   print ("true")
+else:
+   print ("false")
+</textarea>
+<button onclick="myFunction4()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo4" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction4() {
+  document.getElementById("demo4").innerHTML = "false<br>true<br>true";
+}
+</script>
+
+
+<br>
+<br>
+<hr class="new3">
+<div class="subhead1">Identity  Operators</div>
+
+<p>Identity operators compare the memory locations of two objects.</p>
+
+<table width="100%">
+<tbody><tr>
+<th>Operator</th>
+<th>Description</th>
+</tr>
+  <tr>
+<td>is</td>
+<td>
+It is evaluated to be true if the reference present at both sides point to the same object.
+</td>
+  </tr>
+  <tr>
+<td>is not</td>
+<td>
+It is evaluated to be true if the reference present at both side do not point to the same object.
+</td>
+  </tr>
+</tbody></table>
+
+
+<br>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="13"  id="myTextarea" disabled>
+a = 10
+b = 5
+
+if ( a is b ):
+   print ("true")
+else:
+   print ("false")
+
+if ( a is not b ):
+   print ("true")
+else:
+   print ("false")
+</textarea>
+<button onclick="myFunction5()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo5" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction5() {
+  document.getElementById("demo5").innerHTML = "false<br>true";
+}
+</script>
+
+</body>
+</html>

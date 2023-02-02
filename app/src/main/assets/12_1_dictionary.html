@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="mystyle1.css">
+</head>
+<body>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="8"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+   
+print(d[1]);  
+print(d[3]);  
+print (d);  
+print (d.keys());  
+print (d.values()); 
+</textarea>
+<button onclick="myFunction()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "abc<br>pqr<br>{1: 'abc', 2: 'xyz', 3: 'pqr'}<br>[1, 2, 3]<br>['abc', 'xyz', 'pqr']";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">Accessing Dictionary Values</div>
+<p>Dictionaries values can be accessed by using the square braces, i.e. [ ] along with the key name to obtain the value. This is multiple item declaration procedures used to declare keys along with their values in Python's dictionary.
+</p>
+
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="6"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'}; 
+  
+print(d[1]);  
+print(d[3]);  
+print (d); 
+</textarea>
+<button onclick="myFunction1()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo1" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction1() {
+  document.getElementById("demo1").innerHTML = "abc<br>pqr<br>{1: 'abc', 2: 'xyz', 3: 'pqr'}";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">Update Dictionary</div>
+<p>Programmers can update or modify the existing dictionary by simply adding a new entry or a key-value pair or by deleting an item or entry.
+</p>
+
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="10"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'}; 
+#update dictionary
+d[1]='hi'
+print (d)
+
+#add element into dictionary
+d['name'] = 'jack'
+d[4] = 'how'
+print(d)
+</textarea>
+<button onclick="myFunction2()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo2" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction2() {
+  document.getElementById("demo2").innerHTML = "{1: 'hi', 2: 'xyz', 3: 'pqr'}<br>{1: 'hi', 2: 'xyz', 3: 'pqr', 4: 'how', 'name': 'jack'}";
+}
+</script>
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">Deleting Python Dictionary Elements</div>
+<p>del statement is used for performing deletion operation. An item can be deleted from a dictionary using the key only.</p>
+
+
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="9"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'}; 
+del d[1]
+print (d)
+
+#delete full dictionary
+del d
+print (d) 
+#print error dictionary is deleted
+</textarea>
+<button onclick="myFunction3()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo3" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction3() {
+  document.getElementById("demo3").innerHTML = "{2: 'xyz', 3: 'pqr'}";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">len(dict) Method</div>
+<p>Gives the total length of the dictionary. This would be equal to the number of items in the dictionary.
+</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+
+print(len(d))
+</textarea>
+<button onclick="myFunction4()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo4" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction4() {
+  document.getElementById("demo4").innerHTML = "3";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">cmp(dict1, dict2) Method</div>
+<p>Compares elements of both dictionary.</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="6"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+d1 = {'name':'alice' , 'age':20, 'country':'US'}
+
+print(cmp(d,d1))
+print(cmp(d1,d))
+</textarea>
+<button onclick="myFunction5()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo5" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction5() {
+  document.getElementById("demo5").innerHTML = "-1<br>1";
+}
+</script>
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">str(dict) Method</div>
+<p>This method returns string formation of the value.</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+
+print(str(d))
+</textarea>
+<button onclick="myFunction6()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo6" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction6() {
+  document.getElementById("demo6").innerHTML = "{1: 'abc', 2: 'xyz', 3: 'pqr'}";
+}
+</script>
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">clear()Method</div>
+<p>Removes all the elements from the dictionary.</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="5"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+d.clear()
+
+print (d)
+</textarea>
+<button onclick="myFunction7()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo7" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction7() {
+  document.getElementById("demo7").innerHTML = "{}";
+}
+</script>
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">copy()Method</div>
+<p>Returns a copy of the dictionary.</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="5"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+d1=d.copy()
+
+print (d1)
+</textarea>
+<button onclick="myFunction8()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo8" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction8() {
+  document.getElementById("demo8").innerHTML = "{1: 'abc', 2: 'xyz', 3: 'pqr'}";
+}
+</script>
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">get()Method</div>
+<p>Returns the value of the specified key.</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+
+print(d.get(1))
+</textarea>
+<button onclick="myFunction9()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo9" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction9() {
+  document.getElementById("demo9").innerHTML = "abc";
+}
+</script>
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">items()Method</div>
+<p>Returns a list containing the a tuple for each key value pair</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+
+print(d.items())
+</textarea>
+<button onclick="myFunction10()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo10" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction10() {
+  document.getElementById("demo10").innerHTML = "[(1, 'abc'), (2, 'xyz'), (3, 'pqr')]";
+}
+</script>
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">keys()Method</div>
+<p>Returns a list contianing the dictionary's keys.</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+
+print(d.keys())
+</textarea>
+<button onclick="myFunction11()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo11" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction11() {
+  document.getElementById("demo11").innerHTML = "[1, 2, 3]";
+}
+</script>
+
+
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">pop()Method</div>
+<p>Removes the element with the specified key.</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="5"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+print(d.pop(1))
+
+print (d)
+</textarea>
+<button onclick="myFunction12()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo12" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction12() {
+  document.getElementById("demo12").innerHTML = "abc<br>{2: 'xyz', 3: 'pqr'}";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">popitem()Method</div>
+<p>Removes the last inserted key-value pair</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="5"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+print(d.popitem())
+
+print (d)
+</textarea>
+<button onclick="myFunction13()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo13" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction13() {
+  document.getElementById("demo13").innerHTML = "(3, 'pqr')<br>{1: 'abc', 2: 'xyz'}";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">update()Method</div>
+<p>Updates the dictionary with the specified key-value pairs</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="8"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+d.update({4:'hi'})
+
+print (d)
+
+d.update({2:'how'})
+print (d)
+</textarea>
+<button onclick="myFunction14()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo14" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction14() {
+  document.getElementById("demo14").innerHTML = "{1: 'abc', 2: 'xyz', 3: 'pqr', 4: 'hi'}<br>{1: 'abc', 2: 'how', 3: 'pqr', 4: 'hi'}";
+}
+</script>
+
+<br><br>
+<hr class="new3">
+<div class="subhead1">values()Method</div>
+<p>Returns a list of all the values in the dictionary.</p>
+<div class="subhead">Example</div>
+<textarea wrap="off" rows="4"  id="myTextarea" disabled>
+d = {1:'abc', 2:'xyz', 3:'pqr'};
+
+print(d.values())
+</textarea>
+<button onclick="myFunction15()">Try it</button>
+<div class="subhead">Output</div>
+<div id="demo15" class="output">
+	Click on try it to see output
+</div>
+<script>
+function myFunction15() {
+  document.getElementById("demo15").innerHTML = "['abc', 'xyz', 'pqr']";
+}
+</script>
+
+</body>
+</html>
