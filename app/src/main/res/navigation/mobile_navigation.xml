@@ -41,6 +41,11 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
+        android:id="@+id/nav_example"
+        android:name="com.meet.learnpython.ui.example.PyExampleFragment"
+        android:label="@string/menu_example"
+        tools:layout="@layout/fragment_py_example" />
+    <fragment
         android:id="@+id/more"
         android:name="com.meet.learnpython.ui.home.HomeFragment"
         />

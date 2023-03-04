@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
         android:divider="#FBF7F7"
+        android:childDivider="#FBF9F9"
         android:paddingBottom="50dp"
         android:dividerHeight="5dp" />
     <com.google.android.gms.ads.AdView
