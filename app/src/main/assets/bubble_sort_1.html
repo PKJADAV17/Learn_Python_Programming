@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="mystyle1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="mystyle.css">
 </head>
-<body>
+<body class='tutpad'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script src="prism.js"></script>
 <b class="element">Example</b>
 <br>
 <p>Let us take an example of the following elements.</p>
@@ -17,9 +20,8 @@
 <img src="1_img.png" alt="Bubble sort">
 
 
-<div class="subhead">Example</div>
-<textarea wrap="off" rows="12"  id="myTextarea" disabled>
-def bubble_sort(list):
+<div class="example">Example</div>
+<pre><code class="language-python line-numbers">def bubble_sort(list):
     for j in range(len(list)-1):
         for i in range(j):
             if list[i]>list[i+1]:
@@ -30,7 +32,7 @@ def bubble_sort(list):
 list = [1,4,2,5,8]
 bubble_sort(list)
 print(list)
-</textarea>
+</code></pre>
 <button onclick="myFunction2()">Try it</button>
 <div class="subhead">Output</div>
 <div id="demo2" class="output">

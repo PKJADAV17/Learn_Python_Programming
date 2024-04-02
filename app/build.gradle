@@ -8,8 +8,8 @@ android {
         applicationId "com.meet.learnpython"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 3010
-        versionName "1.9"
+        versionCode 3014
+        versionName "1.1.3"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

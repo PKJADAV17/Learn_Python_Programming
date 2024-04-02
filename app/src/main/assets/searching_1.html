@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="mystyle1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="mystyle.css">
 </head>
-<body>
+<body class='tutpad'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script src="prism.js"></script>
 <br> 
 <hr class="new3">
 <div class="subhead1">Linear Search</div>
@@ -26,9 +29,8 @@
 <li>Searching for x = 55 Search un-successful, data not found.</li>
 </ul>
 
-<div class="subhead">Example</div>
-<textarea wrap="off" rows="12"  id="myTextarea" disabled>
-def linear_search(item):
+<div class="example">Example</div>
+<pre><code class="language-python line-numbers">def linear_search(item):
     pos = 0
     list=[90,70,80,10,50,20,40,30,100,60]
     for i in list:
@@ -39,7 +41,7 @@ def linear_search(item):
     
 linear_search(40)
 linear_search(90)
-</textarea>
+</code></pre>
 <button onclick="myFunction2()">Try it</button>
 <div class="subhead">Output</div>
 <div id="demo2" class="output">
@@ -75,9 +77,8 @@ function myFunction2() {
 <p>low = 6, high = 10, mid = 16/2 = 8, check 80,found
 </p>
 
-<div class="subhead">Example</div>
-<textarea wrap="off" rows="16"  id="myTextarea" disabled>
-def binary_search(x): 
+<div class="example">Example</div>
+<pre><code class="language-python line-numbers">def binary_search(x):
     list = [10,20,30,40,50,60,70,80,90,100] 
     l=0
     r=len(list)-1
@@ -92,7 +93,7 @@ def binary_search(x):
             r = mid - 1
 binary_search(20)
 binary_search(80)
-</textarea>
+</code></pre>
 <button onclick="myFunction3()">Try it</button>
 <div class="subhead">Output</div>
 <div id="demo3" class="output">

@@ -3,13 +3,6 @@ package com.meet.learnpython;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Menu;
-
-
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.more:
                         Intent moreintent = new Intent(Intent.ACTION_VIEW);
-                        moreintent.setData(Uri.parse("market://search?q=pub:meet.it"));
+                        moreintent.setData(Uri.parse("market://search?q=pub:tutlearns"));
                         startActivity(moreintent);
                         break;
                     case R.id.share:
@@ -90,8 +84,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     @Override
     public boolean onSupportNavigateUp() {

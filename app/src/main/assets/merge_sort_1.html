@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="mystyle1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="mystyle.css">
 </head>
-<body>
+<body class='tutpad'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script src="prism.js"></script>
 <b class="element">Example</b>
 <br>
 <p>Let us take an example of the following elements.</p>
@@ -17,9 +20,8 @@
 <img src="3_img.png" alt="Merge sort">
 
 
-<div class="subhead">Example</div>
-<textarea wrap="off" rows="35"  id="myTextarea" disabled>
-def merge_sort(list):
+<div class="example">Example</div>
+<pre><code class="language-python line-numbers">def merge_sort(list):
     if len(list)>1:
         mid = len(list)//2
         left = list[:mid]
@@ -53,7 +55,7 @@ def merge_sort(list):
 list = [38,27,43,3,9,82,10]
 merge_sort(list)
 print(list)
-</textarea>
+</code></pre>
 <button onclick="myFunction2()">Try it</button>
 <div class="subhead">Output</div>
 <div id="demo2" class="output">

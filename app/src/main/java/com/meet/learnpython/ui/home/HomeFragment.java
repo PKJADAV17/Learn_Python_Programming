@@ -2,6 +2,7 @@ package com.meet.learnpython.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +28,7 @@ public class HomeFragment extends Fragment {
     AdView mAdview;
     AdRequest adRequest;
     ListView listView;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -38,34 +41,54 @@ public class HomeFragment extends Fragment {
 
         final String[] values = new String[] {
                 "Python Introduction",
-                "Compiler and Interpreter",
-                "Python Input and Output",
-                "Python First Program",
-                "Python Comment",
-                "Python Variables",
-                "Python Data Types",
-                "Python Number",
-                "Python List",
-                "Python String",
-                "Python Tuple",
-                "Python Dictionary",
-                "Python Operators",
-                "Python If Else",
-                "Python Loops",
-                "Python Break continue and pass Statement",
-                "Python Function",
-                "Python Local and Global Variable",
-                "Python Module",
-                "Python File Handling",
-                "Python Exception Handling",
-                "Python Class and Object",
-                "Python Constructor",
-                "Python Inheritance",
-                "Python Overloading",
-                "Python Encapsulation",
-                "Python Regular Expression",
-                "Python Multithreading",
-                "Python Socket Programming",
+                        "Python Features",
+                        "Python Environment Setup",
+                        "Python First Example",
+                        "Python Variable",
+                        "Python Input/Output",
+                        "Python Comments",
+                        "Python Data Types",
+                        "Python Type Conversion",
+                        "Python Keyword",
+                        "Python Literals",
+                        "Python Operators",
+                        "Python If Else",
+                        "Python Loops",
+                        "Python Break & Continue",
+                        "Python Pass",
+                        "Python Numbers",
+                        "Python List",
+                        "Python Tuple",
+                        "Python String",
+                        "Python Set",
+                        "Python Dictionary",
+                        "Python Function",
+                        "Python Recursion",
+                        "Python Lambda Function",
+                        "Python Variable Scope",
+                        "Python Module",
+                        "Python Packages",
+                        "Python File Handling",
+                        "Python Exception Handling",
+                        "Python User Defined Exception",
+                        "Python Date/Time",
+                        "Python Math",
+                        "Python Regular Expression",
+                        "Python Class",
+                        "Python Object",
+                        "Python Constructor",
+                        "Pyhton Overloading",
+                        "Pyhton Inheritance",
+                        "Python Encapsulation",
+                        "Python Abstraction",
+                        "Python Polymorphism",
+                        "Python Thread Programming",
+                        "Python Socket Programming",
+                        "Python Iterator",
+                        "Python Generator",
+                        "Python Closure",
+                        "Python Decorator",
+                        "Python Property",
                 "Python Searching",
                 "Python Bubble Sort",
                 "Python Insertion Sort",
