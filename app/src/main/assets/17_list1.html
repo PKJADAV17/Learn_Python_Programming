@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "[1, 2, 3, 'apple', 'banana', True]";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "['h', 'e', 'l', 'l', 'o']";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "[0, 1, 4, 9, 16]";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "[1, 2, 3, 4, 5]";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "[[1, 2, 3], [4, 5, 6], [7, 8, 9]]";
+    }
+    function myFunction5() {
+        document.getElementById("demo5").innerHTML = "[2, 2, 2, 2, 2]";
+    }
+    function myFunction6() {
+        document.getElementById("demo6").innerHTML = "10 20 30";
+    }
+    function myFunction7() {
+        document.getElementById("demo7").innerHTML = "50 40";
+    }
+    function myFunction8() {
+        document.getElementById("demo8").innerHTML = "[2, 3, 4]";
+    }
+    function myFunction9() {
+        document.getElementById("demo9").innerHTML = "[0, 1, 2]<br/>   [7, 8, 9]";
+    }
+    function myFunction10() {
+        document.getElementById("demo10").innerHTML = "[0, 2, 4, 6, 8]";
+    }
+    function myFunction11() {
+        document.getElementById("demo11").innerHTML = "[0, 1, 20, 30, 40, 5, 6, 7, 8, 9]";
+    }
+    function myFunction12() {
+        document.getElementById("demo12").innerHTML = "[1, 2, 3, 4]<br/>        [1, 5, 2, 3]<br/>        [1, 2, 3, 4, 5]<br/>        [1, 2, 3, 4, 5]";
+    }
+    function myFunction13() {
+        document.getElementById("demo13").innerHTML = "[1, 2, 4, 3, 5]<br/>        [1, 2, 4, 5]<br/>        Popped Element: 3<br/>        [1, 2, 4, 5]<br/>        [ ]";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Creating Lists</div>
+            <p>Creating a list in Python is a straightforward process. Lists are used to store an ordered collection of elements, and you can include items of different data types in a single list. </p>
+            <p>Here are several ways to create a list in Python.</p>
+
+            <br/>
+            <b class='element'>Using Square Brackets []</b>
+            <p>The most common way to create a list is by enclosing a sequence of elements in square brackets.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [1, 2, 3, "apple", "banana", True]
+print(my_list)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, my_list is a list containing integers, strings, and a boolean value.</p>
+
+            <br/>
+            <b class='element'>Using the list() Constructor</b>
+            <p>You can also create a list using the list() constructor. The argument to list() should be an iterable, like a string or another list.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">another_list = list("hello")
+print(another_list)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>Using List Comprehension</b>
+            <p>List comprehension is a concise way to create lists. It allows you to create a list based on an existing iterable.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">squared_numbers = [x ** 2 for x in range(5)]
+print(squared_numbers)</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'> Using the range() Function</b>
+            <p>The range() function is often used to generate a sequence of numbers that can be converted into a list.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">numbers = list(range(1, 6))
+print(numbers)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>Nested Lists</b>
+            <p>Lists can also contain other lists, creating nested structures.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(nested_list)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            
+            <br/>
+            <b class='element'>Using Repetition</b>
+            <p>You can create a list by repeating a specific element or a sequence.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">repeated_list = [2] * 5
+print(repeated_list)</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+            <p>These methods give you flexibility in creating lists based on your specific requirements. Once you have created a list, you can use various operations and methods to manipulate and work with its elements.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Accessing Elements</div>
+            <p>Accessing elements in a list in Python is done using indexing. The index of a list starts at 0 for the first element and increases by 1 for each subsequent element. Negative indices can also be used to access elements from the end of the list.</p>
+            <br/>
+            <b class='element'>Positive Indexing</b>
+            <p>Positive indexing starts from 0 for the first element, 1 for the second element, and so on.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [10, 20, 30, 40, 50]
+
+first_element = my_list[0]     
+second_element = my_list[1]    
+third_element = my_list[2]     
+
+print(first_element, second_element, third_element)</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>Negative Indexing</b>
+            <p>Negative indexing starts from -1 for the last element, -2 for the second-to-last element, and so forth.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [10, 20, 30, 40, 50]
+
+last_element = my_list[-1]     
+second_last_element = my_list[-2]
+
+print(last_element, second_last_element)</code></pre>
+            <button onClick=myFunction7()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo7" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>List Slicing</div>
+            <p>Slicing in lists allows you to extract a portion of the list by specifying a range of indices. The basic syntax for slicing a list is <b>list[start:stop]</b>, where <b>start</b> is the index of the first element to include, and <b>stop</b> is the index of the first element to exclude.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+subset = my_list[2:5]  
+print(subset)</code></pre>
+            <button onClick=myFunction8()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo8" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Omitting Start or Stop</b>
+            <p>If you omit the <b>start</b> index, it defaults to the beginning of the list. If you omit the <b>stop</b> index, it defaults to the end.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+first_three = my_list[:3]  
+last_three = my_list[-3:]  
+
+print(first_three)
+print(last_three)</code></pre>
+            <button onClick=myFunction9()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo9" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Step in Slicing</b>
+            <p>You can specify a step value to skip elements.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+even_indices = my_list[0:10:2]  
+print(even_indices)</code></pre>
+            <button onClick=myFunction10()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo10" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, 2 is the step value, meaning every second element is included in the slice.</p>
+
+            <br/>
+            <b class='element'>Modifying Elements with Slicing</b>
+            <p>You can use slicing to modify elements in a list.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+my_list[2:5] = [20, 30, 40]  
+print(my_list)</code></pre>
+            <button onClick=myFunction11()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo11" class="output">
+                Click on try it to see output
+            </div>
+            <p>Slicing is a powerful feature that provides a convenient way to work with subsets of data in a list or other iterable.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Adding Elements in List</div>
+            <p>Adding elements to a list in Python can be done using various methods.</p>
+            <p>Following are some common ways to add elements to a list.</p>
+            <ul>
+                <li>The <b>append()</b> method is used to add an element to the end of the list.</li>
+                <li>The <b>insert()</b> method allows you to insert an element at a specific index in the list.</li>
+                <li>The <b>extend()</b> method is used to append elements from an iterable to the end of the list. You can also use <b>+=</b> for the same purpose.</li>
+                <li>You can concatenate two lists using the <b>+</b> operator to create a new list.</li>
+            </ul>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)
+
+my_list1 = [1, 2, 3]
+my_list1.insert(1, 5)  
+print(my_list1)
+
+my_list2 = [1, 2, 3]
+my_list2.extend([4, 5])
+print(my_list2)
+
+my_list3 = [1, 2, 3]
+new_elements = [4, 5]
+my_list3 = my_list3 + new_elements
+print(my_list3)</code></pre>
+            <button onClick=myFunction12()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo12" class="output">
+                Click on try it to see output
+            </div>
+            <p>Choose the method that best fits your specific requirements. The appropriate method may depend on whether you want to add elements to the beginning, end, or a specific position in the list.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Removing Elements from List</div>
+            <p>In Python, you can remove elements from a list using various methods. Here are some common ways to remove elements from a list.</p>
+            <ul>
+                <li>The <b>remove()</b> method is used to remove the first occurrence of a specified value.</li>
+                <li>The <b>pop()</b> method is used to remove and return an element at a specific index. If no index is specified, it removes and returns the last element.</li>
+                <li>The <b>del</b> statement is used to remove an element or slice from a list.</li>
+                <li>The <b>clear()</b> method is used to remove all elements from the list, making it empty.</li>
+            </ul>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [1, 2, 3, 4, 3, 5]
+my_list.remove(3)
+print(my_list)
+
+my_list1 = [1, 2, 3, 4, 5]
+popped_element = my_list1.pop(2)  
+print(my_list1)
+print("Popped Element:", popped_element)
+
+my_list2 = [1, 2, 3, 4, 5]
+del my_list2[2]  
+print(my_list2)
+
+my_list3 = [1, 2, 3, 4, 5]
+my_list3.clear()
+print(my_list3)</code></pre>
+            <button onClick=myFunction13()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo13" class="output">
+                Click on try it to see output
+            </div>
+            <p>Choose the method that best fits your specific requirements. The appropriate method may depend on whether you want to remove elements by value, index, or clear the entire list.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>In-bulit Method of list</div>
+            <p>Here's a table listing some common methods and operations that you can perform on lists in Python</p>
+            <table width='100%'><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><b>list.append(x)</b></td><td>Add an element <b>x</b> to the end of the list.</td></tr><tr><td><b>list.extend(iterable)</b></td><td>Extend the list by appending elements from the iterable.</td></tr><tr><td><b>list.insert(index, x)</b></td><td>Insert an element <b>x</b> at the specified index.</td></tr><tr><td><b>list.remove(x)</b></td><td>Remove the first occurrence of element <b>x</b>.</td></tr><tr><td><b>list.pop([index])</b></td><td>Remove and return the element at the specified index. If no index is specified, remove and return the last element.</td></tr><tr><td><b>list.clear()</b></td><td>Remove all elements from the list.</td></tr><tr><td><b>list.index(x, [start, [end]])</b></td><td>Return the index of the first occurrence of element <b>x</b> (optional start and end parameters can be used to search within a specific subsequence).</td></tr><tr><td><b>list.count(x)</b></td><td>Return the number of occurrences of element <b>x</b>.</td></tr><tr><td><b>list.sort(key=None, reverse=False)</b></td><td>Sort the elements of the list in ascending order (or specified order).</td></tr><tr><td><b>list.reverse()</b></td><td>Reverse the elements of the list in place.</td></tr><tr><td><b>list.copy()</b></td><td>Return a shallow copy of the list.</td></tr><tr><td><b>len(list)</b></td><td>Return the number of elements in the list.</td></tr><tr><td><b>max(list)</b></td><td>Return the maximum element in the list.</td></tr><tr><td><b>min(list)</b></td><td>Return the minimum element in the list.</td></tr><tr><td><b>sum(list)</b></td><td>Return the sum of all elements in the list.</td></tr></tbody></table>
+            <p>These are the built-in methods, but keep in mind that Python lists support additional functionalities and operations. You can explore more details in the official Python documentation: <a href="https://docs.python.org/3/tutorial/introduction.html#lists" target="_new">Lists</a>.</p>
+        </body>
+</html>

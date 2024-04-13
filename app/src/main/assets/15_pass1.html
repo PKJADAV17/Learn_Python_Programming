@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def my_function():
+    # TODO: Add functionality later
+    pass</code></pre>
+            <p>In this example, the pass statement is used as a temporary placeholder for future code that will be added to the function. It allows you to define the function without implementing its body immediately.</p>
+            <br/>
+            <p>Another common use case for pass is in conditional statements or loops where the body is syntactically required, but you want to do nothing in that branch or iteration.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">for i in range(5):
+    if i == 3:
+        # Do nothing when i is 3
+        pass
+    else:
+        print(i)</code></pre>
+            <p>In this loop, when i is equal to 3, the pass statement is executed, and nothing happens. For other values of i, the loop prints the value.</p>
+            
+            <br/>
+            <p>The pass statement can also be used in classes, making it a useful tool for creating placeholder classes or methods.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class MyClass:
+    def my_method(self):
+        # TODO: Implement later
+        pass</code></pre>
+            <p>It's important to note that while pass does nothing, it is a valid statement, and using it can help you write code that is syntactically correct while leaving room for future implementation.</p>
+        </body>
+</html>

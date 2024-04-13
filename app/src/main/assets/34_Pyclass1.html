@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Name: Alice<br/>        Age: 25<br/>        Name: Bob<br/>        Age: 30";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Class Definition</div>
+            <p>You define a class using the class keyword, followed by the class name. The class body contains attributes and methods.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class MyClass:
+    # class body</code></pre>
+
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Attributes</div>
+            <p>Attributes are variables that store data associated with the class. They represent the characteristics or properties of objects created from the class.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Dog:
+    species = "Canis familiaris"  # Class attribute
+
+    def __init__(self, name, age):
+        self.name = name  # Instance attribute
+        self.age = age    # Instance attribute</code></pre>
+            <p>The __init__ method (constructor) is a special method used for initializing object attributes when an object is created.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Methods</div>
+            <p>Methods are functions defined inside a class. They perform operations related to the class and can access and modify the class attributes.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name} says Woof!")</code></pre>
+
+        
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Instance and Instantiation</div>
+            <p>An instance is an individual object created from a class. Instantiation involves creating an instance of a class.</p>
+            <p>You create instances by calling the class as if it were a function, passing any required arguments to the __init__ method.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dog = Dog(name="Buddy", age=3)</code></pre>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Self</div>
+            <p>The self keyword is a reference to the instance of the class. It is the first parameter of every instance method and is used to access the attributes and methods of the instance.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name} says Woof!")</code></pre>
+            <p>In this example the bark method, self.name and self.age refer to the attributes of the instance.</p>
+
+            <br/>
+            <p>Here is the simple example of a Person class with a couple of attributes (name and age) and a method to display information about the person.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        print(f"Name: {self.name}")
+        print(f"Age: {self.age}")
+
+person1 = Person("Alice", 25)
+person2 = Person("Bob", 30)
+person1.display_info()
+person2.display_info()</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example We define a <b>Person</b> class with an <b>__init__</b> method to initialize the <b>name</b> and <b>age</b> attributes.</li><li>The <b>display_info</b> method prints information about the person.</li><li>We create two instances of the <b>Person</b> class: <b>person1</b> and <b>person2</b>, each with its own set of attributes.</li><li>We then call the <b>display_info</b> method for each person to display their information.</li></ul>
+            <p>This is a basic example, but it illustrates the concept of classes, instances, attributes, and methods in Python. Classes provide a way to encapsulate related data and behavior, making the code more organized and reusable.</p>
+        </body>
+</html>

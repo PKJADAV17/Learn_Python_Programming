@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.github.ahmadaghazadeh.editor.widget.CodeEditor;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -1182,13 +1182,38 @@ public class Editor extends AppCompatActivity {
                     "Class C";
         }
 
-        CodeEditor editor = findViewById(R.id.editor);
-        editor.setReadOnly(true);
-        editor.setText(code,1);
-        editor.setHorizontalScrollBarEnabled(true);
 
         TextView label = findViewById(R.id.tx1);
         label.setText("Example of "+str2);
+
+        WebView webView1 = (WebView) findViewById(R.id.simpleWebView1);
+        webView1.getSettings().setJavaScriptEnabled(true);
+
+        webView1.loadDataWithBaseURL(null, "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "  <meta charset=\"UTF-8\">\n" +
+                "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "<style>\n" +
+                "      body {\n" +
+                "         background-color: white;\n" +
+                "         color: black;" +
+                "         font-size: 14px;" +
+                "      }\n" +
+                "</style>\n" +
+                "  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css\">\n" +
+                "  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css\">\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js\"></script>\n" +
+                "  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js\"></script>\n" +
+                "<script src=\"file:///android_asset/prism.js\"></script>"+
+                "<pre><code class=\"language-python line-numbers\">"+
+                code+
+                "</code></pre>"+
+                "        </body>\n" +
+                "</html>", "text/html", "utf-8", null);
+
 
         Button bt = findViewById(R.id.button);
         TextView tx = findViewById(R.id.tx);

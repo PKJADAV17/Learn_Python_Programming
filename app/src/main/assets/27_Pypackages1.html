@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello from module1<br/>Hello from module3";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+      <ul><li><strong>Modularity:</strong> Packages allow you to organize code into smaller, manageable units.</li><li><strong>Namespace Control:</strong> Packages help avoid naming conflicts by providing a way to structure namespaces.</li><li><strong>Reusability:</strong> Code in packages can be reused in other projects.</li><li><strong>Readability:</strong> A well-organized package structure makes code more readable and maintainable.</li></ul>
+            <br/>
+            <p>Here are the key components and concepts related to Python packages.</p>
+            <ul><li><strong>Package Structure:</strong><ul><li>A package is simply a directory that contains a special file called <b>__init__.py</b>. This file can be empty, but its presence indicates that the directory should be treated as a Python package.</li><li>Packages can have subpackages, forming a hierarchical structure. For example, if you have a package named <b>mypackage</b>, it can have subpackages like <b>mypackage.subpackage1</b> and <b>mypackage.subpackage2</b>.</li></ul></li><li><strong>Module:</strong><ul><li>A module is a single Python file within a package. It contains Python code, variables, functions, or classes.</li><li>Modules are used to organize code logically and can be imported into other modules or scripts to reuse functionality.</li></ul></li><li><strong>Importing Packages and Modules:</strong><ul><li>To import a module from a package, you use the <b>import</b> statement. For example: <b>import mypackage.mymodule</b>.</li><li>You can also use the <b>from ... import ...</b> syntax to import specific functions or classes from a module or package: <b>from mypackage import mymodule</b>.</li></ul></li><li><strong>Special Attributes:</strong><ul><li>The <b>__init__.py</b> file in a package can contain Python code that is executed when the package is imported. This allows you to initialize variables or perform other setup tasks.</li><li>The <b>__init__.py</b> file can also define the <b>__all__</b> variable, specifying which modules should be imported when the package is imported using the <b>from package import *</b> syntax.</li></ul></li><li><strong>Distribution and Installation:</strong><ul><li>Python packages are often distributed using the Python Package Index (PyPI). Packaging tools like <b>setuptools</b> and <b>pip</b> are commonly used to create, distribute, and install packages.</li><li>The <b>setup.py</b> file is used to configure package metadata and dependencies. It is often included in the package to facilitate installation.</li></ul></li><li><strong>Virtual Environments:</strong><ul><li>Virtual environments are used to create isolated Python environments for projects, preventing conflicts between package versions.</li><li><b>venv</b> and <b>virtualenv</b> are commonly used tools to create virtual environments.</li></ul></li></ul>
+            <p>Here's a simple example of a package structure.</p>
+            <pre><code class="language-python line-numbers">mypackage/
+|-- __init__.py
+|-- module1.py
+|-- module2.py
+|-- subpackage1/
+|   |-- __init__.py
+|   |-- module3.py
+|-- subpackage2/
+    |-- __init__.py
+    |-- module4.py</code></pre>
+            <p>In this example, mypackage is a package with two subpackages (subpackage1 and subpackage2), each containing modules. The __init__.py files indicate that these directories should be treated as packages.</p>
+
+            <br/>
+            <b class='element'>Example</b>
+            <p>Here is a simple example of a Python package and demonstrate how to use it.</p>
+            <p>Create a directory structure for your package. For this example, let's call the package "mypackage" and create the following files.</p>
+            <pre><code class="language-python line-numbers">mypackage/
+|-- __init__.py
+|-- module1.py
+|-- module2.py
+|-- subpackage1/
+|   |-- __init__.py
+|   |-- module3.py
+|-- subpackage2/
+    |-- __init__.py
+    |-- module4.py</code></pre>
+            <br/>
+            <p>In each module, add some simple code. Here's an example.</p>
+            <b class="example">Example module1.py</b>
+            <pre><code class="language-python line-numbers">def hello_module1():
+    print("Hello from module1")</code></pre>
+            <br/>
+            <b class="example">Example module2.py</b>
+            <pre><code class="language-python line-numbers">def hello_module2():
+    print("Hello from module2")</code></pre>
+            <br/>
+            <b class="example">Example subpackage1/module3.py</b>
+            <pre><code class="language-python line-numbers">def hello_module3():
+    print("Hello from module3")</code></pre>
+            <br/>
+            <b class="example">Example subpackage2/module4.py</b>
+            <pre><code class="language-python line-numbers">def hello_module4():
+    print("Hello from module4")</code></pre>
+
+            <br/>
+            <p>Now, you can create a Python script in the same directory as your package to use the modules</p>
+            <b class="example">Example main_script.py</b>
+            <pre><code class="language-python line-numbers">from mypackage import module1, subpackage1.module3
+
+module1.hello_module1()
+subpackage1.module3.hello_module3()</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>This is a basic example, but it illustrates how packages can be organized with modules and subpackages, and how you can import and use them in your scripts. Remember that for a more real-world scenario, you might want to include a __init__.py file in each module or package to perform any necessary setup when the package is imported. Additionally, for larger projects, consider using tools like setuptools for packaging and distribution.</p>
+        </body>
+</html>

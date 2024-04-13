@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "1<br/>3<br/>6";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "1<br/>2<br/>3<br/>a<br/>b<br/>c<br/>d";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Woof!<br/>Meow!";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Method Overloading</div>
+            <p>While Python does not support traditional method overloading with multiple method signatures based on parameter types or number of parameters, it does provide a way to achieve a form of method overloading through default parameter values and variable-length argument lists.</p>
+
+            <br/>
+            <b class='element'>Default Parameter Values</b>
+            <p>You can define a method with default parameter values. This allows the method to be called with a variable number of arguments, and if some arguments are not provided, the default values will be used.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Calculator:
+    def add(self, a, b=0, c=0):
+        return a + b + c
+
+calc = Calculator()
+print(calc.add(1))         
+print(calc.add(1, 2))      
+print(calc.add(1, 2, 3)) </code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In the example above, the add method can be called with one, two, or three arguments. If fewer than three arguments are provided, the missing ones are assumed to be zero.</p>
+
+            <br/>
+            <b class='element'>Variable-Length Argument Lists</b>
+            <p>You can use the *args and **kwargs syntax to define functions that accept a variable number of positional and keyword arguments.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Printer:
+    def print_values(self, *args):
+        for value in args:
+            print(value)
+
+printer = Printer()
+printer.print_values(1, 2, 3)               
+printer.print_values("a", "b", "c", "d")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the print_values method can accept any number of positional arguments. The *args syntax allows you to pass a variable number of arguments as a tuple.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Method Overriding</div>
+            <p>Method overriding is a concept in object-oriented programming where a subclass provides a specific implementation for a method that is already defined in its superclass. The overridden method in the subclass has the same name, return type, and parameters as the method in the superclass. Method overriding allows a subclass to provide a specialized implementation of a method inherited from its superclass.</p>
+            <p>Here's an example in Python.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Animal:
+    def speak(self):
+        return "Generic animal sound"
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+dog = Dog()
+cat = Cat()
+
+print(dog.speak())  
+print(cat.speak()) </code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example The <code>Animal</code> class has a method called <code>speak</code> with a generic implementation.</li><li>The <code>Dog</code> and <code>Cat</code> classes are subclasses of <code>Animal</code> and both override the <code>speak</code> method with their own implementations.</li></ul>
+            <p>When you create instances of Dog and Cat and call the speak method on them, the overridden methods in the subclasses are invoked, providing more specific behavior based on the type of animal.</p>
+            <p>Method overriding is crucial for achieving polymorphism in object-oriented systems. Polymorphism allows objects of different types to be treated as objects of a common type. In this case, you can treat both Dog and Cat objects as Animal objects because they share a common interface (the speak method). This promotes code reusability and flexibility, allowing you to write code that can work with objects of different subclasses in a uniform way.</p>
+        </body>
+</html>

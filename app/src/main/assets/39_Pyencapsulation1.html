@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "5<br/>20";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+        <ul><li><strong>Public, Private, and Protected Attributes:</strong><ul><li><strong>Public:</strong> By default, all attributes and methods in a Python class are public, meaning they can be accessed from outside the class.</li><li><strong>Private:</strong> You can use a double underscore (<code>__</code>) prefix to make an attribute or method private. For example, <code>__variable</code> or <code>__method()</code>. Private members are not accessible from outside the class.</li><li><strong>Protected:</strong> Attributes or methods with a single underscore (<code>_</code>) prefix are considered protected. While they can be accessed from outside the class, it is a convention that they should be treated as if they were private. However, Python does not enforce this, and it's more of a naming convention.</li></ul></li><li><strong>Accessing Encapsulated Members:</strong><ul><li>Public members can be accessed directly: <code>obj.public_member</code>.</li><li>Private members can be accessed within the class itself, but attempting to access them from outside the class will result in an <code>AttributeError</code>.</li><li>Protected members follow a similar pattern as private members but are often accessible from outside the class, although this is discouraged.</li></ul></li><li><strong>Getter and Setter Methods:</strong><ul><li>To provide controlled access to private members, classes often define getter and setter methods.</li><li>A getter method retrieves the value of a private member, while a setter method allows you to modify its value.</li></ul></li></ul>
+            <p>Here's a simple example to illustrate encapsulation in Python.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Car:
+    def __init__(self):
+        self.__speed = 0  
+
+    def accelerate(self):
+        self.__speed += 5
+
+    def get_speed(self):  
+        return self.__speed
+
+    def set_speed(self, speed):
+        if speed >= 0:
+            self.__speed = speed
+
+my_car = Car()
+my_car.accelerate()
+print(my_car.get_speed())  
+my_car.set_speed(20)       
+print(my_car.get_speed())</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, __speed is a private attribute, and its value is controlled through getter and setter methods. This encapsulation helps in maintaining control over the internal state of the Car class.</p>
+        </body>
+</html>

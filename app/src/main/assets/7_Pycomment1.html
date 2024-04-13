@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello, World!";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "Hello, World!";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Hello, World!";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "Hello, World!<br/>  Another line of code!";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+           <ul>
+                <li>Single-line comments</li>
+                <li>Multi-line comments</li>
+            </ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Single-line comments</div>
+            <p>In Python, a single-line comment is created using the # symbol. Anything following the # on the same line is treated as a comment and is ignored by the Python interpreter. Single-line comments are often used for short explanations or remarks within the code.</p>
+            <p>Here's an example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># This is a single-line comment
+print("Hello, World!")  # This is another comment on the same line</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In the above example, the text following the # symbols is not executed by the Python interpreter. These comments are helpful for providing context or explanations for specific lines of code.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Multi-line comments</div>
+            <p>Python does not have a dedicated syntax for multi-line comments in the same way some other languages do. However, you can achieve a similar effect using triple-quotes (''' or """). When you use triple-quotes to create a string literal but don't assign it to a variable or use it in any other way, it essentially serves as a multi-line comment.</p>
+            <p>Here's an example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">'''
+This is a multi-line comment.
+It spans across multiple lines.
+'''
+print("Hello, World!")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>Or using double triple-quotes.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">"""
+Another way to create a multi-line comment.
+"""
+print("Hello, World!")</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>In the examples above, the triple-quoted strings are not assigned to any variable or used in the program. Therefore, they act as comments. While this approach is commonly used, it's essential to be aware that these are not true comments in the formal sense and might have different implications in terms of code readability and maintainability.</p>
+
+            <br/>
+            <p>As per the PEP 8 style guide, which provides recommendations for writing Python code, single-line comments using # are generally preferred over using triple-quoted strings for comments.</p>
+            <p>Here's an example adhering to the PEP 8 style guide.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># This is a single-line comment
+print("Hello, World!")
+
+"""
+This is a multi-line comment using triple-quotes.
+It's not assigned to a variable and serves as a comment.
+"""
+print("Another line of code")</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>In summary, while there isn't a formal syntax for multi-line comments in Python, using triple-quoted strings is a common convention to achieve a similar effect. However, it's essential to follow coding style guidelines and use comments judiciously to ensure code readability and maintainability.</p>
+        </body>
+</html>

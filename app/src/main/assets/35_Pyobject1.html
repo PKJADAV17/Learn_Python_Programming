@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "John Doe<br/>        25<br/>        Name: John Doe, Age: 25";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+           <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Class</div>
+            <p>A class is a blueprint for creating objects. It defines a data structure (attributes or properties) and methods (functions) that operate on that data. When you create an object, you are creating an instance of a class.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def display_info(self):
+        print(f"{self.make} {self.model}")</code></pre>
+            <p>Attributes are variables that store data within an object. In the Car class example, make and model are attributes.</p>
+            <p>Methods are functions that are defined within a class and operate on the object's data. The display_info method in the Car class is an example.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Object</div>
+            <p>An object is an instance of a class. It is a concrete realization of the class blueprint, with its own unique data and behavior.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_car = Car("Toyota", "Camry")
+my_car.display_info()</code></pre>
+            <p>In this example, my_car is an object of the Car class.</p>
+
+            <br/>
+            <p>Here is the simple example using a Person class. This class will have attributes such as name and age, and a method to display information about the person.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display_info(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+person1 = Person("John Doe", 25)
+
+print(person1.name)  
+print(person1.age)   
+person1.display_info() </code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example We define a <b>Person</b> class with an <b>__init__</b> method to initialize the object with a name and age.</li><li>The <b>display_info</b> method prints information about the person.</li><li>We create an instance of the <b>Person</b> class called <b>person1</b> with the name "John Doe" and age 25.</li><li>We access the attributes (<b>name</b> and <b>age</b>) of the <b>person1</b> object and call the <b>display_info</b> method to display information about the person.</li></ul>
+            <p>This demonstrates the basic usage of a class, object, attributes, and methods in Python. You can expand on this example by adding more attributes or methods, or by creating other classes that interact with the Person class, demonstrating concepts like inheritance and polymorphism.</p>
+        </body>
+    </html>

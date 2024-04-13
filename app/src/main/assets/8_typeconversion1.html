@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "13.14<br/>(15+0j)";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "3<br/>        42<br/>        3.14<br/>        (1, 2, 3)<br/>        Error: invalid literal for int() with base 10: 'abc'";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+           <ul>
+                <li>Implicit Type Conversion (Automatic Type Conversion)</li>
+                <li>Explicit Type Conversion (Type Casting)</li>
+            </ul>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Implicit Type Conversion</div>
+            <p>Python automatically converts one data type to another when it's required. This happens during operations between different data types, and Python handles it behind the scenes.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Implicit conversion of int to float
+x = 10      
+y = 3.14    
+result = x + y
+print(result)  # Output: 13.14
+
+# Implicit conversion of int to complex
+z = 5 + 0j
+result_complex = x + z
+print(result_complex)  </code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the integer x is implicitly converted to a float and a complex number during the addition operations.</p>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Explicit Type Conversion</div>
+            <p>Explicit type conversion, also known as type casting, is done by the programmer using predefined functions to change the data type of an object.</p>
+            <p>There are several built-in functions for explicit type conversion.</p>
+            <ul>
+                <li><strong>int()</strong>: Converts a number or a string to an integer.</li>
+                <li><strong>float()</strong>: Converts a number or a string to a floating-point number.</li>
+                <li><strong>str()</strong>: Converts an object to a string.</li>
+                <li><strong>list()</strong>, <strong>tuple()</strong>, <strong>set()</strong>: Convert other iterable objects to lists, tuples, or sets.</li>
+                <li><strong>bool()</strong>: Converts a value to a Boolean.</li></ul>
+            <p>It's important to note that not all type conversions are valid or result in meaningful values. For example, converting a string containing letters to an integer might raise a ValueError.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">float_number = 3.99
+int_number = int(float_number)
+print(int_number)  
+
+num = 42
+str_num = str(num)
+print(str_num)  
+
+num_str = "3.14"
+float_num = float(num_str)
+print(float_num) 
+
+my_list = [1, 2, 3]
+my_tuple = tuple(my_list)
+print(my_tuple)  
+
+invalid_str = "abc"
+try:
+    invalid_int = int(invalid_str)
+except ValueError as e:
+    print(f"Error: {e}")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, attempting to convert a string containing letters to an integer raises a ValueError. It's always a good practice to handle potential errors when performing explicit type conversion.</p>
+            <br/>
+            <p>Understanding and appropriately using type conversion is crucial for writing robust and flexible code in Python. Always be mindful of the data types involved in your operations to avoid unexpected behavior or errors.</p>
+        </body>
+</html>

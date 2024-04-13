@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello, World!<br/>        Name: Alice Age: 25<br/>        The result is: 8";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "Name: Alice, Age: 30";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Name: Bob, Age: 25";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+          <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Input in Python</div>
+            <p>In Python, you can use the input() function to take input from the user. The input() function reads a line of text from the standard input (usually the keyboard) and returns it as a string.</p>
+            <p>Here's a basic example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Taking input from the user
+user_input = input("Enter something: ")
+
+# Displaying the input
+print("You entered:", user_input)</code></pre>
+            <p>In this example, the input() function prompts the user to enter something, and the entered text is stored in the variable user_input. The print() statement then displays the entered text.</p>
+
+            <br/>
+            <p>Keep in mind that input() always returns a string. If you want to use the input as a number, you need to convert it explicitly using functions like int() or float().</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Taking an integer input from the user
+age = int(input("Enter your age: "))
+
+# Displaying the input
+print("Your age is:", age)</code></pre>
+            <p>Here, int() is used to convert the string input to an integer. If the user enters something that cannot be converted to an integer, a ValueError will occur. You can use similar approaches to convert input to other types, such as float() for floating-point numbers.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Output in Python</div>
+            <p>In Python, you can use the print() function to output information to the console. The print() function is versatile and can handle a variety of arguments, such as strings, variables, and expressions. </p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Printing a simple string
+print("Hello, World!")
+
+# Printing variables
+name = "Alice"
+age = 25
+print("Name:", name, "Age:", age)
+
+# Printing expressions
+result = 3 + 5
+print("The result is:", result)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Formatted Output in Python</div>
+            <p>Formatted output is a way to represent data in a specific structure or style when printing it to the console or writing it to a file. In Python, there are multiple ways to achieve formatted output.</p>
+            <br/>
+            <b class='element'>f-strings (Python 3.6 and above)</b>
+            <p>f-strings provide a concise and readable way to embed expressions inside string literals. You can create formatted strings by prefixing the string with 'f' or 'F' and using curly braces {} to enclose expressions.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">name = "Alice"
+age = 30
+
+# Using f-string
+print(f"Name: {name}, Age: {age}")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the expressions inside the curly braces are evaluated, and their values are inserted into the string at those positions.</p>
+            
+            <br/>
+            <b class='element'>format() method</b>
+            <p>The format() method is another way to achieve formatted output. You use placeholders {} within the string and then call the format() method on the string, passing the values to replace the placeholders.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">name = "Bob"
+age = 25
+
+# Using format() method
+print("Name: {}, Age: {}".format(name, age))</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the placeholders {} are replaced by the values of name and age in the order they appear in the format() method.</p>
+            <p>Both of these methods offer flexibility in formatting output, and you can control the precision of numbers, alignment, and other aspects. Choose the method that you find more readable and suits your coding style.</p>
+        </body>
+</html>

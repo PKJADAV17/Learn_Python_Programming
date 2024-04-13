@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Value of pi (π): 3.141592653589793<br/>        Value of e: 2.718281828459045<br/>        Circumference of the circle with radius 3 is: 18.84955592153876<br/>        Area of the circle with radius 4 is: 50.26548245743669";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "Square root of 16 is: 4.0<br/>        16 raised to the power 4 is: 65536.0<br/>        Exponential of 16 is: 8886110.520507872<br/>        Natural logarithm of 16 is: 2.772588722239781<br/>        Base-10 logarithm of 16 is: 1.2041199826559248";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Sine of 45 degrees is: 0.7071067811865475<br/>        Cosine of 45 degrees is: 0.7071067811865476<br/>        Tangent of 45 degrees is: 0.9999999999999999<br/>        Arcsine of sin(45 degrees) is: 44.99999999999999<br/>        Arccosine of cos(45 degrees) is: 45.0<br/>        Arctangent of tan(45 degrees) is: 45.0";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "60 degrees is equivalent to 1.0471975511965976 radians<br/>  1.0471975511965976 radians is equivalent to 59.99999999999999 degrees";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "Hyperbolic sine of 2 is: 3.626860407847019<br/>        Hyperbolic cosine of 2 is: 3.7621956910836314<br/>        Hyperbolic tangent of 2 is: 0.9640275800758169";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+                  <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Mathematical Constants</div>
+            <p>To use the functions and constants provided by the math module, you need to import it first. You can do this using the import statement.</p>
+            <p>The math module provides some mathematical constants, such as.</p>
+            <ul><li><b>math.pi</b>: The mathematical constant π (pi).</li><li><b>math.e</b>: The mathematical constant e.</li></ul>
+            <p>Here's an example demonstrating the use of mathematical constants from the math module in Python.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import math
+
+print("Value of pi (π):", math.pi)
+print("Value of e:", math.e)
+
+radius = 3
+circumference = 2 * math.pi * radius
+print("Circumference of the circle with radius", radius, "is:", circumference)
+
+radius = 4
+area = math.pi * math.pow(radius, 2)
+print("Area of the circle with radius", radius, "is:", area)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, we import the math module and use the constants math.pi and math.e to print the values of π and e, respectively. Then, we use these constants to calculate the circumference and area of circles with given radii. The math.pow function is used to calculate the square of the radius.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Basic Mathematical Operations</div>
+            <p>The math module includes functions for basic mathematical operations, including. </p>
+            <ul><li><b>math.sqrt(x)</b>: Returns the square root of x.</li><li><b>math.pow(x, y)</b>: Returns x raised to the power y.</li><li><b>math.exp(x)</b>: Returns the exponential of x (e^x).</li><li><b>math.log(x)</b>: Returns the natural logarithm of x.</li><li><b>math.log10(x)</b>: Returns the base-10 logarithm of x.</li></ul>
+            <p>Here's an example demonstrating basic mathematical operations using functions from the math module in Python.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import math
+
+x = 16
+y = 4
+
+sqrt_result = math.sqrt(x)
+print(f"Square root of {x} is: {sqrt_result}")
+
+power_result = math.pow(x, y)
+print(f"{x} raised to the power {y} is: {power_result}")
+
+exp_result = math.exp(x)
+print(f"Exponential of {x} is: {exp_result}")
+
+log_result = math.log(x)
+print(f"Natural logarithm of {x} is: {log_result}")
+
+log10_result = math.log10(x)
+print(f"Base-10 logarithm of {x} is: {log10_result}")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, we import the math module and perform several basic mathematical operations.</p>
+            <ul><li>Calculating the square root of <b>x</b> using <b>math.sqrt</b>.</li><li>Raising <b>x</b> to the power of <b>y</b> using <b>math.pow</b>.</li><li>Calculating the exponential of <b>x</b> using <b>math.exp</b>.</li><li>Finding the natural logarithm of <b>x</b> using <b>math.log</b>.</li><li>Calculating the base-10 logarithm of <b>x</b> using <b>math.log10</b>.</li></ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Trigonometric Functions</div>
+            <p>The math module provides various trigonometric functions, such as.</p>
+            <ul><li><b>math.sin(x)</b>, <b>math.cos(x)</b>, <b>math.tan(x)</b>: Sine, cosine, and tangent of x (in radians).</li><li><b>math.asin(x)</b>, <b>math.acos(x)</b>, <b>math.atan(x)</b>: Arcsine, arccosine, and arctangent of x, returning results in radians.</li></ul>
+            <p> Here's an example demonstrating the use of trigonometric functions from the math module in Python.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import math
+
+angle_in_degrees = 45
+
+angle_in_radians = math.radians(angle_in_degrees)
+
+sin_value = math.sin(angle_in_radians)
+cos_value = math.cos(angle_in_radians)
+tan_value = math.tan(angle_in_radians)
+
+print(f"Sine of {angle_in_degrees} degrees is: {sin_value}")
+print(f"Cosine of {angle_in_degrees} degrees is: {cos_value}")
+print(f"Tangent of {angle_in_degrees} degrees is: {tan_value}")
+
+asin_value = math.degrees(math.asin(sin_value))
+acos_value = math.degrees(math.acos(cos_value))
+atan_value = math.degrees(math.atan(tan_value))
+
+print(f"Arcsine of sin({angle_in_degrees} degrees) is: {asin_value}")
+print(f"Arccosine of cos({angle_in_degrees} degrees) is: {acos_value}")
+print(f"Arctangent of tan({angle_in_degrees} degrees) is: {atan_value}")</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example We start with an angle in degrees (<b>angle_in_degrees</b>), and we convert it to radians using <b>math.radians</b>.</li><li>We then use trigonometric functions like <b>math.sin</b>, <b>math.cos</b>, and <b>math.tan</b> to calculate the sine, cosine, and tangent of the angle in radians.</li><li>Additionally, we use the inverse trigonometric functions (<b>math.asin</b>, <b>math.acos</b>, <b>math.atan</b>) to find the angles (in degrees) corresponding to the sine, cosine, and tangent values calculated earlier.</li></ul>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Angular Conversion</div>
+            <p>There are functions to convert angles between degrees and radians.</p>
+            <ul><li><b>math.degrees(x)</b>: Converts angle x from radians to degrees.</li><li><b>math.radians(x)</b>: Converts angle x from degrees to radians.</li></ul>
+            <p>Here's an example demonstrating angular conversion functions in the math module in Python.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import math
+
+angle_in_degrees = 60
+
+angle_in_radians = math.radians(angle_in_degrees)
+print(f"{angle_in_degrees} degrees is equivalent to {angle_in_radians} radians")
+
+angle_in_degrees_again = math.degrees(angle_in_radians)
+print(f"{angle_in_radians} radians is equivalent to {angle_in_degrees_again} degrees")</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example We start with an angle in degrees (<b>angle_in_degrees</b>), and we use <b>math.radians</b> to convert it to radians.</li><li>We then print the equivalent angle in radians.</li><li>Next, we use <b>math.degrees</b> to convert the radians back to degrees.</li><li>Finally, we print the equivalent angle in degrees.</li></ul>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Hyperbolic Functions</div>
+            <p>The math module includes hyperbolic functions like math.sinh(x), math.cosh(x), and math.tanh(x).</p>
+            <p>Here's an example demonstrating the use of hyperbolic functions from the math module in Python.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import math
+
+x = 2
+
+sinh_value = math.sinh(x)
+cosh_value = math.cosh(x)
+tanh_value = math.tanh(x)
+
+print(f"Hyperbolic sine of {x} is: {sinh_value}")
+print(f"Hyperbolic cosine of {x} is: {cosh_value}")
+print(f"Hyperbolic tangent of {x} is: {tanh_value}")</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example We use the hyperbolic functions math.sinh, math.cosh, and math.tanh to calculate the hyperbolic sine, hyperbolic cosine, and hyperbolic tangent of the given value x.</p>
+
+            <br/>
+            <p>Here's a table listing some of the commonly used functions in the Python math module.</p>
+            <table width='100%'><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody><tr><td>math.ceil(x)</td><td>Returns the ceiling of x, the smallest integer greater than or equal to x.</td></tr><tr><td>math.floor(x)</td><td>Returns the floor of x, the largest integer less than or equal to x.</td></tr><tr><td>math.trunc(x)</td><td>Returns the truncated integer value of x.</td></tr><tr><td>math.sqrt(x)</td><td>Returns the square root of x.</td></tr><tr><td>math.pow(x, y)</td><td>Returns x raised to the power y.</td></tr><tr><td>math.exp(x)</td><td>Returns e raised to the power x (e^x).</td></tr><tr><td>math.log(x)</td><td>Returns the natural logarithm of x.</td></tr><tr><td>math.log10(x)</td><td>Returns the base-10 logarithm of x.</td></tr><tr><td>math.sin(x)</td><td>Returns the sine of x (x in radians).</td></tr><tr><td>math.cos(x)</td><td>Returns the cosine of x (x in radians).</td></tr><tr><td>math.tan(x)</td><td>Returns the tangent of x (x in radians).</td></tr><tr><td>math.asin(x)</td><td>Returns the arcsine of x, in radians.</td></tr><tr><td>math.acos(x)</td><td>Returns the arccosine of x, in radians.</td></tr><tr><td>math.atan(x)</td><td>Returns the arctangent of x, in radians.</td></tr><tr><td>math.degrees(x)</td><td>Converts angle x from radians to degrees.</td></tr><tr><td>math.radians(x)</td><td>Converts angle x from degrees to radians.</td></tr><tr><td>math.sinh(x)</td><td>Returns the hyperbolic sine of x.</td></tr><tr><td>math.cosh(x)</td><td>Returns the hyperbolic cosine of x.</td></tr><tr><td>math.tanh(x)</td><td>Returns the hyperbolic tangent of x.</td></tr><tr><td>math.fabs(x)</td><td>Returns the absolute value of x.</td></tr><tr><td>math.factorial(x)</td><td>Returns the factorial of x.</td></tr><tr><td>math.gcd(a, b)</td><td>Returns the greatest common divisor of a and b.</td></tr><tr><td>math.isfinite(x)</td><td>Returns True if x is neither an infinity nor a NaN (Not a Number).</td></tr><tr><td>math.isinf(x)</td><td>Returns True if x is a positive or negative infinity.</td></tr><tr><td>math.isnan(x)</td><td>Returns True if x is a NaN (Not a Number).</td></tr><tr><td>math.erf(x)</td><td>Returns the error function of x.</td></tr><tr><td>math.erfc(x)</td><td>Returns the complementary error function of x.</td></tr><tr><td>math.gamma(x)</td><td>Returns the gamma function of x.</td></tr><tr><td>math.lgamma(x)</td><td>Returns the natural logarithm of the absolute value of the gamma function of x.</td></tr></tbody></table>
+            <p>This is not an exhaustive list, and there are more functions available in the math module. You can refer to the Python documentation for the complete list and detailed descriptions.</p>
+        </body>
+</html>

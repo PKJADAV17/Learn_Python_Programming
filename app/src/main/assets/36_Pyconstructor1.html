@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+           document.getElementById("demo").innerHTML = "Default constructor called";
+       }
+       function myFunction1() {
+           document.getElementById("demo1").innerHTML = "Parameterized constructor called with parameters: value1 value2";
+       }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+           <ul>
+                <li>Default Constructor</li>
+                <li>Parameterized Constructor</li>
+            </ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Default constructor</div>
+            <p>In Python, the default constructor is a special method named __init__ that takes no parameters or takes only the self parameter. It is automatically called when an object is created from a class and is used to initialize the attributes of the object or perform any setup that is common to all objects of the class.</p>
+            <p>Here's an example of a class with a default constructor.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class MyClass:
+    def __init__(self):
+        self.default_attribute = "default_value"
+        print("Default constructor called")
+
+my_object = MyClass()</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>__init__(self)</b> is the default constructor method.</li><li><b>self</b> is a reference to the instance of the class (the object being created).</li><li>Inside the constructor, <b>self.default_attribute</b> is an attribute of the object, and its value is initialized to "default_value."</li></ul>
+            <p>When you create an object of the class (my_object in this case), the __init__ method is automatically called, and you can see the output "Default constructor called" printed.</p>
+            <p>The default constructor is optional. If you don't define one in your class, Python provides a default constructor that takes no parameters and doesn't perform any specific initialization. However, if you want to customize the initialization process, you can define your own default constructor in the class.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Parameterized Constructor</div>
+            <p>In Python, a parameterized constructor is a special method named __init__ that takes parameters in addition to the self parameter. This allows you to pass values to the constructor when creating an object, and these values are used to initialize the attributes of the object.</p>
+            <p>Here's an example of a class with a parameterized constructor.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class MyClass:
+    def __init__(self, parameter1, parameter2):
+        self.attribute1 = parameter1
+        self.attribute2 = parameter2
+        print("Parameterized constructor called with parameters:", parameter1, parameter2)
+
+my_object = MyClass("value1", "value2")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>__init__(self, parameter1, parameter2)</b> is the parameterized constructor method.</li><li><b>self</b> is a reference to the instance of the class (the object being created).</li><li><b>parameter1</b> and <b>parameter2</b> are parameters that you can pass when creating an object of the class.</li><li>Inside the constructor, <b>self.attribute1</b> and <b>self.attribute2</b> are attributes of the object, and their values are initialized with the values of the parameters.</li></ul>
+            <p>When you create an object of the class (my_object in this case), you pass specific values ("value1" and "value2" in this example) as arguments, and the __init__ method is automatically called with those values. The output will be "Parameterized constructor called with parameters: value1 value2".</p>
+            <p>Parameterized constructors are useful when you want to customize the initialization of objects based on the values provided during object creation.</p>
+            <br/>
+            <p>Constructors are commonly used to set up the initial state of an object, and they provide a way to pass initial values to the attributes of the object.</p>
+        </body>
+</html>

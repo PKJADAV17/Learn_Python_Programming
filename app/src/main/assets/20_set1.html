@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+       document.getElementById("demo").innerHTML = "{1, 2, 3, 4, 5}";
+   }
+   function myFunction1() {
+       document.getElementById("demo1").innerHTML = "{2, 4, 6, 8, 10}";
+   }
+   function myFunction2() {
+       document.getElementById("demo2").innerHTML = "{1, 2, 3, 4, 5, 6}<br/>{1, 2, 3, 4, 5, 6, 7, 8, 9}";
+   }
+   function myFunction3() {
+       document.getElementById("demo3").innerHTML = "{1, 2, 4, 5}";
+   }
+   function myFunction4() {
+       document.getElementById("demo4").innerHTML = "{1, 2, 4, 5}";
+   }
+   function myFunction5() {
+       document.getElementById("demo5").innerHTML = "{1, 2, 3, 4, 5}";
+   }
+   function myFunction6() {
+       document.getElementById("demo6").innerHTML = "{3}";
+   }
+   function myFunction7() {
+       document.getElementById("demo7").innerHTML = "{1, 2, 4, 5}";
+   }
+   function myFunction8() {
+       document.getElementById("demo8").innerHTML = "True<br/>False";
+   }
+   function myFunction9() {
+       document.getElementById("demo9").innerHTML = "True<br/>True";
+   }
+   function myFunction10() {
+       document.getElementById("demo10").innerHTML = "True<br/>True";
+   }
+   function myFunction11() {
+       document.getElementById("demo11").innerHTML = "frozenset({1, 2, 3, 4, 5})";
+   }
+   function myFunction12() {
+       document.getElementById("demo12").innerHTML = "frozenset({1, 2, 3, 4, 5})<br/>        frozenset({3})<br/>        frozenset({1, 2})<br/>        frozenset({1, 2, 4, 5})";
+   }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Creating a Set</div>
+            <p>In Python, you can create a set using either curly braces {} or the set() constructor. </p>
+
+            <br/>
+            <b class='element'>Using Curly Braces</b>
+            <p>Here is the example of creating a set using curly braces.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_set = {1, 2, 3, 4, 5}
+print(my_set)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, my_set is a set containing the elements 1, 2, 3, 4, and 5.</p>
+            <p>If you want to create an empty set, you should use the set() constructor because an empty pair of curly braces {} will create an empty dictionary, not an empty set.</p>
+
+            <br/>
+            <b class='element'>Using the set() Constructor</b>
+            <p>Here is the example of creating a set using set() constructor.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">another_set = set([2, 4, 6, 8, 10])
+print(another_set)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>Here, set() is a constructor that can be used to create a set. You can pass an iterable (like a list) to the set() constructor, and it will create a set containing the unique elements of that iterable. In this case, another_set is a set containing the elements 2, 4, 6, 8, and 10.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Adding Elements in set</div>
+            <p>In Python, you can add elements to a set using the add() method. </p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_set = {1, 2, 3, 4, 5}
+
+my_set.add(6)
+print(my_set)
+
+my_set.update([7, 8, 9])
+print(my_set)</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>The add() method is used to add a single element to the set. If you want to add multiple elements, you can use the update() method and pass an iterable (e.g., a list or another set) containing the elements you want to add.</p>
+            <p>It's important to note that sets do not allow duplicate elements. If you try to add an element that already exists in the set, it won't create a duplicate.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Removing Elements from set</div>
+            <p>In Python, you can remove elements from a set using the remove() or discard() methods. </p>
+
+            <br/>
+            <b class='element'>remove() Method</b>
+            <p>The remove() method removes the specified element from the set. If the element is not present, it raises a KeyError.</p>
+            
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_set = {1, 2, 3, 4, 5}
+
+my_set.remove(3)
+print(my_set)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>discard() Method</b>
+            <p>The discard() method also removes the specified element from the set, but it does not raise an error if the element is not present.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_set = {1, 2, 3, 4, 5}
+
+my_set.discard(3)
+my_set.discard(6)  
+print(my_set)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Set Operation</div>
+            <p>Sets in Python support various mathematical operations that you can perform on them. </p>
+            <br/>
+            <b class='element'>Union</b>
+            <p>The union of two sets contains all unique elements from both sets.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+union_set = set1.union(set2)
+print(union_set)</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Intersection</b>
+            <p>The intersection of two sets contains elements that are common to both sets.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+intersection_set = set1.intersection(set2)
+print(intersection_set)</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Symmetric Difference</b>
+            <p>The symmetric difference of two sets contains elements that are in either of the sets, but not in both.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+symmetric_difference_set = set1.symmetric_difference(set2)
+print(symmetric_difference_set)</code></pre>
+            <button onClick=myFunction7()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo7" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Subset and Superset</b>
+            <p>In Python, you can check whether one set is a subset or superset of another set using the issubset() and issuperset() methods, respectively.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">set1 = {1, 2}
+set2 = {1, 2, 3, 4}
+
+is_subset = set1.issubset(set2)
+print(is_subset)
+
+is_superset = set1.issuperset(set2)
+print(is_superset)</code></pre>
+            <button onClick=myFunction8()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo8" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, set1 is a subset of set2 because all elements of set1 are also present in set2, and set1 is not a superset of set2 because all elements of set2 are not present in set1.</p>
+
+            <br/>
+            <p>You can also use the subset and superset operators &lt;= and &gt;=</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">set1 = {1, 2}
+set2 = {1, 2, 3, 4}
+
+is_subset = set1 <= set2
+print(is_subset)
+
+is_superset = set2 >= set1
+print(is_superset)</code></pre>
+            <button onClick=myFunction9()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo9" class="output">
+                Click on try it to see output
+            </div>
+            <p>These operators provide a more concise way to express subset and superset relationships.</p>
+            <br/>
+            <p>Keep in mind that a set is considered a subset or superset of itself. If you want to check for a proper subset or superset (i.e., one set being a subset or superset but not equal), you can use the &lt; and &gt; operators.</p>            
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">set1 = {1, 2}
+set2 = {1, 2, 3, 4}
+
+is_proper_subset = set1 < set2
+print(is_proper_subset)
+
+is_proper_superset = set2 > set1
+print(is_proper_superset)</code></pre>
+            <button onClick=myFunction10()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo10" class="output">
+                Click on try it to see output
+            </div>
+            <p>These operations are useful for comparing the relationships between sets in terms of their elements.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Frozen Sets</div>
+            <p>In Python, a frozenset is a built-in set that is immutable, meaning its elements cannot be changed or modified after the frozenset is created. Unlike a regular set, a frozenset is hashable and can, therefore, be used as a key in a dictionary or as an element in another set.</p>
+            <p>Here's how you can create a frozenset.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_frozenset = frozenset([1, 2, 3, 4, 5])
+print(my_frozenset)</code></pre>
+            <button onClick=myFunction11()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo11" class="output">
+                Click on try it to see output
+            </div>
+            <p>Once a frozenset is created, you cannot add or remove elements from it. Attempting to do so will result in an AttributeError.</p>
+            <br/>
+            <p>However, you can perform non-modifying operations such as union, intersection, difference, and symmetric difference, similar to regular sets</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">frozenset1 = frozenset([1, 2, 3])
+frozenset2 = frozenset([3, 4, 5])
+
+union_frozenset = frozenset1 | frozenset2
+intersection_frozenset = frozenset1 & frozenset2
+difference_frozenset = frozenset1 - frozenset2
+symmetric_difference_frozenset = frozenset1 ^ frozenset2
+
+print(union_frozenset)
+print(intersection_frozenset)
+print(difference_frozenset)
+print(symmetric_difference_frozenset)</code></pre>
+            <button onClick=myFunction12()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo12" class="output">
+                Click on try it to see output
+            </div>
+            <p>frozenset objects are particularly useful in situations where you need an immutable set, for example, when you want to use sets as keys in dictionaries or elements in other sets. Regular sets are mutable and cannot be used as dictionary keys or elements in other sets.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Set Methods</div>
+            <p>Here is a table listing some of the common methods associated with sets in Python.</p>
+            <table width='100%'><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>add(element)</td><td>Adds an element to the set.</td></tr><tr><td>clear()</td><td>Removes all elements from the set.</td></tr><tr><td>copy()</td><td>Returns a shallow copy of the set.</td></tr><tr><td>difference(set)</td><td>Returns the set of elements in the current set but not in the specified set.</td></tr><tr><td>difference_update(set)</td><td>Removes all elements from the set that are present in the specified set.</td></tr><tr><td>discard(element)</td><td>Removes the specified element from the set, if present.</td></tr><tr><td>intersection(set)</td><td>Returns the set of elements that are common to both sets.</td></tr><tr><td>intersection_update(set)</td><td>Updates the set with the intersection of itself and another set.</td></tr><tr><td>isdisjoint(set)</td><td>Returns True if the set has no elements in common with the specified set.</td></tr><tr><td>issubset(set)</td><td>Returns True if the set is a subset of the specified set.</td></tr><tr><td>issuperset(set)</td><td>Returns True if the set is a superset of the specified set.</td></tr><tr><td>pop()</td><td>Removes and returns an arbitrary element from the set.</td></tr><tr><td>remove(element)</td><td>Removes the specified element from the set.</td></tr><tr><td>symmetric_difference(set)</td><td>Returns the set of elements that are in either of the sets, but not in both.</td></tr><tr><td>symmetric_difference_update(set)</td><td>Updates the set with the symmetric difference of itself and another set.</td></tr><tr><td>union(set)</td><td>Returns the set of elements that are in either of the sets.</td></tr><tr><td>update(set)</td><td>Updates the set with elements from another set or iterable.</td></tr></tbody></table>
+            <p>This table includes some of the commonly used set methods. There may be additional methods and variations, so it's always a good idea to refer to the official Python documentation for the most up-to-date and comprehensive information.</p>
+        </body>
+</html>

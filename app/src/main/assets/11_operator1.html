@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Addition: 15 + 7 = 22<br/>        Subtraction: 15 - 7 = 8<br/>        Multiplication: 15 * 7 = 105<br/>        Division: 15 / 7 = 2.142857142857143<br/>        Modulus: 15 % 7 = 1<br/>        Exponentiation: 15 ** 7 = 170859375<br/>        Floor Division: 15 // 7 = 2";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "False<br/>        True<br/>        True<br/>        False<br/>        True<br/>        False";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Logical AND: False<br/>        Logical OR: True<br/>        Logical NOT: False";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "x after assignment: 5<br/>        x after addition assignment: 8<br/>        x after subtraction assignment: 6<br/>        x after multiplication assignment: 24<br/>        x after division assignment: 12.0<br/>        x after modulus assignment: 0.0<br/>        x after exponentiation assignment: 0.0<br/>        x after floor division assignment: 0.0";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "True<br/>        False<br/>        False<br/>        True";
+    }
+    function myFunction5() {
+        document.getElementById("demo5").innerHTML = "True<br/>        False<br/>        True<br/>        False<br/>        True<br/>        False<br/>       True<br/>        False<br/>        False<br/>        True<br/>        False<br/>        True<br/>        False<br/>        True<br/>        False<br/>        True";
+    }
+    function myFunction6() {
+        document.getElementById("demo6").innerHTML = "7 15 8 -16 30 7";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           <ul>
+                <li>Arithmetic Operators</li>
+                <li>Comparison Operators</li>
+                <li>Logical Operators</li>
+                <li>Assignment Operators</li>
+                <li>Identity Operators</li>
+                <li>Membership Operators</li>
+                <li>Bitwise Operators</li>
+            </ul>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Arithmetic Operators</div>
+            <p>Arithmetic operators in Python are used to perform mathematical operations on numeric values. These operators work with integers, floating-point numbers, and other numeric types. </p>
+            <p>Here's a table summarizing the arithmetic operators in Python.</p>
+            <table width='100%'><thead><tr><th>Operator</th><th>Description</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td>+</td><td>Addition</td><td>a + b</td><td>Sum of a and b</td></tr><tr><td>-</td><td>Subtraction</td><td>a - b</td><td>Difference of a and b</td></tr><tr><td>*</td><td>Multiplication</td><td>a * b</td><td>Product of a and b</td></tr><tr><td>/</td><td>Division</td><td>a / b</td><td>Quotient of a and b</td></tr><tr><td>%</td><td>Modulus</td><td>a % b</td><td>Remainder of a ÷ b</td></tr><tr><td>**</td><td>Exponentiation</td><td>a ** b</td><td>a raised to the power of b</td></tr><tr><td>//</td><td>Floor Division</td><td>a // b</td><td>Quotient of a ÷ b, rounded down to the nearest integer</td></tr></tbody></table>
+            <p>These operators are fundamental for performing mathematical calculations in Python and are used extensively in various programming scenarios.</p>
+            <br />
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">a = 15
+b = 7
+
+sum_result = a + b
+print(f"Addition: {a} + {b} = {sum_result}")
+
+difference_result = a - b
+print(f"Subtraction: {a} - {b} = {difference_result}")
+
+product_result = a * b
+print(f"Multiplication: {a} * {b} = {product_result}")
+
+quotient_result = a / b
+print(f"Division: {a} / {b} = {quotient_result}")
+
+remainder_result = a % b
+print(f"Modulus: {a} % {b} = {remainder_result}")
+
+power_result = a ** b
+print(f"Exponentiation: {a} ** {b} = {power_result}")
+
+floor_division_result = a // b
+print(f"Floor Division: {a} // {b} = {floor_division_result}")</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, we have two variables a and b, and we perform various arithmetic operations on them using the corresponding arithmetic operators. The results are then printed to the console.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Comparison Operators</div>
+            <p>Comparison operators in Python are used to compare values and return a Boolean result (True or False). These operators allow you to check relationships between variables or values. </p>
+            <p>Here's a table summarizing the comparison operators in Python.</p>
+            <table width='100%'><thead><tr><th>Operator</th><th>Description</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td>==</td><td>Equal to</td><td>a == b</td><td>True if a equals b</td></tr><tr><td>!=</td><td>Not equal to</td><td>a != b</td><td>True if a is not equal to b</td></tr><tr><td>&gt;</td><td>Greater than</td><td>a &gt; b</td><td>True if a is greater than b</td></tr><tr><td>&lt;</td><td>Less than</td><td>a &lt; b</td><td>True if a is less than b</td></tr><tr><td>&gt;=</td><td>Greater than or equal to</td><td>a &gt;= b</td><td>True if a is greater than or equal to b</td></tr><tr><td>&lt;=</td><td>Less than or equal to</td><td>a &lt;= b</td><td>True if a is less than or equal to b</td></tr></tbody></table>
+            <p>These operators are often used in conditional statements (e.g., if, else, elif) and loops to make decisions based on the comparison results. Understanding comparison operators is fundamental for writing logical and decision-making code in Python.</p>
+
+            <br />
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">a = 10
+b = 5
+
+print(a == b)  
+print(a != b)  
+print(a > b)   
+print(a < b)   
+print(a >= b)  
+print(a <= b)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In these examples, the comparison operators are used to compare the values of variables a and b, and the results are printed to the console.</p>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Logical Operators</div>
+            <p>Logical operators in Python are used to perform logical operations on Boolean values. These operators allow you to combine or manipulate Boolean values to make more complex decisions in your code. There are three main logical operators in Python: and, or, and not. </p>
+            <p>Here's a table summarizing the logical operators in Python.</p>
+            <table width='100%'><thead><tr><th>Operator</th><th>Description</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td>and</td><td>Logical AND</td><td>a and b</td><td>True if a and b are both True, False otherwise</td></tr><tr><td>or</td><td>Logical OR</td><td>a or b</td><td>True if at least one of a or b is True, False otherwise</td></tr><tr><td>not</td><td>Logical NOT</td><td>not a</td><td>True if a is False, False if a is True</td></tr></tbody></table>
+            <p>Logical operators are often used in conditional statements (e.g., if, else, elif) and loops to control the flow of the program based on the truth values of conditions. Understanding logical operators is crucial for writing code that makes decisions based on multiple conditions.</p>
+            <br />
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">a = True
+b = False
+
+result_and = a and b  
+
+result_or = a or b   
+
+result_not = not a   
+
+print(f"Logical AND: {result_and}")
+print(f"Logical OR: {result_or}")
+print(f"Logical NOT: {result_not}")</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>In these examples, the logical operators are applied to Boolean values, and the results are printed to the console.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Assignment Operators</div>
+            <p>Assignment operators in Python are used to assign values to variables. They combine the operation of assigning a value to a variable with a specific operation, making it a concise way to update the variable's value based on its current value or the value of another variable. </p>
+            <p>Here's a table summarizing the assignment operators in Python.</p>
+            <table width='100%'><thead><tr><th>Operator</th><th>Description</th><th>Example</th><th>Equivalent to</th></tr></thead><tbody><tr><td>=</td><td>Assignment</td><td>x = 5</td><td>-</td></tr><tr><td>+=</td><td>Addition Assignment</td><td>x += 3</td><td>x = x + 3</td></tr><tr><td>-=</td><td>Subtraction Assignment</td><td>x -= 2</td><td>x = x - 2</td></tr><tr><td>*=</td><td>Multiplication Assignment</td><td>x *= 4</td><td>x = x * 4</td></tr><tr><td>/=</td><td>Division Assignment</td><td>x /= 2</td><td>x = x / 2</td></tr><tr><td>%=</td><td>Modulus Assignment</td><td>x %= 3</td><td>x = x % 3</td></tr><tr><td>**=</td><td>Exponentiation Assignment</td><td>x **= 2</td><td>x = x ** 2</td></tr><tr><td>//=</td><td>Floor Division Assignment</td><td>x //= 3</td><td>x = x // 3</td></tr></tbody></table>
+            <p>These assignment operators provide a concise and readable way to update variables based on their current values. They are commonly used in loops, calculations, and other situations where variables need to be updated dynamically.</p>
+            <br />
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 5
+print(f"x after assignment: {x}")
+
+x += 3  
+print(f"x after addition assignment: {x}")
+
+x -= 2  
+print(f"x after subtraction assignment: {x}")
+
+x *= 4  
+print(f"x after multiplication assignment: {x}")
+
+x /= 2  
+print(f"x after division assignment: {x}")
+
+x %= 3  
+print(f"x after modulus assignment: {x}")
+
+x **= 2  
+print(f"x after exponentiation assignment: {x}")
+
+x //= 3  
+print(f"x after floor division assignment: {x}")</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>In these examples, the assignment operators modify the value of the variable x based on the specified operations. Each subsequent operation is performed on the updated value of x.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Identity Operators</div>
+            <p>Identity operators in Python are used to compare the memory locations of two objects. These operators check whether two variables refer to the same object in memory or not. There are two identity operators in Python: is and is not.</p>
+            <p>Here's a table summarizing the identity operators in Python.</p>
+            <table width='100%'><thead><tr><th>Operator</th><th>Description</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td>is</td><td>Identity</td><td>a is b</td><td>True if a is the same object as b</td></tr><tr><td>is not</td><td>Negated identity</td><td>a is not b</td><td>True if a is not the same object as b</td></tr></tbody></table>
+            <p>These identity operators are often used to compare objects in a more specific way than the equality operators (== and !=). While equality checks whether the values of two objects are the same, identity checks whether the two variables refer to the exact same object in memory.</p>
+            <br />
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+
+print(a is b)    
+print(a is c)    
+
+print(a is not b)
+print(a is not c)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <p>In these examples, the identity operators are used to compare the memory locations of variables. The "Result" column indicates whether the condition specified by the operator is True or False.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Membership Operators</div>
+            <p>Membership operators in Python are used to test whether a value is a member of a sequence, such as a string, list, tuple, or set. The two membership operators in Python are in and not in. These operators return a Boolean value (True or False) based on whether the specified value is found in the sequence or not.</p>
+            <p>Here's a table summarizing the membership operators in Python.</p>
+            <table width='100%'><thead><tr><th>Operator</th><th>Description</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td>in</td><td>Membership</td><td>value in sequence</td><td>True if value is found in the sequence</td></tr><tr><td>not in</td><td>Negated Membership</td><td>value not in sequence</td><td>True if value is not found in the sequence</td></tr></tbody></table>
+            <p>Membership operators are commonly used in conditional statements and loops to check if a specific value is present in a given sequence.</p>
+            <br />
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_list = [1, 2, 3, 4, 5]
+my_tuple = ('apple', 'banana', 'orange')
+my_string = "Hello, World!"
+my_set = {1, 2, 3, 4, 5}
+
+print(3 in my_list)    
+print(6 in my_list)    
+
+print('apple' in my_tuple)
+print('pear' in my_tuple) 
+
+print('H' in my_string)   
+print('X' in my_string)   
+
+print(3 in my_set)        
+print(6 in my_set)        
+
+print(3 not in my_list)   
+print(6 not in my_list)   
+
+print('apple' not in my_tuple)  
+print('pear' not in my_tuple)   
+
+print('H' not in my_string)     
+print('X' not in my_string)     
+
+print(3 not in my_set)          
+print(6 not in my_set)  </code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+            <p>In these examples, the membership operators are used to check if certain values are present in different types of sequences, and the results are printed to the console.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Bitwise Operators</div>
+            <p>Bitwise operators in Python perform operations on the individual bits of binary representations of integers. These operators are often used in low-level programming, such as in working with hardware, graphics, encryption, and other areas where bitwise manipulation is required. </p>
+            <p>Here's a table summarizing the bitwise operators in Python.</p>
+            <table width="100%">
+                <tbody><tr>
+                    <th>Operator</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+                    <tr>
+                        <td>&amp;&nbsp;</td>
+                        <td>AND</td>
+                        <td>Sets each bit to 1 if both bits are 1</td>
+                    </tr>
+                    <tr>
+                        <td>|</td>
+                        <td>OR</td>
+                        <td>Sets each bit to 1 if one of two bits is 1</td>
+                    </tr>
+                    <tr>
+                        <td>^</td>
+                        <td>XOR</td>
+                        <td>Sets each bit to 1 if only one of two bits is 1</td>
+                    </tr>
+                    <tr>
+                        <td>~</td>
+                        <td>NOT</td>
+                        <td>Inverts all the bits</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;&lt;</td>
+                        <td>Zero fill left shift</td>
+                        <td>Shift left by pushing zeros in from the right and let the leftmost bits fall
+                            off</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;&gt;</td>
+                        <td>Signed right shift</td>
+                        <td>Shift right by pushing copies of the leftmost bit in from the left, and let
+                            the rightmost bits fall off</td>
+                    </tr>
+                </tbody></table>
+            <p>Bitwise operators work on integer values, and the results are integers as well. Understanding binary representation and bitwise operations is crucial when working with these operators.</p>
+            <br />
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">a = 15   
+b = 7    
+
+and_result = a & b  
+or_result = a | b   
+xor_result = a ^ b  
+
+not_a = ~a          
+left_shift_result = a << 1   
+right_shift_result = a >> 1  
+
+print(and_result, or_result, xor_result, not_a, left_shift_result, right_shift_result)</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+        </body>
+    </html>

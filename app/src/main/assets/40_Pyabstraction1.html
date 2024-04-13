@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+       document.getElementById("demo").innerHTML = "Circle Area: 78.5<br/>Rectangle Area: 24";
+   }
+   function myFunction1() {
+       document.getElementById("demo1").innerHTML = "Circle Area: 78.5, Perimeter: 31.400000000000002<br/> Square Area: 16, Perimeter: 16";
+   }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+         <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Abstract Classes</div>
+            <p>An abstract class is a class that cannot be instantiated on its own and is meant to be subclassed by other classes.</p>
+            <p>Abstract classes in Python are created using the ABC (Abstract Base Class) module, which provides the ABC metaclass and the abstractmethod decorator.</p>
+            <p>Abstract methods declared using the @abstractmethod decorator in an abstract class must be implemented by concrete (non-abstract) subclasses.</p>
+            <p>Let's take an example of abstraction using a simple scenario involving geometric shapes. We'll create an abstract class called Shape with an abstract method area(). Then, we'll create two concrete subclasses, Circle and Rectangle, that inherit from the Shape class and implement the area() method.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+circle_instance = Circle(5)
+rectangle_instance = Rectangle(4, 6)
+
+print(f"Circle Area: {circle_instance.area()}")
+print(f"Rectangle Area: {rectangle_instance.area()}")</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example The <b>Shape</b> class is an abstract class that defines the abstract method <b>area()</b>. It cannot be instantiated on its own.</li><li>The <b>Circle</b> and <b>Rectangle</b> classes are concrete subclasses of <b>Shape</b>. They provide implementations for the <b>area()</b> method.</li><li>Even though <b>Shape</b> doesn't provide a specific implementation of <b>area()</b>, it enforces that any subclass must implement this method. This ensures a consistent interface for all shapes.</li></ul>
+            <p>When you run this script, it will output the areas of a circle and a rectangle, demonstrating how abstraction allows you to create a common interface for different shapes while leaving the specific implementations to the subclasses.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Interfaces</div>
+            <p>In Python, there is no strict concept of interfaces like in some other languages (e.g., Java or C#). However, you can achieve a similar effect using abstract classes and the Abstract Base Classes (ABC) module. Abstract classes can be used to define a contract that specifies the methods that must be implemented by concrete subclasses. The ABC module provides the ABC metaclass and the abstractmethod decorator for this purpose.</p>
+            <p>Here's an example of creating an interface-like structure using abstract classes.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
+
+class Square(Shape):
+    def __init__(self, side_length):
+        self.side_length = side_length
+
+    def area(self):
+        return self.side_length * self.side_length
+
+    def perimeter(self):
+        return 4 * self.side_length
+
+circle_instance = Circle(5)
+square_instance = Square(4)
+
+print(f"Circle Area: {circle_instance.area()}, Perimeter: {circle_instance.perimeter()}")
+print(f"Square Area: {square_instance.area()}, Perimeter: {square_instance.perimeter()}")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example The <b>Shape</b> class defines an interface with two abstract methods: <b>area</b> and <b>perimeter</b>.</li><li>The <b>Circle</b> and <b>Square</b> classes are concrete implementations of the <b>Shape</b> interface, providing specific implementations for both <b>area</b> and <b>perimeter</b>.</li></ul>
+            <p>While Python doesn't enforce interfaces in the same way as languages with explicit interface support, using abstract classes in this manner helps document and ensure that classes adhere to a specific contract or set of methods. It provides a way to achieve a level of abstraction and code consistency similar to interfaces in other languages.</p>
+            
+            <br/>
+            <p>In summary, abstraction in Python involves creating abstract classes, abstract methods, and interfaces to simplify complex systems by focusing on essential properties and behaviors, while encapsulation helps in controlling access to the internal details of a class. These concepts contribute to building more modular, maintainable, and extensible code in object-oriented programming.</p>
+        </body>
+</html>

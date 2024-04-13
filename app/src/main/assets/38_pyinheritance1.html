@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Buddy says Woof!";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "Can fly<br/>        Can walk<br/>        Uses echolocation";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Buddy says Woof!<br/>        Buddy gives birth to live young";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "Buddy says Woof!<br/>Whiskers says Meow!";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "Perry says Quack!<br/>        Perry gives birth to live young<br/>        Perry lays eggs";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+         <ul>
+                <li>Single Inheritance</li>
+                <li>Multiple Inheritance</li>
+                <li>Multilevel Inheritance</li>
+                <li>Hierarchical Inheritance</li>
+                <li>Hybrid Inheritance</li>
+            </ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Single Inheritance</div>
+            <p>Single inheritance is a type of inheritance in object-oriented programming where a class can inherit from only one parent class. This means that a derived class can extend the functionality of a single base (parent) class. In single inheritance, there is a clear, linear hierarchy of classes.</p>
+            <p>Here's a simple example in Python to illustrate single inheritance.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclasses must implement the 'speak' method")
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+dog = Dog("Buddy")
+
+print(dog.speak())  </code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>Animal</b> is the parent class with a constructor (<b>__init__</b>) and a method (<b>speak</b>) marked as abstract. The <b>speak</b> method is intended to be implemented by any class that inherits from <b>Animal</b>.</li><li><b>Dog</b> is the child class that inherits from <b>Animal</b>. It provides its own implementation of the <b>speak</b> method, overriding the method in the parent class.</li><li>An instance of <b>Dog</b> is created, and its <b>speak</b> method is called.</li></ul>
+            <p>Single inheritance provides a simple and straightforward way to create a hierarchy of classes, making the code more organized and promoting code reuse. However, it also means that a class can only directly inherit from one parent, which may limit flexibility in certain situations.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Multiple Inheritance</div>
+            <p>Multiple inheritance is a feature in object-oriented programming where a class can inherit attributes and methods from more than one parent class. In other words, a class can have multiple direct ancestor classes. This allows for the combination of features from different classes, promoting code reuse and flexibility.</p>
+            <p>Here's a simple example in Python to illustrate multiple inheritance.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Bird:
+    def fly(self):
+        return "Can fly"
+
+class Mammal:
+    def walk(self):
+        return "Can walk"
+
+class Bat(Bird, Mammal):
+    def echo_location(self):
+        return "Uses echolocation"
+
+bat = Bat()
+
+print(bat.fly())      
+print(bat.walk())     
+print(bat.echo_location()) </code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>Bird</b> and <b>Mammal</b> are two parent classes with different behaviors.</li><li><b>Bat</b> is the child class that inherits from both <b>Bird</b> and <b>Mammal</b>. As a result, an instance of <b>Bat</b> has access to methods from both parent classes (<b>fly</b> from <b>Bird</b> and <b>walk</b> from <b>Mammal</b>).</li><li>The <b>Bat</b> class can also have its own methods, such as <b>echo_location</b>.</li></ul>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Multilevel Inheritance</div>
+            <p>Multilevel inheritance is a type of inheritance in object-oriented programming where a class inherits from another class, and then another class inherits from the derived class. This creates a chain or hierarchy of classes. Each class in the hierarchy is a subclass of the class above it and a superclass for the class below it.</p>
+            <p>Here's a simple example in Python to illustrate multilevel inheritance.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclasses must implement the 'speak' method")
+
+class Mammal(Animal):
+    def give_birth(self):
+        return f"{self.name} gives birth to live young"
+
+class Dog(Mammal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+dog = Dog("Buddy")
+
+print(dog.speak())          
+print(dog.give_birth())</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>Animal</b> is the parent class with a constructor (<b>__init__</b>) and a method (<b>speak</b>) marked as abstract.</li><li><b>Mammal</b> is a child class that inherits from <b>Animal</b>. It adds a new method (<b>give_birth</b>) to represent the characteristic of giving birth to live young.</li><li><b>Dog</b> is a child class that inherits from <b>Mammal</b>. It overrides the <b>speak</b> method from the parent class <b>Animal</b>.</li><li>An instance of <b>Dog</b> is created, and its methods are called. Since <b>Dog</b> inherits from <b>Mammal</b> and <b>Mammal</b> inherits from <b>Animal</b>, the instance has access to methods from the entire hierarchy.</li></ul>
+            <p>Multilevel inheritance provides a way to create a hierarchy of classes with increasing specialization. Each level of the hierarchy introduces new attributes or behaviors while building upon the features inherited from the classes above. It can enhance code organization and reuse, but like any form of inheritance, it should be used thoughtfully to avoid unnecessary complexity.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Hierarchical Inheritance</div>
+            <p>Hierarchical inheritance is a type of inheritance in object-oriented programming where multiple classes inherit from a single base or parent class. In this type of inheritance, a single parent class serves as the common ancestor for several child classes. Each child class inherits the attributes and methods from the same parent class, and it can also have its own additional attributes and methods.</p>
+            <p>Here's a simple example in Python to illustrate hierarchical inheritance.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclasses must implement the 'speak' method")
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+print(dog.speak())  
+print(cat.speak())  </code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>Animal</b> is the parent class with a constructor (<b>__init__</b>) and a method (<b>speak</b>) marked as abstract.</li><li><b>Dog</b> and <b>Cat</b> are child classes that inherit from the common parent class <b>Animal</b>. They both provide their own implementation of the <b>speak</b> method, customizing it for their specific types of animals.</li><li>Instances of <b>Dog</b> and <b>Cat</b> can be created, and their <b>speak</b> methods can be called.</li></ul>
+            <p>Hierarchical inheritance allows for the creation of a family of related classes, where each class shares common attributes and behaviors from the same ancestor class. It provides a way to model relationships in a natural and intuitive manner.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Hybrid Inheritance</div>
+            <p>Hybrid inheritance is a combination of different types of inheritance within a single program. It typically involves the use of multiple inheritance (inheriting from more than one class) and other forms of inheritance such as single or multilevel inheritance. Hybrid inheritance allows for the advantages of different inheritance types to be utilized in a single program.</p>
+            <p>Here's a conceptual example of hybrid inheritance.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclasses must implement the 'speak' method")
+
+class Mammal(Animal):
+    def give_birth(self):
+        return f"{self.name} gives birth to live young"
+
+class Bird(Animal):
+    def lay_eggs(self):
+        return f"{self.name} lays eggs"
+
+class Platypus(Mammal, Bird):
+    def speak(self):
+        return f"{self.name} says Quack!"
+
+platypus = Platypus("Perry")
+
+print(platypus.speak())       
+print(platypus.give_birth())  
+print(platypus.lay_eggs())</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>Animal</b> is the parent class with a constructor (<b>__init__</b>) and a method (<b>speak</b>) marked as abstract.</li><li><b>Mammal</b> and <b>Bird</b> are first-level child classes that inherit from the common parent class <b>Animal</b>. They introduce their own methods specific to mammals and birds, respectively.</li><li><b>Platypus</b> is a second-level child class that inherits from both <b>Mammal</b> and <b>Bird</b>. It combines features from both classes, creating a hybrid inheritance structure.</li></ul>
+            <p>Hybrid inheritance can be a powerful tool, but it also introduces challenges such as the diamond problem (ambiguity in method resolution order) associated with multiple inheritance. In languages like Python, the method resolution order (MRO) is used to determine the order in which base classes are considered when looking for a method or attribute.</p>
+        </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based, so add 1
+    var day = currentDateTime.getDate().toString().padStart(2, '0');
+    var hours = currentDateTime.getHours().toString().padStart(2, '0');
+    var minutes = currentDateTime.getMinutes().toString().padStart(2, '0');
+    var seconds = currentDateTime.getSeconds().toString().padStart(2, '0');
+
+    var formattedDateTime = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    document.getElementById("demo").innerHTML = formattedDateTime + "<br/>2023-01-01 12:30:00";
+}
+
+function myFunction1() {
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based, so add 1
+    var day = currentDateTime.getDate().toString().padStart(2, '0');
+    var hours = currentDateTime.getHours().toString().padStart(2, '0');
+    var minutes = currentDateTime.getMinutes().toString().padStart(2, '0');
+    var seconds = currentDateTime.getSeconds().toString().padStart(2, '0');
+
+    var formattedDateTime = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    document.getElementById("demo1").innerHTML = "Formatted Date: "+formattedDateTime;
+}
+function myFunction2() {
+    document.getElementById("demo2").innerHTML = "Parsed Date: 2023-01-01 12:30:00";
+}
+function myFunction3() {
+    document.getElementById("demo3").innerHTML = "2023-12-01<br/>        2023<br/>        12<br/>        1";
+}
+function myFunction4() {
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based, so add 1
+    var day = currentDateTime.getDate().toString().padStart(2, '0');
+
+    var formattedDateTime = year + '-' + month + '-' + day;
+    document.getElementById("demo4").innerHTML = formattedDateTime;
+}
+function myFunction5() {
+    document.getElementById("demo5").innerHTML = "30";
+}
+function myFunction6() {
+    document.getElementById("demo6").innerHTML = "10:30:45.123456<br/>        10<br/>        30<br/>        45<br/>        123456";
+}
+function myFunction7() {
+    document.getElementById("demo7").innerHTML = "2:15:14.135802";
+}
+function myFunction8() {
+    document.getElementById("demo8").innerHTML = "5 days, 3:30:00<br/>5<br/>12600<br/> 0";
+}
+function myFunction9() {
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based, so add 1
+    var day = currentDateTime.getDate().toString().padStart(2, '0');
+    var hours = currentDateTime.getHours().toString().padStart(2, '0');
+    var minutes = currentDateTime.getMinutes().toString().padStart(2, '0');
+    var seconds = currentDateTime.getSeconds().toString().padStart(2, '0');
+    day=parseInt(day)+2;
+    hours=parseInt(hours)+3;
+    var formattedDateTime = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    document.getElementById("demo9").innerHTML = formattedDateTime;
+}
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+            <h1 class="head">Python Date/Time</h1>
+            <p>In Python, the datetime module provides classes for working with dates and times. The module includes classes like datetime, date, time, timedelta, and others that make it easy to perform various operations on dates and times. </p>
+        </body>
+</html>

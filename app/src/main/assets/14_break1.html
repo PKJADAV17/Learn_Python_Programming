@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "0<br/>1<br/>2";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "0<br/>1<br/>3<br/>4";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+         <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>break Statement</div>
+            <p>The break statement is used to terminate the loop prematurely, causing the program to exit the loop and continue with the next statement after the loop.</p>
+            <p>It is commonly used when a certain condition is met, and you want to exit the loop without completing all the iterations.</p>
+            <p>Here's a simple example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">for i in range(5):
+    if i == 3:
+        break
+    print(i)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the loop terminates when i becomes 3, and the remaining iterations are skipped.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>continue Statement</div>
+            <p>The continue statement is used to skip the rest of the code inside a loop for the current iteration and move to the next iteration.</p>
+            <p>It is useful when you want to skip specific iterations based on a certain condition without terminating the entire loop.</p>
+            <p>Here's an example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">for i in range(5):
+    if i == 2:
+        continue
+    print(i)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the loop skips the iteration when i is 2, and the rest of the loop body is not executed for that iteration.</p>
+            <br/>
+            <p>Both break and continue can be used in for loops as well as while loops. It's important to use them judiciously, as excessive use of these statements can make the code harder to understand and maintain. They are powerful tools for controlling the flow of loops, but their misuse can lead to less readable code.</p>
+        </body>
+   </html>

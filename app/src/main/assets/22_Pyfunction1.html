@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello, Alice!";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "7";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "9<br/>27";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "Hello, Alice! You are 25 years old.";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "1<br/>        2<br/>        3<br/>        name: Alice<br/>        age: 25";
+    }
+    function myFunction5() {
+        document.getElementById("demo5").innerHTML = "(4, 8)<br/>        4<br/>        8";
+    }
+    function myFunction6() {
+        document.getElementById("demo6").innerHTML = "7";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Defining a Function</div>
+            <p>Defining a function in Python involves using the def keyword followed by the function name, a pair of parentheses, and a colon. If the function takes parameters, they are specified within the parentheses. The function body is indented to indicate the block of code that belongs to the function. </p>
+            <p>Here's the basic syntax.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">def function_name(parameter1, parameter2, ...):
+    # Function body
+    # Code to perform a specific task
+    # Optional: return statement to send a result back</code></pre>
+            <ul><li><strong><b>def</b></strong>: This keyword is used to declare the beginning of a function definition.</li><li><strong><b>function_name</b></strong>: This is the name of your function. Choose a descriptive name that indicates what the function does. Follow the naming conventions (use lowercase letters and underscores).</li><li><strong><b>(parameter1, parameter2, ...)</b></strong>: These are the parameters or inputs that your function accepts. They are optional, depending on the function's requirements. If there are no parameters, the parentheses are left empty.</li><li><strong><b>:</b></strong>: The colon indicates the start of the function body. Everything indented after the colon is part of the function.</li><li><strong>Function Body</strong>: This is where you write the code that defines what the function does. It can include any valid Python statements.</li><li><strong><b>return</b> statement (optional)</strong>: If the function needs to send a value back to the caller, you use the <b>return</b> statement. It's optional, and you can have a function without a <b>return</b> statement.</li></ul>
+
+            <p>Here's a simple example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def greet(name):
+    """
+    This function takes a name as a parameter and prints a greeting.
+    """
+    print(f"Hello, {name}!")
+
+greet("Alice")</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the function <b>greet</b> takes a parameter <b>name</b> and prints a greeting. The function is then called with the argument <b>"Alice"</b>. When you run this code, it will output: "Hello, Alice!".</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Return Statement</div>
+            <p>The return statement in a Python function is used to exit the function and return a value to the caller. It essentially sends a result or output back to the part of the code that called the function. </p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def add(x, y):
+    result = x + y
+    return result
+
+sum_result = add(3, 4)
+print(sum_result)</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the add function takes two parameters (x and y), computes their sum, and then uses the return statement to send the result back to the caller.</p>
+
+
+            <br/>
+            <b class='element'>Returning Multiple Values</b>
+            <p>A function can also return multiple values as a tuple. This is achieved by separating the values with commas in the return statement.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def square_and_cube(x):
+    square = x ** 2
+    cube = x ** 3
+    return square, cube
+
+result = square_and_cube(2)
+print(result)  
+
+square_result, cube_result = square_and_cube(2)
+print(square_result)  
+print(cube_result)</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+            <p>Understanding the return statement is crucial because it allows functions to produce results that can be used in the rest of your program. If a function doesn't have a return statement, it implicitly returns None.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Function Parameters</div>
+            <p>Function parameters are values that you pass into a function when you call it. Parameters allow you to provide input to the function, making it more versatile and capable of handling different data. When you define a function, you specify its parameters within the parentheses.</p>
+
+            <br/>
+            <b class='element'>Positional Parameters</b>
+            <p>Positional parameters are the most common type of parameters. They are defined in the order in which they should be passed when calling the function.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def add(x, y):
+    result = x + y
+    return result
+
+sum_result = add(3, 4)
+print(sum_result)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, x and y are positional parameters. When you call the add function, you pass values for x and y in the same order.</p>
+
+            <br/>
+            <b class='element'>Default Parameters</b>
+            <p>You can set default values for parameters, making them optional when calling the function. If a value is not provided, the default value is used.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def power(base, exponent=2):
+    result = base ** exponent
+    return result
+
+result1 = power(3)      
+result2 = power(3, 3)   
+
+print(result1)  
+print(result2)  </code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, exponent has a default value of 2, but you can override it by providing a different value when calling the function.</p>
+
+            <br/>
+            <b class='element'>Keyword Arguments</b>
+            <p>When calling a function, you can use keyword arguments to explicitly match values with parameter names. This allows you to provide the arguments in a different order or skip some of them.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def greet(name, age):
+    print(f"Hello, {name}! You are {age} years old.")
+
+greet(name="Alice", age=25)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>Here, the order of the arguments doesn't matter because they are explicitly associated with parameter names.</p>
+
+            <br/>
+            <b class='element'>Variable Number of Positional and Keyword Arguments</b>
+            <p>If you want a function to accept a variable number of arguments, you can use <b>*args</b> and <b>**kwargs</b>. This allows your function to handle any number of positional and keyword arguments, respectively.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def print_args(*args, **kwargs):
+    for arg in args:
+        print(arg)
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_args(1, 2, 3, name="Alice", age=25)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, <b>*args</b> collects positional arguments into a tuple, and <b>**kwargs</b> collects keyword arguments into a dictionary.</p>
+            <br/>
+            <p>Understanding and using these different types of function parameters gives you flexibility and control over how your functions receive and handle input.</p>
+            <p>These are the fundamental concepts related to Python functions. Functions play a crucial role in writing organized and efficient code by promoting code reuse and readability.</p>
+        </body>
+</html>

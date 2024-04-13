@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+         <ul><li><strong>try:</strong> The code that might raise an exception is placed inside the <b>try</b> block.</li><li><strong>except:</strong> If an exception occurs in the <b>try</b> block, it is caught by the corresponding <b>except</b> block. You can have multiple <b>except</b> blocks to handle different types of exceptions.</li><li><strong>else:</strong> This block is optional and is executed if no exceptions are raised in the <b>try</b> block.</li><li><strong>finally:</strong> This block is also optional and is always executed, whether an exception occurs or not. It is typically used for cleanup code.</li></ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Try-Except Block</div>
+            <p>The try-except block is a fundamental construct in Python for handling exceptions. It allows you to write code that might raise an exception and then define how to handle that exception.</p>
+            <p>Here's a breakdown of how the try-except block works.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">try:
+    # Code that may raise an exception
+    # ...
+except SomeException as e:
+    # Handle the exception
+    # ...</code></pre>
+            <p>Let's break down the components.</p>
+            <ul><li><strong><b>try</b> Block:</strong><ul><li>The <b>try</b> block encloses the code that might raise an exception.</li><li>If an exception occurs within the <b>try</b> block, the normal flow of execution is interrupted, and the code jumps to the first matching <b>except</b> block.</li></ul></li><li><strong><b>except</b> Block:</strong><ul><li>The <b>except</b> block specifies the type of exception it can handle (e.g., <b>ValueError</b>, <b>TypeError</b>).</li><li>If an exception of the specified type occurs in the <b>try</b> block, the code inside the corresponding <b>except</b> block is executed.</li><li>The <b>as e</b> part allows you to capture the exception instance, so you can inspect or use information about the exception.</li></ul></li></ul>
+            <p>Here's a simple example using only try and except.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+
+    result = numerator / denominator
+
+    print("Result:", result)
+
+except:
+    print("An error occurred during the division.")</code></pre>
+            <p>In this example, the try block attempts to get user input, perform the division, and print the result. If any exception occurs within the try block, the code inside the except block is executed, which simply prints a generic error message. This is a minimalistic example, and in practice, you might want to handle specific exceptions to provide more informative error messages or take different actions based on the type of error encountered.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Multiple Except Blocks</div>
+            <p>Multiple except blocks allow you to handle different types of exceptions in distinct ways. </p>
+            <p> Here's an example demonstrating the use of multiple except blocks.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+
+    result = numerator / denominator
+
+    print("Result:", result)
+
+except ValueError:
+    print("Error: Please enter valid numeric values.")
+
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero.")
+
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")</code></pre>
+            <ul><li>In this example The <b>try</b> block attempts to get user input, convert it to integers, and perform the division.</li><li>The first <b>except</b> block (<b>ValueError</b>) handles the situation where the user enters a non-numeric value.</li><li>The second <b>except</b> block (<b>ZeroDivisionError</b>) handles the case where the user tries to divide by zero.</li><li>The third <b>except</b> block (<b>Exception</b>) is a catch-all for any other unexpected exceptions. It captures the exception object as <b>e</b> for further analysis or logging.</li></ul>
+            <p>Using multiple except blocks allows you to provide specific handling for different types of errors, making your code more robust and user-friendly.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Finally Block</div>
+            <p>The finally block is used to define a block of code that will be executed whether an exception is raised or not. It ensures that certain code is always executed, regardless of whether an exception occurs in the try block or not.</p>
+            <p>Here's an example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">try:
+    x = int(input("Enter a number: "))
+    result = 10 / x
+    print("Result:", result)
+
+except ValueError:
+    print("Invalid input. Please enter a valid number.")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+
+finally:
+    print("This block always executes, regardless of exceptions.")</code></pre>
+            <ul><li>In this example The <b>try</b> block contains code that might raise an exception (e.g., division by zero, invalid input).</li><li>The <b>except</b> blocks handle specific types of exceptions.</li><li>The <b>finally</b> block contains code that will always execute, irrespective of whether an exception occurred or not. It's commonly used for cleanup operations, such as closing files, releasing resources, or logging.</li></ul>
+            <p>The finally block is useful when you need to ensure that certain tasks are performed, such as cleaning up resources, regardless of whether an exception occurred. This helps maintain the integrity of your program and is especially valuable for situations where resource management is critical.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Else Block</div>
+            <p>The else block in a try-except structure is used to specify a block of code that should be executed if no exceptions are raised in the preceding try block.</p>
+            <p>Here's an example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">try:
+    x = int(input("Enter a number: "))
+    result = 10 / x
+    print("Result:", result)
+
+except ValueError:
+    print("Invalid input. Please enter a valid number.")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+
+else:
+    print("No exceptions occurred. Division operation completed successfully.")</code></pre>
+            <ul><li>In this example The <b>try</b> block contains code that may raise an exception.</li><li>The <b>except</b> blocks handle specific types of exceptions.</li><li>The <b>else</b> block contains code that will execute only if no exceptions occurred in the <b>try</b> block.</li></ul>
+            <p>Using the else block can help separate the code that might raise exceptions from the code that should only run when everything in the try block executes successfully. It can make your code more readable and help clarify the logic of your error-handling strategy.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Handling Multiple Exceptions in One Except Block</div>
+            <p>You can handle multiple exceptions in a single except block by specifying them as a tuple. This allows you to provide a common set of instructions for different types of exceptions.</p>
+            <p>Here's an example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">try:
+    num1 = int(input("Enter the first number: "))
+    num2 = int(input("Enter the second number: "))
+    result = num1 / num2
+    print("Result:", result)
+
+except (ValueError, ZeroDivisionError):
+    print("Invalid input or division by zero. Please enter valid numbers.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")</code></pre>
+            <ul><li>In this example The <b>try</b> block contains code that may raise exceptions, such as <b>ValueError</b> or <b>ZeroDivisionError</b>.</li><li>The <b>except</b> block catches both <b>ValueError</b> and <b>ZeroDivisionError</b> in a single tuple. If either of these exceptions occurs, the code inside the <b>except</b> block is executed.</li><li>The <b>Exception</b> block, if present, serves as a catch-all for any other unexpected exceptions.</li></ul>
+            <p>Using a tuple in the except block allows you to group similar types of exceptions together and handle them with the same set of instructions, making your code more concise and readable. However, be cautious when using this approach, as it can make it harder to differentiate between the types of exceptions that occurred.</p>
+
+            <br/>
+            <p>Exception handling is an essential part of writing reliable and maintainable Python code. It helps prevent your programs from crashing due to unexpected errors and allows you to gracefully handle exceptional situations.</p>
+        </body>
+ </html>

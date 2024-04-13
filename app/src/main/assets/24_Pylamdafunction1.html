@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "5<br/>5";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "Hello, World!";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "[1, 4, 9, 16, 25]<br/>        [2, 4]<br/>        ['date', 'apple', 'banana', 'cherry']";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+             <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">lambda arguments: expression</code></pre>
+            <p>Here, lambda is the keyword, followed by a list of arguments, a colon, and an expression. The lambda function takes the arguments, performs the specified expression, and returns the result.</p>
+            <p>Let's break down the components of a lambda function.</p>
+            <ul><li><strong><b>lambda</b></strong>: This keyword is used to indicate the start of a lambda function.</li><li><strong><b>arguments</b></strong>: These are the input parameters for the lambda function. You can have any number of arguments, separated by commas. The arguments are similar to the arguments you would define in a regular function.</li><li><strong><b>:</b> (colon)</strong>: It separates the arguments from the expression.</li><li><strong><b>expression</b></strong>: This is a single expression that the lambda function evaluates. The result of this expression is implicitly returned as the result of the lambda function.</li></ul>
+
+            <p> Here's a simple example of a lambda function without any arguments.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Lambda fun without arguments
+greeting = lambda: "Hello, World!"
+
+# Using the lambda fun
+result = greeting()
+print(result)  </code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the lambda function doesn't take any arguments, and its expression simply returns the string "Hello, World!". The lambda function is then assigned to the variable greeting, and when called, it produces the specified greeting message.</p>
+            <br />
+            <p>Here's a simple example to illustrate the syntax and usage of a lambda function.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Regular fun
+def add(x, y):
+    return x + y
+print(add(2,3))
+
+# Equivalent lambda fun
+add_lambda = lambda x, y: x + y
+
+# Using the lambda fun
+result = add_lambda(2, 3)
+print(result) </code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+
+            <br />
+            <p>Lambda functions are often used in situations where a small, throwaway function is needed, such as when passing a function as an argument to a higher-order function like map(), filter(), or sorted().</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  
+
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens)    
+
+words = ["apple", "banana", "cherry", "date"]
+sorted_words = sorted(words, key=lambda x: len(x))
+print(sorted_words)</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>It's important to note that while lambda functions are convenient for short operations, for more complex logic, it's often better to use a named function for clarity and reusability. Lambda functions are limited to a single expression and are generally not suitable for more extensive functionality.</p>
+        </body>
+</html>

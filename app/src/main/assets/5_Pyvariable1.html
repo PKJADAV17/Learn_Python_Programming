@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "10<br/>        John<br/>        3.14";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "10<br/>Hello";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+ <script src="prism.js"></script>
+ 
+       <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Variable Naming Rules</div>
+            <ul><li>Variable names must begin with a letter (a-z, A-Z) or an underscore (_).</li><li>The subsequent characters can be letters, numbers, or underscores.</li><li>Variable names are case-sensitive (e.g., <b>myVar</b> and <b>myvar</b> are different).</li><li>Python keywords (reserved words) cannot be used as variable names.</li></ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Variable Declaration and Assignment</div>
+            <p>In Python, you don't explicitly declare variables in the way you might in some other programming languages (e.g., C or Java). Instead, you simply assign a value to a variable, and Python dynamically determines the variable's type based on the assigned value.</p>
+            <p> Here's an example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Variable declaration and assignment
+x = 10
+name = "John"
+pi = 3.14
+
+# Displaying the values
+print(x)    # Output: 10
+print(name) # Output: John
+print(pi)   # Output: 3.14</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, x, name, and pi are variables that are assigned values of different types (integer, string, and float, respectively). Python infers the types automatically.</p>
+            <br/>
+            <p>It's important to note that Python is a dynamically-typed language, which means you can reassign a variable to a value of a different type</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 10
+print(x)  # Output: 10
+
+x = "Hello"
+print(x)  # Output: Hello</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, x is initially assigned the value 10, but later it's reassigned the value "Hello".</p>
+            <p>While Python doesn't have variable declaration in the traditional sense, you can think of variable assignment as a way of declaring and initializing variables simultaneously. The lack of explicit declaration contributes to the simplicity and flexibility of Python code.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Dynamic Typing</div>
+            <p>Python is dynamically typed, meaning you don't have to explicitly declare the type of a variable. The interpreter infers the type based on the assigned value.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 10        # x is an integer
+y = "hello"   # y is a string</code></pre>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Data Types</div>
+            <p>Variables in Python can hold values of different data types, such as integers, floats, strings, lists, tuples, dictionaries, etc.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">num = 42      # integer
+pi = 3.14     # float
+message = "Hello, World!"  # string</code></pre>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Variable Scope</div>
+            <p>The scope of a variable determines where it can be accessed. Variables can have local or global scope.</p>
+            <ul><li><strong>Local Scope:</strong> Variables defined within a function have local scope and are only accessible within that function.</li><li><strong>Global Scope:</strong> Variables defined outside of any function have global scope and can be accessed throughout the program.</li></ul>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">global_var = 10  # Global variable
+
+def my_function():
+    local_var = 5  # Local variable</code></pre>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Deleting Variables</div>
+            <p>You can use the del statement to delete a variable and free up the memory it occupies.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 10
+del x</code></pre>
+
+            <br/>
+            <p>These are the basic concepts of Python variables. Understanding how to use variables effectively is crucial for writing clear, concise, and functional code.</p>
+        </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+          <ul>
+                <li><strong>Import the socket module:</strong>
+                    You start by importing the <b>socket</b> module:
+                    <pre><code class="language-python line-numbers">import socket</code></pre>
+                </li>
+                <li><strong>Create a socket:</strong>
+                    You create a socket object using the <b>socket()</b> constructor. The <b>socket()</b> function takes two arguments: the address family and the socket type.
+                    <pre><code class="language-python line-numbers">server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</code></pre>
+                    Here, <b>AF_INET</b> refers to the address family, which is IPv4, and <b>SOCK_STREAM</b> is the socket type, which is for TCP connections. For UDP, you would use <b>SOCK_DGRAM</b> as the socket type.</li><li><strong>Bind the socket to an address and port:</strong>
+                        You need to bind the socket to a specific address and port so that it can listen for incoming connections. The address can be the hostname of the machine or its IP address.
+                    <pre><code class="language-python line-numbers">server_address = ('localhost', 12345)
+server_socket.bind(server_address)</code></pre>
+                </li>
+                <li><strong>Listen for connections (for server):</strong>
+                    For a server, you need to use the <b>listen()</b> method to put the socket into server mode and listen for incoming connections.
+                    <pre><code class="language-python line-numbers">server_socket.listen()</code></pre>
+                </li>
+                <li><strong>Accept connections (for server):</strong>
+                    Once the server is listening, you use the <b>accept()</b> method to accept incoming connections. This method returns a new socket object representing the connection and the address of the client.
+                    <pre><code class="language-python line-numbers">client_socket, client_address = server_socket.accept()</code></pre>
+                </li>
+                <li><strong>Connect to a server (for client):</strong>
+                    For a client, you create a socket and then use the <b>connect()</b> method to connect to a server.
+                    <pre><code class="language-python line-numbers">client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_address = ('localhost', 12345)
+client_socket.connect(server_address)</code></pre>
+                </li>
+                <li><strong>Send and receive data:</strong>
+                    Once the connection is established, you can use the <b>send()</b> and <b>recv()</b> methods to send and receive data.
+                    <pre><code class="language-python line-numbers"># Sending data
+client_socket.send(b'Hello, server!')
+
+# Receiving data
+data = client_socket.recv(1024)</code></pre>
+                </li>
+                <li><strong>Close the connection:</strong>
+                    After the communication is complete, you should close the sockets.
+                    <pre><code class="language-python line-numbers">client_socket.close()
+server_socket.close()</code></pre>
+                </li>
+            </ul>
+            <p>This is a basic outline of Python socket programming. Depending on your application, you may need to handle exceptions, use multithreading or multiprocessing for handling multiple connections, and implement more sophisticated communication protocols.</p>
+
+            <br/>
+            <p>Let's create a simple example of a client-server interaction using Python sockets. In this example, the server will listen for connections and the client will connect to the server, send a message, and receive a response.</p>
+            <b class="example">Example  Server (server.py) </b>
+            <pre><code class="language-python line-numbers">import socket
+
+# Create a socket object
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Bind the socket to a specific address and port
+server_address = ('localhost', 12345)
+server_socket.bind(server_address)
+
+# Listen for incoming connections
+server_socket.listen()
+
+print(f"Server is listening on {server_address}")
+
+# Accept a connection
+client_socket, client_address = server_socket.accept()
+print(f"Connection from {client_address}")
+
+# Receive data from the client
+data = client_socket.recv(1024)
+print(f"Received: {data.decode()}")
+
+# Send a response back to the client
+response = "Hello, client! I received your message."
+client_socket.send(response.encode())
+
+# Close the connection
+client_socket.close()
+server_socket.close()</code></pre>
+            <br/>
+            <b class="example">Example  Client (client.py) </b>
+            <pre><code class="language-python line-numbers">import socket
+
+# Create a socket object
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Connect to the server
+server_address = ('localhost', 12345)
+client_socket.connect(server_address)
+
+# Send a message to the server
+message = "Hello, server! How are you?"
+client_socket.send(message.encode())
+
+# Receive the response from the server
+response = client_socket.recv(1024)
+print(f"Server response: {response.decode()}")
+
+# Close the connection
+client_socket.close()</code></pre>
+
+            <p>To run this example.</p>
+            <ul><li>Save the server code in a file named <b>server.py</b>.</li><li>Save the client code in a file named <b>client.py</b>.</li><li>Open two terminal windows.</li><li>In one window, run <b>python server.py</b> to start the server.</li><li>In the other window, run <b>python client.py</b> to start the client.</li></ul>
+            <p>You should see output indicating the connection and data exchange between the client and server. The server will print the received message from the client, and the client will print the response from the server.</p>
+        </body>
+</html>

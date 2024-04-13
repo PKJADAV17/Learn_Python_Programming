@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "(1, 2, 3, 'hello', 4.5)";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "(5, 'world', 6.7)";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "(42,)";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "(1, (2, 3), 'abc')";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "a<br/>b";
+    }
+    function myFunction5() {
+        document.getElementById("demo5").innerHTML = "e<br/>d";
+    }
+    function myFunction6() {
+        document.getElementById("demo6").innerHTML = "(2, 3, 4, 5)";
+    }
+    function myFunction7() {
+        document.getElementById("demo7").innerHTML = "(0, 1, 2, 3)<br/>        (4, 5, 6, 7, 8, 9)<br/>        (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)";
+    }
+    function myFunction8() {
+        document.getElementById("demo8").innerHTML = "(7, 8)";
+    }
+    function myFunction9() {
+        document.getElementById("demo9").innerHTML = "(2, 4, 6)<br/>(9, 8, 7, 6, 5, 4, 3, 2, 1, 0)";
+    }
+    function myFunction10() {
+        document.getElementById("demo10").innerHTML = "(1, 2, 3, 'a', 'b', 'c')<br/> (1, 2, 3, 1, 2, 3, 1, 2, 3)";
+    }
+    function myFunction11() {
+        document.getElementById("demo11").innerHTML = "True<br/>True";
+    }
+    function myFunction12() {
+        document.getElementById("demo12").innerHTML = "4";
+    }
+    function myFunction13() {
+        document.getElementById("demo13").innerHTML = "1<br/>        2<br/>        3<br/>        apple";
+    }
+    function myFunction14() {
+        document.getElementById("demo14").innerHTML = "3<br/>3";
+    }
+    function myFunction15() {
+        document.getElementById("demo15").innerHTML = "True";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+           <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Tuples Creation</div>
+            <p>The most common way to create a tuple is by enclosing elements in parentheses ().</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (1, 2, 3, 'hello', 4.5)
+print(my_tuple)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Create using tuple() constructor</b>
+            <p>You can use the tuple() constructor to create a tuple from an iterable (e.g., list, string, etc.).</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">another_tuple = tuple([5, 'world', 6.7])
+print(another_tuple)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Tuple having single element</b>
+            <p>If you want a tuple with a single element, you need to include a trailing comma to distinguish it from a regular parenthesized expression.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">single_element_tuple = (42,)
+print(single_element_tuple)</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Nested tuples</b>
+            <p>Tuples can contain other tuples, forming nested structures.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">nested_tuple = (1, (2, 3), 'abc')
+print(nested_tuple)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Accessing Tuples Elements</div>
+            <p>In Python, you can access individual elements in a tuple using indexing. The index represents the position of an element in the tuple, and indexing starts at 0.</p>
+
+            <br/>
+            <b class='element'>Positive Indexing</b>
+            <p>Elements in a tuple are accessed using positive indices. The first element has an index of 0, the second has an index of 1, and so on.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = ('a', 'b', 'c', 'd', 'e')
+first_element = my_tuple[0]  
+second_element = my_tuple[1] 
+
+print(first_element)
+print(second_element)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Negative Indexing</b>
+            <p>Python also supports negative indexing, where -1 refers to the last element, -2 to the second-to-last, and so forth.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = ('a', 'b', 'c', 'd', 'e')
+last_element = my_tuple[-1]  
+second_last_element = my_tuple[-2]
+
+print(last_element)
+print(second_last_element)</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Tuples Slicing</div>
+            <p>In Python, slicing is a technique used to extract a portion of a sequence, and it is applicable to tuples, lists, strings, and other iterable types. Tuple slicing allows you to create a new tuple by specifying a range of indices. The syntax for tuple slicing is <b>tuple[start:stop:step]</b>, where:</p>
+            <ul><li><b>start</b> is the index of the first element you want to include.</li><li><b>stop</b> is the index of the first element you don't want to include.</li><li><b>step</b> is an optional parameter indicating the increment between indices.</li></ul>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+subset_tuple = my_tuple[2:6]  
+
+print(subset_tuple)</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, subset_tuple will be (2, 3, 4, 5). The start index is inclusive, and the stop index is exclusive.</p>
+            <br/>
+            <b class='element'>Omit Start and Stop</b>
+            <p>If you omit start, it defaults to the beginning of the tuple.</p>
+            <p>If you omit stop, it defaults to the end of the tuple.</p>
+            <p>If both start and stop are omitted, the slice represents the entire tuple.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+subset_tuple = my_tuple[:4]
+subset_tuple1 = my_tuple[4:] 
+entire_tuple = my_tuple[:]
+
+print(subset_tuple)
+print(subset_tuple1)
+print(entire_tuple)</code></pre>
+            <button onClick=myFunction7()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo7" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Negative Index</b>
+            <p>Negative indices can also be used in slicing, representing positions counting from the end of the tuple.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+subset_tuple = my_tuple[-3:-1]
+
+print(subset_tuple)</code></pre>
+            <button onClick=myFunction8()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo8" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Skip Element</b>
+            <p>You can specify a step to skip elements in the specified range.</p>
+            <p>If the step is negative, it reverses the order of elements.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+even_indices = my_tuple[2:8:2]
+reversed_tuple = my_tuple[::-1]
+
+print(even_indices)
+print(reversed_tuple)</code></pre>
+            <button onClick=myFunction9()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo9" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Tuples Operation</div>
+            <p>In Python, tuples support several operations that allow you to manipulate and combine them.</p>
+
+            <br/>
+            <b class='element'>Tuple concatenating and repeating</b>
+            <p>The + operator is used for concatenating two tuples, creating a new tuple with the elements of both tuples.</p>
+            <p>The * operator is used for repeating a tuple, creating a new tuple with multiple copies of the original tuple.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">tuple1 = (1, 2, 3)
+tuple2 = ('a', 'b', 'c')
+combined_tuple = tuple1 + tuple2
+print(combined_tuple)
+
+tuple3 = (1, 2, 3)
+repeated_tuple = tuple3 * 3
+print(repeated_tuple)</code></pre>
+            <button onClick=myFunction10()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo10" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, combined_tuple will be (1, 2, 3, 'a', 'b', 'c') and repeated_tuple will be (1, 2, 3, 1, 2, 3, 1, 2, 3).</p>
+            <br/>
+            <b class='element'>Memebership Test</b>
+            <p>The in and not in operators allow you to check if an element is present or not in a tuple.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (1, 2, 3, 'apple')
+is_present = 'apple' in my_tuple  
+not_present = 'orange' not in my_tuple  
+
+print(is_present)
+print(not_present)</code></pre>
+            <button onClick=myFunction11()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo11" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Length</b>
+            <p>The len() function is used to determine the number of elements in a tuple.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (1, 2, 3, 'apple')
+length = len(my_tuple)  
+
+print(length)</code></pre>
+            <button onClick=myFunction12()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo12" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Tuple Iteration</b>
+            <p>You can iterate over the elements of a tuple using a for loop.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (1, 2, 3, 'apple')
+    for item in my_tuple:
+        print(item)</code></pre>
+            <button onClick=myFunction13()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo13" class="output">
+                Click on try it to see output
+            </div>
+            <p>This would output each element of the tuple on a new line.</p>
+
+            <br/>
+            <b class='element'>Count and Index Methods</b>
+            <p>Tuples have two methods, count() and index(), which can be used to count the occurrences of a specific value and find the index of a value, respectively.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (1, 2, 2, 3, 4, 2)
+count_of_2 = my_tuple.count(2)  
+index_of_3 = my_tuple.index(3)  
+
+print(count_of_2)
+print(index_of_3)</code></pre>
+            <button onClick=myFunction14()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo14" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>Deleting a Tuple</b>
+            <p>You cannot modify a tuple, but you can delete it using the del statement.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_tuple = (1, 2, 3)
+del my_tuple</code></pre>
+            <p>After this operation, the tuple my_tuple will no longer exist.</p>
+            <br/>
+            <b class='element'>Tuple Comparison</b>
+            <p>Tuples can be compared element-wise using comparison operators (&lt;, &lt;=, &gt;, &gt;=, ==, !=).</p>
+            <pre><code class="language-python line-numbers">tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+result = tuple1 < tuple2  
+
+print(result)</code></pre>
+            <button onClick=myFunction15()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo15" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <p>These operations make tuples versatile for various use cases, allowing you to combine, repeat, compare, and manipulate tuple elements in different ways. Keep in mind that tuples are immutable, so these operations do not modify the original tuples; they create new tuples.</p>
+        </body>
+</html>

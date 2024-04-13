@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "0<br/>        1<br/>        4<br/>        9<br/>        16";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "0<br/>        1<br/>        4<br/>        9<br/>        16";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+             <p>Let's go through a practical example of using a generator. Suppose you want to generate the squares of numbers up to a given limit.</p>
+            <p>Here's how you could implement it using a generator.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def square_generator(limit):
+    n = 0
+    while n < limit:
+        yield n ** 2
+        n += 1
+
+limit = 5
+squares = square_generator(limit)
+
+for square in squares:
+print(square)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the square_generator function is a generator that yields the square of each number from 0 to limit - 1. The generator is used in a for loop to iterate over the generated values, printing each square.</p>
+            <p>The generator produces each square on-the-fly without having to store all the values in memory. This can be especially useful if you were working with a very large limit where storing all the squares in memory might be impractical.</p>
+            <br/>
+            <p>You can also use the next() function to manually retrieve values from the generator.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def square_generator(limit):
+    n = 0
+    while n < limit:
+        yield n ** 2
+        n += 1
+
+limit = 5
+squares = square_generator(limit)
+
+print(next(squares))  
+print(next(squares))  
+print(next(squares))  
+print(next(squares))
+print(next(squares))</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>This is just a simple example, but generators become particularly handy when dealing with large datasets, where loading all the data into memory at once might not be feasible.</p>
+        </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+         <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Numeric Types</div>
+            <p>Numeric types in Python represent numbers and include integers (int), floating-point numbers (float), and complex numbers (complex).</p>
+            <ul><li><strong>int:</strong> Integer data type represents whole numbers without any decimal points. Example: <b>x = 5</b></li><li><strong>float:</strong> Float data type represents real numbers with decimal points. Example: <b>y = 3.14</b></li><li><strong>complex:</strong> Complex numbers have a real and an imaginary part. Example: <b>z = 2 + 3j</b></li></ul>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Example of Numeric Types
+x = 5       # int
+y = 3.14    # float
+z = 2 + 3j  # complex</code></pre>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Sequence Types</div>
+            <p>Sequence types in Python represent ordered collections of elements. The primary sequence types are strings (str), lists (list), tuples (tuple) type. </p>
+            <ul>
+                <li>
+                    <b class='element'>str (String)</b>
+                    <p>Represents sequences of characters. Strings are immutable (cannot be changed after creation). Example: name = "John".</p>
+                    <pre><code class="language-python line-numbers">name = "John"</code></pre>
+                </li>
+                <li>
+                    <b class='element'>list</b>
+                    <p> Represents a mutable ordered sequence of elements. Elements can be of different data types. Example: numbers = [1, 2, 3, 4].</p>
+                    <pre><code class="language-python line-numbers">numbers = [1, 2, 3, 4]</code></pre>
+                </li>
+                <li>
+                    <b class='element'>tuple</b>
+                    <p>Represents an immutable ordered sequence of elements. Once created, elements cannot be changed. Example: coordinates = (3, 4)</p>
+                    <pre><code class="language-python line-numbers">coordinates = (3, 4)</code></pre>
+                </li>
+            </ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Set Types</div>
+            <p>In Python, set types represent unordered collections of unique elements. There are two primary set types: set and frozenset.</p>
+
+            <ul>
+                <li><b class='element'>set</b>
+                <p>Sets are mutable collections of unique elements. They are unordered, meaning that the order of elements is not guaranteed. Example: unique_numbers = &#123;1, 2, 3, 4&#125;</p>
+                <pre><code class="language-python line-numbers">unique_numbers = {1, 2, 3, 4}</code></pre>
+                </li>
+                <li>
+                    <b class='element'>frozenset</b>
+                    <p> Frozensets are immutable collections of unique elements. Once created, their elements cannot be changed. Example: immutable_set = frozenset(&#123;1, 2, 3, 4&#125;)</p>
+                    <pre><code class="language-python line-numbers">immutable_set = frozenset({1, 2, 3, 4})</code></pre>
+                </li>
+            </ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Mapping Type</div>
+            <p>In Python, the primary mapping type is the dictionary (dict). Dictionaries are mutable and represent an unordered collection of key-value pairs, where each key must be unique. </p>
+
+            <br/>
+            <b class='element'>dict (Dictionary)</b>
+            <p> Dictionaries are mutable collections that map keys to values. They are unordered, meaning that the order of elements is not guaranteed. Keys must be immutable (strings, numbers, or tuples) while values can be of any data type. Example: person = &#123;"name": "John", "age": 30, "city": "New York"&#125;</p>
+            <pre><code class="language-python line-numbers">person = {"name": "John", "age": 30, "city": "New York"}</code></pre>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Boolean Type</div>
+            <p>In Python, the Boolean type (bool) is used to represent logical values. There are only two Boolean values: True and False. Booleans are essential for making decisions in code and controlling the flow of a program through conditional statements.</p>
+            <p>Booleans represent the truth values True or False.</p>
+            <pre><code class="language-python line-numbers">is_true = True
+is_false = False</code></pre>
+            <br/>
+            <p>These data types are the building blocks for constructing more complex data structures and performing various operations in Python programming. Understanding them is crucial for effective coding and problem-solving.</p>
+        </body>
+  </html>

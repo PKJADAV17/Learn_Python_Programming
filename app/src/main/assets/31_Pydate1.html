@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based, so add 1
+    var day = currentDateTime.getDate().toString().padStart(2, '0');
+    var hours = currentDateTime.getHours().toString().padStart(2, '0');
+    var minutes = currentDateTime.getMinutes().toString().padStart(2, '0');
+    var seconds = currentDateTime.getSeconds().toString().padStart(2, '0');
+
+    var formattedDateTime = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    document.getElementById("demo").innerHTML = formattedDateTime + "<br/>2023-01-01 12:30:00";
+}
+
+function myFunction1() {
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based, so add 1
+    var day = currentDateTime.getDate().toString().padStart(2, '0');
+    var hours = currentDateTime.getHours().toString().padStart(2, '0');
+    var minutes = currentDateTime.getMinutes().toString().padStart(2, '0');
+    var seconds = currentDateTime.getSeconds().toString().padStart(2, '0');
+
+    var formattedDateTime = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    document.getElementById("demo1").innerHTML = "Formatted Date: "+formattedDateTime;
+}
+function myFunction2() {
+    document.getElementById("demo2").innerHTML = "Parsed Date: 2023-01-01 12:30:00";
+}
+function myFunction3() {
+    document.getElementById("demo3").innerHTML = "2023-12-01<br/>        2023<br/>        12<br/>        1";
+}
+function myFunction4() {
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based, so add 1
+    var day = currentDateTime.getDate().toString().padStart(2, '0');
+
+    var formattedDateTime = year + '-' + month + '-' + day;
+    document.getElementById("demo4").innerHTML = formattedDateTime;
+}
+function myFunction5() {
+    document.getElementById("demo5").innerHTML = "30";
+}
+function myFunction6() {
+    document.getElementById("demo6").innerHTML = "10:30:45.123456<br/>        10<br/>        30<br/>        45<br/>        123456";
+}
+function myFunction7() {
+    document.getElementById("demo7").innerHTML = "2:15:14.135802";
+}
+function myFunction8() {
+    document.getElementById("demo8").innerHTML = "5 days, 3:30:00<br/>5<br/>12600<br/> 0";
+}
+function myFunction9() {
+    var currentDateTime = new Date();
+    var year = currentDateTime.getFullYear();
+    var month = (currentDateTime.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based, so add 1
+    var day = currentDateTime.getDate().toString().padStart(2, '0');
+    var hours = currentDateTime.getHours().toString().padStart(2, '0');
+    var minutes = currentDateTime.getMinutes().toString().padStart(2, '0');
+    var seconds = currentDateTime.getSeconds().toString().padStart(2, '0');
+    day=parseInt(day)+2;
+    hours=parseInt(hours)+3;
+    var formattedDateTime = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    document.getElementById("demo9").innerHTML = formattedDateTime;
+}
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+         <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>datetime Class</div>
+            <p>The datetime class in Python is part of the datetime module and is used to represent points in time. It's a powerful and versatile class that includes both date and time information. </p>
+
+            <br />
+            <b class='element'>Creating datetime Objects</b>
+            <p>You can create a datetime object using the datetime() constructor. The parameters for the constructor include year, month, day, hour, minute, second, and microsecond. All parameters are optional, and if not provided, they default to 0.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import datetime
+
+current_datetime = datetime.now()
+print(current_datetime)
+
+specific_datetime = datetime(2023, 1, 1, 12, 30, 0)
+print(specific_datetime)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>Attributes.</p>
+            <ul><li><b>year</b>: Year as a four-digit number.</li><li><b>month</b>: Month as an integer (1-12).</li><li><b>day</b>: Day of the month as an integer (1-31).</li><li><b>hour</b>: Hour as an integer (0-23).</li><li><b>minute</b>: Minute as an integer (0-59).</li><li><b>second</b>: Second as an integer (0-59).</li><li><b>microsecond</b>: Microsecond as an integer (0-999999).</li></ul>
+            <br/>
+            <b class='element'>strftime(format) Method</b>
+            <p>Returns a string representing the date and time according to a format string. Format codes are used to specify the representation.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import datetime
+
+current_datetime = datetime.now()
+formatted_date = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+print("Formatted Date:", formatted_date)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>strptime(date_string, format) Method</b>
+            <p>Parses a string representing a date and time according to a format string and returns a datetime object.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import datetime
+
+parsed_date = datetime.strptime("2023-01-01 12:30:00", "%Y-%m-%d %H:%M:%S")
+print("Parsed Date:", parsed_date)</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+           
+           
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Date Class</div>
+            <p>In Python, the datetime module provides the date class, which represents a date (year, month, and day) without the time information. The date class is part of the broader datetime module, which also includes classes for handling time and combined date and time values.</p>
+
+            <br/>
+            <b class='element'>Creating a date object and Access Values</b>
+            <p>You can create a date object using the date class constructor by specifying the year, month, and day.</p>
+            <p>You can access the year, month, and day components of a date object using the corresponding attributes.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import date
+
+my_date = date(2023, 12, 1)
+print(my_date)
+print(my_date.year)   
+print(my_date.month)  
+print(my_date.day)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Current date</b>
+            <p>You can obtain the current date using the today() method.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import date
+
+current_date = date.today()
+print(current_date)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>Arithmetic with dates</b>
+            <p>You can perform arithmetic operations with date objects, such as finding the difference between two dates.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import date
+
+date1 = date(2023, 12, 1)
+date2 = date(2023, 11, 1)
+difference = date1 - date2
+print(difference.days)</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+            <p>The date class does not represent time or timezone information. If you need to work with time, you can use the datetime class.</p>
+            <p>The date class is immutable, meaning you cannot modify its attributes once it's created. If you need to perform operations that involve modification, you can use the datetime class and then extract the date part.</p>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Time Class</div>
+            <p>In Python, the datetime module provides the time class, which represents the time of day with hour, minute, second, and microsecond precision. The time class is part of the broader datetime module, which also includes classes for handling dates and combined date and time values.</p>
+
+            <br/>
+            <b class='element'>Creating a time object and Access Values</b>
+            <p>You can create a time object using the time class constructor by specifying the hour, minute, second, and microsecond.</p>
+            <p>You can access the hour, minute, second, and microsecond components of a time object using the corresponding attributes.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import time
+
+my_time = time(10, 30, 45, 123456)
+print(my_time)
+print(my_time.hour)         
+print(my_time.minute)       
+print(my_time.second)       
+print(my_time.microsecond) </code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>Arithmetic with times</b>
+            <p>You can perform arithmetic operations with time objects, such as finding the difference between two times. However, note that the result might exceed 24 hours.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import timedelta, time
+
+time1 = time(10, 30, 45, 123456)
+time2 = time(8, 15, 30, 987654)
+time_difference = timedelta(hours=time1.hour - time2.hour,
+                            minutes=time1.minute - time2.minute,
+                            seconds=time1.second - time2.second,
+                            microseconds=time1.microsecond - time2.microsecond)
+print(time_difference)</code></pre>
+            <button onClick=myFunction7()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo7" class="output">
+                Click on try it to see output
+            </div>
+            <p>The time class does not represent date information. If you need to work with both date and time, you can use the datetime class.</p>
+            <p>The time class is immutable, meaning you cannot modify its attributes once it's created.</p>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>timedelta Class</div>
+            <p>In Python, the timedelta class is part of the datetime module and represents a duration of time. It is used for arithmetic operations with datetime, date, and time objects. timedelta can be used to represent the difference between two dates, times, or combined date and time values.</p>
+
+            <br/>
+            <b class='element'>Creating a timedelta object and Access Values</b>
+            <p>You can create a timedelta object by specifying the duration in terms of days, hours, minutes, seconds, and microseconds.</p>
+            <p>You can access the individual components of a timedelta object, such as days, seconds, and microseconds.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import timedelta
+
+delta = timedelta(days=5, hours=3, minutes=30)
+print(delta)
+print(delta.days)      
+print(delta.seconds)   
+print(delta.microseconds)</code></pre>
+            <button onClick=myFunction8()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo8" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Arithmetic with timedelta</b>
+            <p>You can perform arithmetic operations with timedelta objects, such as addition or subtraction with datetime, date, or time objects.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">from datetime import datetime, timedelta
+
+current_datetime = datetime.now()
+
+new_datetime = current_datetime + timedelta(days=2, hours=3)
+print(new_datetime)</code></pre>
+            <button onClick=myFunction9()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo9" class="output">
+                Click on try it to see output
+            </div>
+            <p>The timedelta class is immutable, meaning you cannot modify its attributes once it's created.</p>
+            <p>When performing arithmetic operations with timedelta, keep in mind that the result may be subject to certain limitations, especially when dealing with daylight saving time changes.</p>
+        </body>
+</html>

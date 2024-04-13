@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "28-11-2023<br/>        28<br/>        11<br/>        2023<br/>        0<br/>        10<br/>        3<br/>        5<br/>        (0, 10)<br/>        (0, 2)<br/>        ('28', '11', '2023')";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "Match found: 123";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Match found: 123<br/>Start position: 13<br/>        End position: 16<br/>        Match span: (13, 16)";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "['This', 'is', 'a', 'sample', 'string', 'with', 'multiple', 'spaces.']";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "['apple', 'orange', 'banana', 'grape']";
+    }
+    function myFunction5() {
+        document.getElementById("demo5").innerHTML = "The price is X dollars.";
+    }
+    function myFunction6() {
+        document.getElementById("demo6").innerHTML = "The squares are 1, 16, 81, and 256.";
+    }
+    function myFunction7() {
+        document.getElementById("demo7").innerHTML = "['123', '456']";
+    }
+    function myFunction8() {
+        document.getElementById("demo8").innerHTML = "['The', 'cat', 'the', 'mat']";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+           <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Characters Sequence</div>
+            <p> here's a table with some common character sequences and their meanings in regular expressions.</p>
+            <table width="100%">
+                <tbody><tr>
+                    <th>Character</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                    <tr>
+                        <td>[]</td>
+                        <td>A set of characters</td>
+                        <td>"[a-m]"</td>
+                    </tr>
+                    <tr>
+                        <td>\</td>
+                        <td>Signals a special sequence (can also be used to escape special characters)</td>
+                        <td>"\d"</td>
+                    </tr>
+                    <tr>
+                        <td>.</td>
+                        <td>Any character (except newline character)</td>
+                        <td>"he..o"</td>
+                    </tr>
+                    <tr>
+                        <td>^</td>
+                        <td>Starts with</td>
+                        <td>"^hello"</td>
+                    </tr>
+                    <tr>
+                        <td>$</td>
+                        <td>Ends with</td>
+                        <td>"planet$"</td>
+                    </tr>
+                    <tr>
+                        <td>*</td>
+                        <td>Zero or more occurrences</td>
+                        <td>"he.*o"</td>
+                    </tr>
+                    <tr>
+                        <td>+</td>
+                        <td>One or more occurrences</td>
+                        <td>"he.+o"</td>
+                    </tr>
+                    <tr>
+                        <td>?</td>
+                        <td>Zero or one occurrences</td>
+                        <td>"he.?o"</td>
+                    </tr>
+                    <tr>
+                        <td>{ }</td>
+                        <td>Exactly the specified number of occurrences</td>
+                        <td>"he.{2}o"</td>
+                    </tr>
+                    <tr>
+                        <td>|</td>
+                        <td>Either or</td>
+                        <td>"falls|stays"</td>
+                    </tr>
+                    <tr>
+                        <td>()</td>
+                        <td>Capture and group</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody></table>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Special Sequences</div>
+            <p>Certainly! Special sequences in regular expressions are sequences of characters that have a special meaning. Here's a table with some common special sequences and their meanings in regular expressions.</p>
+            <table width="100%">
+                <tbody><tr>
+                    <th>Character</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                    <tr>
+                        <td>\A</td>
+                        <td>Returns a match if the specified characters are at the beginning of the
+                            string</td>
+                        <td>"\AThe"</td>
+                    </tr>
+                    <tr>
+                        <td>\b</td>
+                        <td>Returns a match where the specified characters are at the beginning or at the
+                            end of a word<br />(the "r" in the beginning is making sure that the string is
+                            being treated as a "raw string")</td>
+                        <td>r"\bain"<br />r"ain\b"</td>
+                    </tr>
+                    <tr>
+                        <td>\B</td>
+                        <td>Returns a match where the specified characters are present, but NOT at the beginning
+                            (or at
+                            the end) of a word<br />(the "r" in the beginning is making sure that the string
+                            is being treated as a "raw string")</td>
+                        <td>r"\Bain"<br />r"ain\B"</td>
+                    </tr>
+                    <tr>
+                        <td>\d</td>
+                        <td>Returns a match where the string contains digits (numbers from 0-9)</td>
+                        <td>"\d"</td>
+                    </tr>
+                    <tr>
+                        <td>\D</td>
+                        <td>Returns a match where the string DOES NOT contain digits</td>
+                        <td>"\D"</td>
+                    </tr>
+                    <tr>
+                        <td>\s</td>
+                        <td>Returns a match where the string contains a white space character</td>
+                        <td>"\s"</td>
+                    </tr>
+                    <tr>
+                        <td>\S</td>
+                        <td>Returns a match where the string DOES NOT contain a white space character</td>
+                        <td>"\S"</td>
+                    </tr>
+                    <tr>
+                        <td>\w</td>
+                        <td>Returns a match where the string contains any word characters (characters from
+                            a to Z, digits from 0-9, and the underscore _ character)</td>
+                        <td>"\w"</td>
+                    </tr>
+                    <tr>
+                        <td>\W</td>
+                        <td>Returns a match where the string DOES NOT contain any word characters</td>
+                        <td>"\W"</td>
+                    </tr>
+                    <tr>
+                        <td>\Z</td>
+                        <td>Returns a match if the specified characters are at the end of the string</td>
+                        <td>"Spain\Z"</td>
+                    </tr>
+                </tbody></table>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Sets</div>
+            <p>In regular expressions, character sets, also known as character classes, are used to specify a set of characters to match at a particular position in the input. Here's a table with some common character sets and their meanings.</p>
+            <table width="100%">
+                <tbody><tr>
+                    <th>Set</th>
+                    <th>Description</th>
+                </tr>
+                    <tr>
+                        <td>[arn]</td>
+                        <td>Returns a match where one of the specified characters (<code class="w3-codespan">a</code>,
+                            <code class="w3-codespan">r</code>, or <code class="w3-codespan">n</code>) is
+                            present</td>
+                    </tr>
+                    <tr>
+                        <td>[a-n]</td>
+                        <td>Returns a match for any lower case character, alphabetically between
+                            <code class="w3-codespan">a</code> and <code class="w3-codespan">n</code></td>
+                    </tr>
+                    <tr>
+                        <td>[^arn]</td>
+                        <td>Returns a match for any character EXCEPT <code class="w3-codespan">a</code>,
+                            <code class="w3-codespan">r</code>, and <code class="w3-codespan">n</code></td>
+                    </tr>
+                    <tr>
+                        <td>[0123]</td>
+                        <td>Returns a match where any of the specified digits (<code class="w3-codespan">0</code>,
+                            <code class="w3-codespan">1</code>, <code class="w3-codespan">2</code>, or <code class="w3-codespan">
+                                3</code>) are
+                            present</td>
+                    </tr>
+                    <tr>
+                        <td>[0-9]</td>
+                        <td>Returns a match for any digit between
+                            <code class="w3-codespan">0</code> and <code class="w3-codespan">9</code></td>
+                    </tr>
+                    <tr>
+                        <td>[0-5][0-9]</td>
+                        <td>Returns a match for any two-digit numbers from <code class="w3-codespan">00</code> and <code class="w3-codespan">
+                            59</code></td>
+                    </tr>
+                    <tr>
+                        <td>[a-zA-Z]</td>
+                        <td>Returns a match for any character alphabetically between
+                            <code class="w3-codespan">a</code> and <code class="w3-codespan">z</code>, lower case OR upper case</td>
+                    </tr>
+                    <tr>
+                        <td>[+]</td>
+                        <td>In sets, <code class="w3-codespan">+</code>, <code class="w3-codespan">*</code>,
+                            <code class="w3-codespan">.</code>, <code class="w3-codespan">|</code>,
+                            <code class="w3-codespan">()</code>, <code class="w3-codespan">$</code>,<code class="w3-codespan">{ }</code>
+                            has no special meaning, so <code class="w3-codespan">[+]</code> means: return a match for any
+                            <code class="w3-codespan">+</code> character in the string</td>
+                    </tr>
+                </tbody></table>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Match Object</div>
+            <p>In Python's re module, when you use functions like match(), search(), or findall(), they return a match object if a match is found. The match object provides information about the match and has methods to retrieve details about the match.</p>
+            <p>Here are some common methods of a match object.</p>
+            <ul>
+                <li><b class='element'>group([group1, ...]): </b>Returns one or more subgroups of the match. If no argument is given, it returns the entire match.</li>
+                <li><b class='element'>start([group]) and end([group]): </b>Returns the start and end positions of the match or a specified group.</li>
+                <li><b class='element'>span([group]): </b>Returns a tuple containing the (start, end) positions of the match or a specified group.</li>
+                <li><b class='element'>groups([default]): </b>Returns a tuple containing all the subgroups of the match.</li>
+            </ul>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+pattern = re.compile(r'(\d{2})-(\d{2})-(\d{4})')
+match = pattern.match('28-11-2023')
+
+print(match.group())   
+print(match.group(1))  
+print(match.group(2))  
+print(match.group(3))  
+
+print(match.start())   
+print(match.end())     
+print(match.start(2))  
+print(match.end(2))    
+
+print(match.span())    
+print(match.span(1))   
+
+print(match.groups()) </code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>These methods allow you to access various details about the matched text and its subgroups. Keep in mind that if there is no match, these methods may raise an AttributeError, so it's a good practice to check if a match is found before attempting to access the match object's properties.</p>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>search Function</div>
+            <p>The re.search() function in Python is used to search for a pattern in a string. It scans the entire string and returns a match object if a match is found. If no match is found, it returns None. The re.search() function is less restrictive than re.match(), as it searches for the pattern anywhere in the string, not just at the beginning.</p>
+            <p>Here's a simple example demonstrating the use of re.search().</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+pattern = re.compile(r'\d{3}')  
+
+text = "The price is 123 dollars."
+
+match = pattern.search(text)
+
+if match:
+    print("Match found:", match.group())
+else:
+    print("No match found.")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the pattern \d{3} is looking for three consecutive digits. The re.search() function finds the first occurrence of this pattern in the given text, and if a match is found, it prints the matched string using match.group().</p>
+            
+            <br/>
+            <p>You can also use the start(), end(), and span() methods of the match object returned by re.search() to get information about the position of the match in the string.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+pattern = re.compile(r'\d{3}')  
+
+text = "The price is 123 dollars."
+
+match = pattern.search(text)
+
+if match:
+    print("Match found:", match.group())
+else:
+    print("No match found.")
+
+if match:
+    print("Start position:", match.start())
+    print("End position:", match.end())
+    print("Match span:", match.span())</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>This allows you to obtain the start and end positions of the match and the span as a tuple.</p>
+            <p>Keep in mind that re.search() stops as soon as it finds the first match. If you need to find all occurrences of a pattern in a string, you might want to use re.finditer() or re.findall() instead.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>split Function</div>
+            <p>The re.split() function in Python is used to split a string based on a specified pattern. It takes a regular expression pattern as its first argument and the target string as the second argument. It returns a list of substrings obtained by splitting the original string at occurrences of the specified pattern.</p>
+            <p>Here's a simple example demonstrating the use of re.split().</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+pattern = re.compile(r'\s+')
+
+text = "This is a sample   string with multiple    spaces."
+
+result = pattern.split(text)
+
+print(result)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the pattern \s+ represents one or more whitespace characters. The re.split() function splits the given text wherever it finds one or more consecutive whitespace characters.</p>
+
+            <br/>
+            <p>You can use various regular expression patterns in re.split() to split a string based on different criteria, such as specific characters, patterns, or even groups.</p>
+            <p>Here's another example where the string is split based on either a comma or a semicolon.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+pattern = re.compile(r'[,;]')
+
+text = "apple,orange;banana;grape"
+
+result = pattern.split(text)
+
+print(result)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this case, the pattern [,;] matches either a comma or a semicolon, causing the string to be split at these occurrences.</p>
+            <p>Keep in mind that the re.split() function is useful for more complex splitting scenarios where the built-in str.split() method might not be sufficient.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>sub Function</div>
+            <p>The re.sub() function in Python is used to replace occurrences of a pattern in a string with a specified replacement string. It takes three main arguments: the pattern to search for, the replacement string, and the target string. Optionally, you can provide additional arguments to control the number of substitutions or modify the behavior.</p>
+            <p>Here's a basic example demonstrating the use of re.sub().</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+pattern = re.compile(r'\d+')  
+
+text = "The price is 123 dollars."
+
+result = pattern.sub("X", text)
+
+print(result)</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the pattern \d+ is used to match one or more digits. The re.sub() function replaces all occurrences of digits in the text with the letter "X".</p>
+
+            <br/>
+            <p>You can also use a function as the replacement argument. The function takes a match object as an argument and returns the replacement string. This allows for more dynamic replacements based on the matched content.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+def square(match):
+    num = int(match.group())
+    return str(num * num)
+
+pattern = re.compile(r'\d+')  
+
+text = "The squares are 1, 4, 9, and 16."
+
+result = pattern.sub(square, text)
+
+print(result)</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the square function takes a match object, extracts the matched digits, squares the number, and returns the result.</p>
+            <p>The re.sub() function is quite flexible and useful for performing complex replacements in strings based on regular expressions.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>findall Function</div>
+            <p>The re.findall() function in Python is used to find all occurrences of a pattern in a string and return them as a list. It takes two main arguments: the pattern to search for and the target string. Optionally, you can provide additional arguments to modify the behavior.</p>
+            <p>Here's a basic example demonstrating the use of re.findall().</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+pattern = re.compile(r'\d+')  
+
+text = "There are 123 apples and 456 oranges in the basket."
+
+result = pattern.findall(text)
+
+print(result)</code></pre>
+            <button onClick=myFunction7()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo7" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the pattern \d+ is used to match one or more digits. The re.findall() function finds all occurrences of digits in the text and returns them as a list. </p>
+            <br/>
+            <p>You can use more complex patterns to match specific content in the string. </p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">import re
+
+pattern = re.compile(r'\b\w{3}\b')  
+
+text = "The cat is on the mat."
+
+result = pattern.findall(text)
+
+print(result)</code></pre>
+            <button onClick=myFunction8()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo8" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the pattern \b\w{3}\b is used to match three-letter words. The \b represents a word boundary, and \w{3} matches exactly three word characters. </p>
+            <p>The re.findall() function is particularly useful when you want to extract specific patterns or content from a string and obtain all occurrences.</p>
+        </body>
+    </html>

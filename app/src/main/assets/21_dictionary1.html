@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "{'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "value1<br/>        value2<br/>        default_value";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "key1: value1<br/>        key2: value2<br/>        key3: value3";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "key1: value1<br/>        key2: value2<br/>        key3: value3";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "{'key1': 'value1', 'key2': 'new_value', 'key3': 'value3', 'key4': 'value4'}";
+    }
+    function myFunction5() {
+        document.getElementById("demo5").innerHTML = "{'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'value4', 'key5': 'value5'}";
+    }
+    function myFunction6() {
+        document.getElementById("demo6").innerHTML = "{'key1': 'value1', 'key2': 'value2', 'key3': 'value3', 'key4': 'default_value'}";
+    }
+    function myFunction7() {
+        document.getElementById("demo7").innerHTML = "{'key1': 'value1', 'key3': 'value3'}";
+    }
+    function myFunction8() {
+        document.getElementById("demo8").innerHTML = "{'key1': 'value1', 'key3': 'value3'}";
+    }
+    function myFunction9() {
+        document.getElementById("demo9").innerHTML = "{'key1': 'value1', 'key2': 'value2'}<br/>Removed item: ('key3', 'value3')";
+    }
+    function myFunction10() {
+        document.getElementById("demo10").innerHTML = "{}";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+          <br/>
+            <b class='element'>Features of Python dictionaries</b>
+            <ul><li><strong>Mutable</strong>: Dictionaries in Python are mutable, meaning you can modify them by adding, removing, or updating key-value pairs.</li><li><strong>Unordered</strong>: Dictionaries are unordered collections, which means they do not maintain any specific order of elements. This is different from sequences like lists or tuples where the order is important.</li><li><strong>Dynamic</strong>: You can add, modify, or remove key-value pairs from a dictionary after it has been created.</li></ul>
+            <br/>  
+            <p>Here's a basic example of a dictionary.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+print(my_dict)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example 'key1', 'key2', and 'key3' are the keys.</li><li>'value1', 'value2', and 'value3' are the corresponding values.</li></ul>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Accessing Dictionary Values</div>
+            <p>Accessing values in a Python dictionary is done by providing the key associated with the value you want to retrieve. There are several ways to access dictionary values.</p>
+            <br/>
+            <b class='element'>get() Method</b>
+            <p>You can use square brackets [] with the key inside to access the corresponding value.</p>
+            <p>The get() method allows you to retrieve the value for a given key. If the key is not present, it returns None (or a default value you can specify).</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+value_of_key1 = my_dict['key1']
+print(value_of_key1)  
+
+value_of_key2 = my_dict.get('key2')
+print(value_of_key2)  
+
+value_of_key4 = my_dict.get('key4', 'default_value')
+print(value_of_key4) </code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>Using get() is often preferable if you're not sure whether the key exists, as it won't raise a KeyError if the key is not found.</p>
+            
+            <br/>
+            <b class='element'>Using a Loop to Iterate Over Keys</b>
+            <p>You can also iterate over the keys and access the values in a loop.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+for key in my_dict:
+    print(f'{key}: {my_dict[key]}')</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Using the items() Method</b>
+            <p>The items() method returns a view of the dictionary's key-value pairs as tuples. This allows you to iterate over both keys and values.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+for key, value in my_dict.items():
+    print(f'{key}: {value}')</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>These methods provide different ways to access values in a dictionary based on your specific needs. Choose the method that fits the context of your code.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Update Dictionary</div>
+            <p>Updating a dictionary in Python involves adding, modifying, or removing key-value pairs. Here are several ways to update a dictionary.</p>
+
+            <br/>
+            <b class='element'>Adding or Modifying Key-Value Pairs</b>
+            <p>You can add a new key-value pair or modify the value of an existing key.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+my_dict['key4'] = 'value4'
+my_dict['key2'] = 'new_value'
+print(my_dict)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>update() Method</b>
+            <p>The update() method allows you to merge the contents of another dictionary or an iterable of key-value pairs into the current dictionary.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+new_data = {'key4': 'value4', 'key5': 'value5'}
+
+my_dict.update(new_data)
+
+print(my_dict)</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+            <p>The updated dictionary will include the new key-value pairs.</p>
+
+            <br/>
+            <b class='element'>setdefault()</b>
+            <p>The setdefault() method sets the value of a key if the key is not already in the dictionary.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+# Setting a default value for a new key
+my_dict.setdefault('key4', 'default_value')
+
+print(my_dict)</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+            <p>If 'key4' is not present, it adds the key with the default value.</p>
+            <p>Choose the appropriate method based on your specific requirements for updating the dictionary.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Deleting Dictionary Elements</div>
+            <p>In Python, you can delete elements from a dictionary using several methods, depending on whether you want to delete a specific key, remove all items, or clear the entire dictionary. Here are the common methods.</p>
+
+            <br/>
+            <b class='element'>Using the del Statement</b>
+            <p>The del statement is used to delete a specific key-value pair from a dictionary.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+del my_dict['key2']
+print(my_dict)</code></pre>
+            <button onClick=myFunction7()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo7" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>pop() Method</b>
+            <p>The pop() method removes and returns the value associated with the specified key. If the key is not found, you can provide a default value to avoid a KeyError.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+value_of_key2 = my_dict.pop('key2', None)
+print(my_dict)</code></pre>
+            <button onClick=myFunction8()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo8" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>popitem() Method</b>
+            <p>The popitem() method removes and returns the last key-value pair from the dictionary. This method is useful when you want to remove an arbitrary item.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+removed_item = my_dict.popitem()
+print(my_dict)
+print(f'Removed item: {removed_item}')</code></pre>
+            <button onClick=myFunction9()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo9" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>clear() Method</b>
+            <p>The clear() method removes all items from the dictionary, leaving it empty.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_dict = {'key1': 'value1', 'key2': 'value2', 'key3': 'value3'}
+
+my_dict.clear()
+print(my_dict)</code></pre>
+            <button onClick=myFunction10()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo10" class="output">
+                Click on try it to see output
+            </div>
+            <p>Choose the method that best fits your specific use case, whether you want to remove a specific key-value pair or clear the entire dictionary.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Dictionary Methods</div>
+            <p>Here is a table listing out various methods available for Python dictionaries.</p>
+            <table width='100%'><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>clear()</td><td>Removes all items from the dictionary.</td></tr><tr><td>copy()</td><td>Returns a shallow copy of the dictionary.</td></tr><tr><td>fromkeys(iterable, value=None)</td><td>Returns a new dictionary with keys from the iterable and values set to the specified value.</td></tr><tr><td>get(key, default=None)</td><td>Returns the value for the given key. If the key is not present, it returns the default value.</td></tr><tr><td>items()</td><td>Returns a view of the dictionary's key-value pairs as tuples.</td></tr><tr><td>keys()</td><td>Returns a view of the dictionary's keys.</td></tr><tr><td>values()</td><td>Returns a view of the dictionary's values.</td></tr><tr><td>pop(key, default=None)</td><td>Removes and returns the value for the given key. If the key is not present, it returns the default value.</td></tr><tr><td>popitem()</td><td>Removes and returns the last key-value pair as a tuple.</td></tr><tr><td>setdefault(key, default=None)</td><td>Returns the value for the given key. If the key is not present, sets the key to the default value.</td></tr><tr><td>update(iterable)</td><td>Merges the contents of another dictionary or an iterable of key-value pairs into the current dictionary.</td></tr><tr><td>values()</td><td>Returns a view of the dictionary's values.</td></tr></tbody></table>
+            <p>These methods provide a range of functionality for working with dictionaries in Python. You can choose the appropriate method based on the specific task you need to perform with a dictionary.</p>
+        </body>
+</html>

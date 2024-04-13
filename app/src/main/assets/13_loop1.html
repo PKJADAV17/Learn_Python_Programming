@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+       document.getElementById("demo").innerHTML = "1<br/>2<br/> 3<br/> 4<br/> 5";
+   }
+   function myFunction1() {
+       document.getElementById("demo1").innerHTML = "0<br/>1<br/>2<br/>3<br/>4";
+   }
+   function myFunction2() {
+       document.getElementById("demo2").innerHTML = "0<br/>1<br/>2<br/>3<br/>4";
+   }
+   function myFunction3() {
+       document.getElementById("demo3").innerHTML = "apple<br/>        banana<br/>        cherry<br/>        Loop finished.";
+   }
+   function myFunction4() {
+       document.getElementById("demo4").innerHTML = "0<br/>1<br/>2<br/>3<br/>4<br/>Loop finished.";
+   }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+           <ul>
+                <li>for loop</li>
+                <li>while loop</li>
+            </ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>for loop</div>
+            <p>The for loop in Python is used for iterating over a sequence (that can be a list, tuple, string, or other iterable objects) and executing a block of code for each element in the sequence.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">for variable in sequence:
+    # code to be executed for each item in the sequence</code></pre>
+            <ul><li><strong><b>variable</b>:</strong> This is a variable that takes on the value of each item in the sequence during each iteration of the loop.</li><li><strong><b>sequence</b>:</strong> This is the sequence of elements over which the loop iterates.</li></ul>
+            <br/>
+            <p>Here is an example using a list of numbers.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">numbers = [1, 2, 3, 4, 5]
+
+for num in numbers:
+    print(num)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the for loop iterates over the list of numbers, and the variable num takes on each value in the list in turn. The print(num) statement is executed for each number in the list.</p>
+
+            <br/>
+            <b class='element'>Range Function</b>
+            <p>The range() function is often used with for loops to generate a sequence of numbers.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">for i in range(5):
+    print(i)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, range(5) generates a sequence of numbers from 0 to 4. The for loop then iterates over this sequence, and the variable i takes on each value in the sequence.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>while loop</div>
+            <p>The while loop is used to repeatedly execute a block of code as long as a given condition is true.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">while condition:
+    # code to be executed as long as the condition is true</code></pre>
+            <p><strong><b>condition</b>:</strong> A boolean expression. The loop continues to execute as long as this condition evaluates to <b>True</b>.</p>
+            <br/>
+            <p>Here's a simple example where a while loop is used to print numbers from 0 to 4.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">count = 0
+while count < 5:
+    print(count)
+    count += 1</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example The <b>count</b> variable is initialized to 0.</li><li>The <b>while</b> loop continues to execute as long as <b>count</b> is less than 5.</li><li>Inside the loop, the current value of <b>count</b> is printed, and then <b>count</b> is incremented by 1.</li></ul>
+            
+            <br/>
+            <b class='element'>Infinite while Loop</b>
+            <p>Be cautious when using while loops to avoid unintentional infinite loops. An infinite loop occurs when the loop condition always evaluates to True, and the loop never exits.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers"># Infinite loop
+while True:
+    print("This is an infinite loop!")</code></pre>
+            <p>To break out of an infinite loop, you can use the break statement.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>else Statement in loops</div>
+            <p>In Python, the else clause in loops is a feature that might seem a bit counterintuitive at first, but it provides additional functionality to loops, both for and while. The else clause in a loop is executed when the loop condition becomes false. However, there is an exception: if the loop is terminated by a break statement, the else clause is skipped.</p>
+            <p>Here's the basic syntax</p>
+            <b class="example">Syntax of for Loop with else</b>
+            <pre><code class="language-python line-numbers">for variable in sequence:
+    # code to be executed for each item in the sequence
+else:
+    # code to be executed when the loop completes normally (i.e., without a break)</code></pre>
+            <br/>
+            <b class="example">Syntax while Loop with else</b>
+            <pre><code class="language-python line-numbers">while condition:
+    # code to be executed as long as the condition is true
+else:
+    # code to be executed when the loop condition becomes false (i.e., without a break)</code></pre>
+
+            <br/>
+            <p>Example of else statement with for Loop</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+else:
+    print("Loop finished.")</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the else block is executed after the for loop completes its iterations over the list of fruits. If the loop completes normally without encountering a break statement, the else block is executed and "Loop finished." is printed.</p>
+            
+            <br/>
+            <p>Example of else statement with while Loop</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">count = 0
+while count < 5:
+    print(count)
+    count += 1
+else:
+    print("Loop finished.")</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the else block is executed when the condition count &lt; 5 becomes false. Again, if the loop completes normally without a break, the else block is executed.</p>
+            <p>Remember that the else clause in loops is optional, and you don't have to include it if you don't need it for your specific use case.</p>
+        </body>
+</html>

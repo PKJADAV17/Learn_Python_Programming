@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "10";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "20";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "30";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "20";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "20";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+           <ul>
+                <li>global scope</li>
+                <li> local scope</li>
+            </ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Global Scope</div>
+            <p>Variables defined outside of any function or block have a global scope. They can be accessed from any part of the code, both inside and outside functions.</p>
+            <p>Global variables are usually declared at the top level of a script or module and are visible throughout the entire script.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">global_variable = 10  
+
+def some_function():
+    print(global_variable)  
+
+some_function() </code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In the example above, global_variable is defined outside any function, making it a global variable that can be accessed from within some_function.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Local Scope</div>
+            <p>Variables defined inside a function or a block have local scope. They are only accessible within that specific function or block.</p>
+            <p>Local variables are created when the function is called and destroyed when the function exits.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def some_function():
+    local_variable = 20  
+    print(local_variable)
+
+some_function() </code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, local_variable is a local variable that exists only within the scope of the some_function function.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Enclosing Scope (Closure)</div>
+            <p>In nested functions, a variable defined in the outer (enclosing) function can be accessed by the inner function. This creates an enclosing scope for the inner function.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def outer_function():
+    outer_variable = 30  
+
+    def inner_function():
+        print(outer_variable)
+
+    inner_function()
+
+outer_function() </code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>Here, inner_function can access the variable outer_variable from its enclosing scope, which is the outer_function.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Global Keyword</div>
+            <p>In Python, the global keyword is used to indicate that a variable is a global variable, rather than a local one, within the scope of a function. When you declare a variable as global inside a function, it means that the variable is associated with the global scope, and any modifications made to the variable inside the function will affect the global variable with the same name.</p>
+            <p>Here's a simple example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">global_variable = 10  
+
+def modify_global_variable():
+    global global_variable     
+    global_variable = 20    
+
+modify_global_variable()
+print(global_variable)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, <code>global_variable</code> is initially set to 10. The <code>modify_global_variable</code> function uses the <code>global</code> keyword to indicate that it is modifying the global variable, not creating a local one. After calling the function, the value of <code>global_variable</code> has been changed to 20.</p>
+            <p>It's important to note the use of the global keyword inside the function to explicitly state that the variable being modified is the one in the global scope. If you omit the global keyword, Python will treat the variable as local to the function, and any modifications will create a new local variable instead of modifying the global one.</p>
+            <p>Using the global keyword should be done with caution, as it can make the code less modular and harder to understand. It's generally recommended to minimize the use of global variables and prefer passing values through function parameters and return statements for better code organization.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>nonlocal Keyword</div>
+            <p>In Python, the nonlocal keyword is used to indicate that a variable is not local to the current function's scope, but it is also not a global variable. Instead, the variable is in an enclosing (non-global) scope, typically within the scope of an outer function. The nonlocal keyword allows you to modify variables in an outer (enclosing) scope from within a nested function.</p>
+            <p>Here's an example to illustrate the use of nonlocal.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def outer_function():
+outer_variable = 10  
+
+def inner_function():
+    nonlocal outer_variable  
+    outer_variable = 20      
+
+inner_function()
+print(outer_variable)  
+
+outer_function()</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, <code>outer_function</code> contains a variable called <code>outer_variable</code>. Inside the <code>inner_function</code>, the <code>nonlocal</code> keyword is used to indicate that <code>outer_variable</code> is not local to the <code>inner_function</code> but belongs to the enclosing scope (the scope of <code>outer_function</code>). The <code>inner_function</code> modifies the value of <code>outer_variable</code>, and when you print it after calling <code>inner_function</code>, you see the updated value.</p>
+            <p>Without the use of nonlocal, Python would treat outer_variable as a local variable within the inner_function, and modifying it would create a new local variable, not affecting the variable in the outer scope.</p>
+            <p>The nonlocal keyword is particularly useful in situations where you have nested functions, and you want to modify a variable in an enclosing scope without making it a global variable. However, like the global keyword, it should be used with caution to maintain code clarity and avoid unintended side effects.</p>
+            <br/>
+            <p>Understanding variable scope is crucial for writing maintainable and error-free code. It helps prevent unintended variable modifications and ensures that variables are used in the appropriate context.</p>
+        </body>
+</html>

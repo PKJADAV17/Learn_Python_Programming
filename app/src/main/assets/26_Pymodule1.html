@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+       document.getElementById("demo").innerHTML = "Hello, Alice!<br/>The result is: 8";
+   }
+   function myFunction1() {
+       document.getElementById("demo1").innerHTML = "5.0";
+   }
+   function myFunction2() {
+       document.getElementById("demo2").innerHTML = "5.0";
+   }
+   function myFunction3() {
+       document.getElementById("demo3").innerHTML = "5.0";
+   }
+   function myFunction4() {
+       document.getElementById("demo4").innerHTML = "5.0";
+   }
+   function myFunction5() {
+       document.getElementById("demo5").innerHTML = "Square root: 5.0<br/>Random number: "+Math.floor(Math.random() * (10 - 1 + 1) + 1);
+   }
+   function myFunction6() {
+       document.getElementById("demo6").innerHTML = "Square root: 5.0<br/>Factorial: 120";
+   }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Creating a Module</div>
+            <p>Creating a module in Python is a straightforward process.</p>
+            <ul><li>Open your text editor or integrated development environment (IDE).</li><li>Create a new file and give it a name with a <code>.py</code> extension. For example, let's call it <code>mymodule.py</code>.</li><li>Add your Python code to the module file. This can include functions, classes, and variables.</li><li>You can now use this module in another Python script or interactive session.</li></ul>
+
+            <p>Here's an example.</p>
+            <b class="example">Example    mymodule.py</b>
+            <pre><code class="language-python line-numbers">def greet(name):
+    print(f"Hello, {name}!")
+
+def add(a, b):
+    return a + b</code></pre>
+            <p>In this example, mymodule.py defines two functions (greet and add).</p>
+            <br/>
+            <b class="example">Example main_script.py</b>
+            <pre><code class="language-python line-numbers">import mymodule
+
+mymodule.greet("Alice")
+result = mymodule.add(3, 5)
+print(f"The result is: {result}")</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, main_script.py imports the mymodule module and uses its greet and add functions.</p>
+            <p>This demonstrates the basic process of creating a module and using it in another script. Modules are a powerful way to organize and reuse code in Python projects.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Import Statement</div>
+            <p>In Python, the import statement is used to bring external modules or packages into your script or program. It allows you to access the functions, classes, and variables defined in the imported module. Here are different ways to use the import statement.</p>
+
+            <br/>
+            <b class='element'>Importing the Entire Module</b>
+            <p>You can import the entire module and use its functions or classes using the module name followed by a dot (.).</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">import module_name
+
+module_name.function_name()</code></pre>
+            <br/>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">import math
+
+result = math.sqrt(25)
+print(result)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+
+            <br/>
+            <b class='element'>Importing Specific Items from a Module</b>
+            <p>You can import specific functions or classes from a module instead of importing the entire module. This can make your code more concise.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">from module_name import function_name
+
+function_name()</code></pre>
+            <br/>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">from math import sqrt
+
+result = sqrt(25)
+print(result)</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>Importing with an Alias</b>
+            <p>You can use an alias to rename the imported module or item, providing a shorter or more convenient name.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">import module_name as alias
+
+alias.function_name()</code></pre>
+            <br/>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">import math as m
+
+result = m.sqrt(25)
+print(result)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <br/>
+            <b class='element'>Importing Everything from a Module</b>
+            <p>You can import all functions and variables from a module using the * wildcard. However, it is generally not recommended as it can lead to naming conflicts.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">from module_name import *
+
+function_name()</code></pre>
+            <br/>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">from math import *
+
+result = sqrt(25)
+print(result)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <p>Note: Using * is discouraged because it can make the code less readable and may lead to unexpected behavior due to naming conflicts.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Importing Multiple Modules </div>
+            <p>In Python, you can import multiple modules in a single script by using multiple import statements. Each import statement brings in the functionality of a specific module, allowing you to use its functions, classes, and variables in your script. </p>
+            <p>Here's an example of how you can import multiple modules.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">import math
+import random
+
+result_sqrt = math.sqrt(25)
+print(f"Square root: {result_sqrt}")
+
+random_number = random.randint(1, 10)
+print(f"Random number: {random_number}")</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, main_script.py imports both the math and random modules. The math module is used to calculate the square root of a number, and the random module is used to generate a random number.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>from.. import Statement</div>
+            <p>The from ... import ... statement in Python is used to selectively import specific attributes (functions, classes, or variables) from a module into your script or another module. This syntax allows you to use the imported attributes directly without needing to prefix them with the module name.</p>
+            <p>Here's an example using the math module.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">from math import sqrt, factorial
+
+result_sqrt = sqrt(25)
+result_factorial = factorial(5)
+
+print(f"Square root: {result_sqrt}")
+print(f"Factorial: {result_factorial}")</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, only the sqrt and factorial functions are imported from the math module, and they can be used directly without referencing the module name.</p>
+        </body>
+</html>

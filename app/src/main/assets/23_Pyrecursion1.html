@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "120";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+          <ul><li><strong>Base Case(s):</strong><ul><li>The base case is the condition under which the function stops calling itself and returns a result directly.</li><li>It prevents the function from calling itself indefinitely and causing a stack overflow.</li></ul></li><li><strong>Recursive Case(s):</strong><ul><li>The recursive case is where the function calls itself with modified arguments.</li><li>Each recursive call should move closer to the base case, ensuring that the problem becomes simpler with each iteration.</li></ul></li></ul>
+
+            <p>Here is the example of a factorial function to illustrate recursion.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+fact=factorial(5)
+print(fact)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example The base case is when <b>n</b> is 0 or 1, where the factorial is 1.</li><li>The recursive case calls <b>factorial(n-1)</b> and multiplies it by <b>n</b>.</li></ul>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Pros and Cons of Recursion</div>
+
+            <p>Following are the Pros of recursion function.</p>
+            <ul><li><strong>Clarity and Simplicity:</strong> Recursive solutions can be more elegant and easier to understand for certain problems.</li><li><strong>Problem Decomposition:</strong> Recursion naturally breaks down a problem into smaller, more manageable sub-problems.</li></ul>
+            <br/>
+            <p>Following are the Cons of recursion function.</p>
+            <ul><li><strong>Performance Overhead:</strong> Recursive solutions may have higher memory and time complexity due to the function call stack.</li><li><strong>Stack Overflow:</strong> Without proper base case handling, recursion can lead to a stack overflow if it continues indefinitely.</li></ul>
+            <p>Recursion is a powerful tool, but it's important to use it judiciously and understand its implications on performance and memory usage.</p>
+        </body>
+</html>

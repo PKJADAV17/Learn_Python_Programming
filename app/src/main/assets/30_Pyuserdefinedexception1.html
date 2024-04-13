@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Creating a User-Defined Exception</div>
+            <p>To create a user-defined exception, you define a new class that inherits from the Exception class or one of its subclasses. Typically, you give your custom exception a meaningful name that reflects the nature of the error it represents. </p>
+            <p>Here's a simple example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class CustomError(Exception):
+    pass</code></pre>
+            <p>In this example, CustomError is a new exception class derived from the built-in Exception class.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Adding Information to the Exception</div>
+            <p>You can also add additional information or attributes to your custom exception by defining an __init__ method in your class. This allows you to provide more context about the error when it is raised.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class CustomErrorWithInfo(Exception):
+    def __init__(self, message, code):
+        super().__init__(message)
+        self.code = code</code></pre>
+            <p>In this example, CustomErrorWithInfo takes a message and a code as parameters, and the message is passed to the base class (Exception). The code attribute can then be accessed when catching this exception.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Raising a User-Defined Exception</div>
+            <p>You can raise your custom exception using the raise statement. </p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def some_function(value):
+    if value < 0:
+        raise CustomError("Value must be non-negative.")
+    return value</code></pre>
+            <p>In this example, the some_function raises the CustomError if the input value is negative.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Handling a User-Defined Exception</div>
+            <p>You handle a user-defined exception the same way you handle built-in exceptions, using a try-except block.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">try:
+    result = some_function(-5)
+except CustomError as ce:
+    print(f"Caught an exception: {ce}")</code></pre>
+            <p>In this example, if some_function is called with a negative value, it raises a CustomError, and the except block catches and handles it.</p>
+            <br/>
+            <p>User-defined exceptions are a powerful tool for making your code more expressive and handling specific error conditions in a way that is meaningful for your application. They contribute to creating robust and maintainable code by encapsulating error-handling logic and improving the clarity of your codebase.</p>
+            <br/>
+            <p>Here is the example with a user-defined exception.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class CustomError(Exception):
+    """A custom exception indicating a negative value."""
+
+    def __init__(self, value):
+        super().__init__(f"Negative value not allowed: {value}")
+        self.value = value
+
+
+def process_positive_value(value):
+    """A function that processes a positive value."""
+    if value < 0:
+        raise CustomError(value)
+    return value * 2
+
+
+# Example usage:
+
+try:
+    user_input = int(input("Enter a positive number: "))
+    result = process_positive_value(user_input)
+    print(f"Result: {result}")
+except CustomError as ce:
+    print(f"Custom error caught: {ce}")
+except ValueError:
+    print("Invalid input. Please enter a valid number.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")</code></pre>
+            <ul><li>In this example We have a custom exception <b>CustomError</b> that inherits from the base <b>Exception</b> class. It is designed to represent an error condition when a negative value is encountered.</li><li>The <b>process_positive_value</b> function checks if the provided value is negative. If so, it raises a <b>CustomError</b> with the negative value.</li><li>In the <b>try-except</b> block, we attempt to get user input, call <b>process_positive_value</b>, and print the result. If the user enters a negative number, a <b>CustomError</b> is raised, and we catch and handle it in the corresponding <b>except</b> block.</li><li>The code also includes additional <b>except</b> blocks to handle potential <b>ValueError</b> and other unexpected exceptions.</li></ul>
+            <p>This example demonstrates how user-defined exceptions can be used to handle specific error conditions in a clean and organized way, making your code more readable and maintainable.</p>
+        </body>
+</html>

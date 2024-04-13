@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "15";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+           <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">`def outer_function(x):
+    def inner_function(y):
+        return x + y
+
+    return inner_function
+
+closure_instance = outer_function(10)
+
+result = closure_instance(5)
+
+print(result) </code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, <code>outer_function</code> takes an argument <code>x</code> and defines an inner function <code>inner_function</code> that takes another argument <code>y</code>. The inner function, when returned, forms a closure that "remembers" the value of <code>x</code> from the enclosing scope. When you later call <code>closure_instance(5)</code>, it adds <code>5</code> to the remembered value of <code>x</code> (which was <code>10</code>), resulting in <code>15</code>.</p>
+            <p>Closures are useful in situations where you want to create functions with behavior dependent on some external state, and you want that state to persist across multiple function calls. They are commonly used in functional programming and can be a powerful tool for creating more flexible and modular code.</p>
+        </body>
+</html>

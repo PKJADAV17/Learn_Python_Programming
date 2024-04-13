@@ -8,8 +8,8 @@ android {
         applicationId "com.meet.learnpython"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 3014
-        versionName "1.1.3"
+        versionCode 3016
+        versionName "1.1.5"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -37,7 +37,6 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'com.github.barteksc:android-pdf-viewer:2.0.3'
     implementation 'com.google.android.gms:play-services-ads:22.2.0'
-    implementation 'com.github.ahmadaghazadeh:CodeEditor:1.0.17'
     implementation project(':nativetemplates')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

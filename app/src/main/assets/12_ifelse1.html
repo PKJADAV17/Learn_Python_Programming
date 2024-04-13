@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+       document.getElementById("demo").innerHTML = "x is greater than 5";
+   }
+   function myFunction1() {
+       document.getElementById("demo1").innerHTML = "x is greater than 5";
+   }
+   function myFunction2() {
+       document.getElementById("demo2").innerHTML = "x is equal to 5";
+   }
+   function myFunction3() {
+       document.getElementById("demo3").innerHTML = "x is greater than 5<br/>y is greater than 2";
+   }
+   function myFunction4() {
+       document.getElementById("demo4").innerHTML = "greater than 5";
+   }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+            <ul>
+                <li>if statement</li>
+                <li>if-else statement</li>
+                <li>if-elif-else statement</li>
+                <li>Nested if statements</li>
+            </ul>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>if statement</div>
+            <p>The if statement is a fundamental control flow statement in Python that allows you to execute a block of code conditionally. </p>
+            <p>The basic syntax of the if statement is as follows.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">if condition:
+    # Code to be executed if the condition is true</code></pre>
+            <p>Here's a breakdown of the components.</p>
+            <ul><li><code>if</code>: This is the keyword that starts the <code>if</code> statement.</li><li><code>condition</code>: This is an expression that evaluates to either <code>True</code> or <code>False</code>. If the condition is <code>True</code>, the indented block of code beneath it will be executed. If the condition is <code>False</code>, the code block is skipped.</li><li><code>:</code> (colon): It signifies the end of the <code>if</code> statement's header and the beginning of the indented block.</li></ul>
+            <br/>
+            <p>Here's a simple example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 10
+
+if x > 5:
+    print("x is greater than 5")</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the condition x &gt; 5 is True, so the indented block beneath the if statement is executed, and "x is greater than 5" is printed.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>if-else statement</div>
+            <p>The if-else statement is used in Python for branching or conditional execution of code. It allows you to specify two blocks of code: one to be executed if a certain condition is true (if block), and another to be executed if the condition is false (else block).</p>
+            <p>The basic syntax of the if-else statement is as follows.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">if condition:
+    # Code to be executed if the condition is true
+else:
+    # Code to be executed if the condition is false</code></pre>
+            <br/>
+            <p>Here's a simple example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 10
+
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is not greater than 5")</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, if the condition x &gt; 5 is true, the code block under the if statement is executed, and "x is greater than 5" is printed. If the condition is false, the code block under the else statement is executed, and "x is not greater than 5" is printed.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>if-elif-else statement</div>
+            <p>The if-elif-else statement in Python is an extension of the basic if-else statement and is used when you have multiple conditions to check. It allows you to provide different code blocks to be executed based on which condition is true first. </p>
+            <p>The basic syntax is as follows.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">if condition1:
+    # Code to be executed if condition1 is true
+elif condition2:
+    # Code to be executed if condition2 is true
+elif condition3:
+    # Code to be executed if condition3 is true
+    # ...
+else:
+    # Code to be executed if none of the conditions is true</code></pre>
+            <p>Each elif (short for "else if") introduces a new condition to be checked, and the code block under the first true condition is executed. If none of the conditions is true, the code block under the else statement is executed.</p>
+
+            <br/>
+            <p>Here's an example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 5
+
+if x > 5:
+    print("x is greater than 5")
+elif x < 5:
+    print("x is less than 5")
+else:
+    print("x is equal to 5")</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the program first checks if x is greater than 5. Since it's not, it moves on to the next condition, checking if x is less than 5. Finally, if neither of the conditions is true, it executes the code block under the else statement.</p>
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Nested if statements</div>
+            <p>Nested if statements in Python allow you to have one or more if statements inside another. This enables you to create more complex decision-making logic and handle multiple conditions in a structured manner. </p>
+            <p>The basic syntax for nested if statements is as follows.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">if outer_condition:
+    # Outer code block
+    if inner_condition:
+        # Inner code block
+    else:
+        # Another inner code block
+else:
+# Code block if outer_condition is false</code></pre>
+            <br/>
+            <p>Here's a simple example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 10
+y = 5
+
+if x > 5:
+    print("x is greater than 5")
+    if y > 2:
+        print("y is greater than 2")
+    else:
+        print("y is not greater than 2")
+else:
+    print("x is not greater than 5")</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the outer if statement checks if x is greater than 5. If this condition is true, it enters the indented block and further checks if y is greater than 2 using the inner if statement. Depending on the values of x and y, different code blocks will be executed.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Ternary conditional expression</div>
+            <p>The ternary conditional expression, also known as the ternary operator or conditional expression, is a concise way to write a simple if-else statement in a single line. It provides a compact syntax for conditional assignments or expressions. </p>
+            <p>The basic syntax is as follows.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">value_if_true if condition else value_if_false</code></pre>
+
+            <br/>
+            <p>Here's a simple example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">x = 10
+result = "greater than 5" if x > 5 else "not greater than 5"
+print(result)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, if the condition x &gt; 5 is true, the value "greater than 5" is assigned to the variable result. If the condition is false, the value "not greater than 5" is assigned.</p>
+            <p>The ternary conditional expression can be used for various purposes, such as concise assignments or creating short conditional expressions within larger expressions. It is especially useful when the if-else statement is straightforward and involves simple expressions.</p>
+        </body>
+</html>

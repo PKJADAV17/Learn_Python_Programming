@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "0<br/>        1<br/>        2<br/>        3<br/>        4";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "0<br/>        1";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+         <ul><li><strong><b>__iter__()</b> method:</strong><ul><li>This method returns the iterator object itself. It is called when you use the <b>iter()</b> function on an object or when you use it in a for loop.</li></ul></li><li><strong><b>__next__()</b> method:</strong><ul><li>This method is responsible for returning the next element in the iterator. When there are no more items to return, it should raise the <b>StopIteration</b> exception to signal the end of the iteration.</li></ul></li></ul>
+            <p>Here's a simple example of an iterator in Python.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class MyIterator:
+    def __iter__(self):
+        self.counter = 0
+        return self
+
+    def __next__(self):
+        if self.counter < 5:
+            result = self.counter
+            self.counter += 1
+            return result
+        else:
+            raise StopIteration
+
+my_iter = MyIterator()
+for num in my_iter:
+print(num)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, MyIterator is a simple iterator that produces numbers from 0 to 4. When you use it in a for loop, it calls the __iter__() method to get the iterator object and then repeatedly calls __next__() until StopIteration is raised.</p>
+
+            <br/>
+            <p>Python provides a convenient way to create iterators using the iter() function and the next() function.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_iter = iter([0, 1, 2, 3, 4])
+print(next(my_iter))  
+print(next(my_iter))</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <p>Many built-in objects in Python are iterable, meaning you can loop through their elements using a for loop or the iter() and next() functions. Examples include lists, tuples, dictionaries, and strings.</p>
+        </body>
+</html>

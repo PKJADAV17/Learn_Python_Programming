@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+         <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Opening a File</div>
+            <p>In Python, you can use the open() function to open a file. The open() function takes two main arguments: the file path and the mode in which you want to open the file.</p>
+            <b class="example">Syntax</b>
+            <pre><code class="language-python line-numbers">file = open(file_path, mode)</code></pre>
+            <ul><li><b>file_path</b>: This is the path to the file you want to open. It can be a relative or absolute path.</li><li><b>mode</b>: This is a string that specifies the mode in which the file is opened. The mode can be one of the following:<ul><li><b>"r"</b>: Read mode. Opens the file for reading. If the file does not exist, it raises a <b>FileNotFoundError</b>.</li><li><b>"w"</b>: Write mode. Opens the file for writing. If the file already exists, it truncates the file to zero length. If the file does not exist, it creates a new file.</li><li><b>"a"</b>: Append mode. Opens the file for writing. If the file already exists, it moves the file pointer to the end of the file. If the file does not exist, it creates a new file.</li><li><b>"b"</b>: Binary mode. This is used when working with binary files (e.g., images, executables). Append <b>"b"</b> to the mode for binary mode (e.g., <b>"rb"</b>, <b>"wb"</b>).</li><li><b>"x"</b>: Exclusive creation. Opens the file for exclusive creation. If the file already exists, the operation fails.</li></ul></li></ul>
+            <p>Here's an example of opening a file in read mode.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers"># Open a file in read mode
+file_path = "example.txt"
+file_mode = "r"
+
+try:
+    file = open(file_path, file_mode)
+    # Perform file operations here
+finally:
+    file.close()  # Always close the file when done</code></pre>
+            <br/>
+            <p>It's a good practice to use the with statement when working with files. The with statement automatically takes care of closing the file, even if an error occurs.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "r"
+
+with open(file_path, file_mode) as file:
+    # Perform file operations here
+    content = file.read()
+    print(content)
+# File is automatically closed outside the 'with' block</code></pre>
+            <p>Remember to close the file when you are done with it to free up system resources and ensure that changes are saved.</p>
+            
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Reading from a File</div>
+            <p>Reading from a file in Python involves opening the file in read mode ("r") and using various methods to read the content. Here are common methods for reading from a file.</p>
+
+            <br/>
+            <b class='element'>Reading the Entire File</b>
+            <p>You can read the entire content of a file using the read() method.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "r"
+
+with open(file_path, file_mode) as file:
+    content = file.read()
+    print(content)</code></pre>
+            <p>This reads the entire content of the file as a single string.</p>
+
+            <br/>
+            <b class='element'>Reading a Specific Number of Characters</b>
+            <p>If you want to read a specific number of characters from the file, you can specify the number in the read() method.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "r"
+
+with open(file_path, file_mode) as file:
+    content = file.read(100)  # Read the first hundred characters
+    print(content)</code></pre>
+            <br/>
+            <b class='element'>Reading Line by Line</b>
+            <p>You can read the file line by line using the readline() method inside a loop.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "r"
+
+with open(file_path, file_mode) as file:
+    line = file.readline()
+    while line:
+        print(line.strip())  # Strip to remove newline characters
+        line = file.readline()</code></pre>
+            <br/>
+            <p>Alternatively, you can use the readlines() method to read all lines into a list.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "r"
+
+with open(file_path, file_mode) as file:
+    lines = file.readlines()
+    for line in lines:
+        print(line.strip())</code></pre>
+            <p>These are some of the common techniques for reading from a file in Python. Choose the method that best suits your specific use case. Remember to handle exceptions, especially FileNotFoundError, in case the file does not exist.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Writing to a File</div>
+            <p>In Python, writing to a file involves opening the file in write mode ("w") or append mode ("a") and then using various methods to write content to the file. Here are common methods for writing to a file.</p>
+
+            <br/>
+            <b class='element'>Writing a String to a File</b>
+            <p>You can use the write() method to write a string to a file.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "w"  # or "a" for append mode
+
+with open(file_path, file_mode) as file:
+    file.write("Hello, World!\\n")
+    file.write("This is a new line.")</code></pre>
+            <p>This will create a file or overwrite the existing file with the specified content.</p>
+            <br/>
+            <b class='element'>Writing Multiple Lines</b>
+            <p>If you have multiple lines to write, you can use the write() method multiple times or use a list and the writelines() method.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "w"
+
+lines_to_write = ["Line 1\\n", "Line 2\\n", "Line 3\\n"]
+
+with open(file_path, file_mode) as file:
+    file.writelines(lines_to_write)</code></pre>
+            <br/>
+            <b class='element'>Using the print Function</b>
+            <p>You can use the print function with the file parameter to write to a file.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "w"
+
+with open(file_path, file_mode) as file:
+    print("Hello, World!", file=file)
+    print("This is a new line.", file=file)</code></pre>
+            <br/>
+            <b class='element'>Binary File Writing</b>
+            <p>For binary file writing, use binary mode ("wb") and the write() method with binary data.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "binary_file.bin"
+file_mode = "wb"
+
+binary_data = b'\x48\x65\x6C\x6C\x6F\x2C\x20\x57\x6F\x72\x6C\x64\x21'
+
+with open(file_path, file_mode) as file:
+    file.write(binary_data)</code></pre>
+            <p>Make sure to close the file using the close() method or by using the with statement.</p>
+
+            <br/>
+            <p>These are some common techniques for writing to a file in Python. Choose the method that best suits your specific use case. Remember to handle exceptions, especially PermissionError, in case you don't have the necessary permissions to write to the file.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Closing a File</div>
+            <p>Closing a file in Python is a crucial step to release system resources and ensure that any changes made to the file are saved. The close() method is used for closing a file.</p>
+            <p>Here's how you can close a file.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "r"
+
+# Open file for reading
+file = open(file_path, file_mode)
+
+try:
+    # Perform file operations here
+    content = file.read()
+    print(content)
+finally:
+    file.close()  # Close the file when done</code></pre>
+            <br/>
+            <p>However, a more recommended and cleaner way to handle file operations is to use the with statement. The with statement ensures that the file is automatically closed when the block inside it is exited, even if an exception occurs.</p>
+            <b class="example">Example</b>
+            <pre><code class="language-python line-numbers">file_path = "example.txt"
+file_mode = "r"
+
+with open(file_path, file_mode) as file:
+    # Perform file operations here
+    content = file.read()
+    print(content)
+# File is automatically closed outside the 'with' block</code></pre>
+            <p>When using the with statement, there's no need to explicitly call close(). The file is closed automatically when the block is exited, whether it's exited normally or due to an exception.</p>
+            <p>The with statement is particularly useful for file handling, and it's considered a best practice because it ensures that resources are properly managed. In addition to closing the file, it also handles exceptions and other resource-related clean-up tasks.</p>
+            <p>Always remember to close files after using them to avoid potential issues with resource management.</p>
+        </body>
+</html>

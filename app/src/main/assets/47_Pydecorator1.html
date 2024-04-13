@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+       document.getElementById("demo").innerHTML = "Something is happening before the function is called.<br/>        Hello, this is my function!<br/>        Something is happening after the function is called.";
+   }
+   function myFunction1() {
+       document.getElementById("demo1").innerHTML = "42<br/>This attribute was added by the decorator";
+   }
+   function myFunction2() {
+       document.getElementById("demo2").innerHTML = "Hello, Alice!<br/>        Hello, Alice!<br/>        Hello, Alice!";
+   }
+   function myFunction3() {
+       document.getElementById("demo3").innerHTML = "&lt;p&gt;Hello, world!&lt;/p&gt;";
+   }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+           <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Function Decorator</div>
+            <p>A function decorator is a specific type of decorator that wraps or modifies the behavior of a function. It is a function that takes another function as its input, usually adds some functionality or changes the behavior of the input function, and returns a new function. </p>
+            <p>Here is a basic example of a function decorator.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def my_function():
+print("Hello, this is my function!")
+
+my_function()</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>my_decorator</b> is a function decorator that takes <b>my_function</b> as its argument.</li><li><b>wrapper</b> is an inner function within <b>my_decorator</b> that adds behavior before and after calling the original function.</li><li><b>@my_decorator</b> is the decorator syntax applied to the <b>my_function</b> definition.</li><li>When <b>my_function()</b> is called, it executes the <b>wrapper()</b> function created by the decorator, which, in turn, calls the original <b>my_function</b>.</li></ul>
+            <p>Function decorators are a powerful tool in Python, providing a clean and concise way to modify the behavior of functions without altering their code directly. They are commonly used for tasks such as logging, timing, caching, access control, and more.</p>
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Class Decorator</div>
+            <p>A class decorator is a type of decorator that is applied to a class instead of a function. It is a callable (usually a class) that takes a class as its input, performs some modifications, and returns a new class. Class decorators are less common than function decorators but can be useful in certain scenarios. </p>
+            <p>Here's a basic example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class MyDecorator:
+    def __init__(self, cls):
+        self.cls = cls
+
+    def __call__(self, *args, **kwargs):
+        instance = self.cls(*args, **kwargs)
+        instance.extra_attribute = "This attribute was added by the decorator"
+        return instance
+
+@MyDecorator
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+obj = MyClass(42)
+print(obj.value) 
+print(obj.extra_attribute) </code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>MyDecorator</b> is a class decorator that takes a class (<b>cls</b>) as its input.</li><li>The <b>__call__</b> method is invoked when an instance of the decorated class is created. It creates an instance of the original class, adds an extra attribute, and returns the modified instance.</li><li><b>@MyDecorator</b> is the decorator syntax applied to the <b>MyClass</b> definition.</li></ul>
+            <p>When an instance of MyClass is created, it goes through the MyDecorator class, and the __call__ method adds an extra attribute to the instance.</p>
+            <p>Class decorators can be useful for tasks such as adding or modifying class attributes, validating class properties, or even dynamically creating subclasses. Keep in mind that while class decorators are a powerful tool, they are less commonly used than function decorators in typical Python code.</p>
+
+
+            <br/>
+            <hr class='custom-hr'/>
+            <div class='subhead1'>Argument Decorator</div>
+            <p>An argument decorator, often referred to as a decorator with arguments, is a type of decorator that accepts additional arguments when applied to a function or method. This allows you to customize the behavior of the decorator for different use cases. </p>
+            <p>Here's a basic example.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">def repeat(n):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(n):
+                result = func(*args, **kwargs)
+            return result
+        return wrapper
+    return decorator
+
+@repeat(n=3)
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>In this example <b>repeat</b> is a decorator factory function that takes an argument <b>n</b>.</li><li><b>decorator</b> is the actual decorator function that takes a function (<b>func</b>) as its input.</li><li><b>wrapper</b> is an inner function within the decorator that repeats the execution of the original function <b>n</b> times.</li></ul>
+            <p>When you apply the decorator using @repeat(n=3), it is equivalent to calling greet = repeat(n=3)(greet). The greet function is then wrapped by the decorator, and when it is called, it executes the original function (greet) three times.</p>
+            <p>This pattern allows you to create more flexible decorators that can be customized based on the arguments provided when applying the decorator.</p>
+            <br/>
+            <p>Here's another example with a class-based decorator that takes an argument.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class TagDecorator:
+    def __init__(self, tag):
+        self.tag = tag
+
+    def __call__(self, func):
+        def wrapper(*args, **kwargs):
+            result = func(*args, **kwargs)
+            return f"<{self.tag}>{result}</{self.tag}>"
+        return wrapper
+
+@TagDecorator(tag="p")
+def say_hello():
+    return "Hello, world!"
+
+result = say_hello()
+print(result)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the TagDecorator class takes a tag argument, and when applied to the say_hello function, it wraps the original function and adds HTML tags around the result.</p>
+        </body>
+</html>

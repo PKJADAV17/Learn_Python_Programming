@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "5<br/>10<br/>Deleting the radius";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+            
+             <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">class Circle:
+    def __init__(self, radius):
+        self._radius = radius  
+        
+    @property
+    def radius(self):
+        """Getter method for the radius."""
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        """Setter method for the radius."""
+        if value < 0:
+            raise ValueError("Radius cannot be negative")
+        self._radius = value
+
+    @radius.deleter
+    def radius(self):
+        """Deleter method for the radius."""
+        print("Deleting the radius")
+        del self._radius
+
+my_circle = Circle(5)
+
+print(my_circle.radius)  
+
+my_circle.radius = 10  
+
+print(my_circle.radius)
+
+del my_circle.radius</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example, the <b>property</b> function is used as a decorator for three methods: <b>radius</b> (getter), <b>radius.setter</b> (setter), and <b>radius.deleter</b> (deleter). The <b>radius</b> property is then used to encapsulate access to the <b>_radius</b> attribute, allowing for validation and additional behavior when getting, setting, and deleting the radius.</p>
+            <p>Using properties helps make the code more readable, maintainable, and adheres to the principles of encapsulation. It allows you to expose a clean and consistent interface for interacting with the attributes of your class while hiding the implementation details.</p>
+        </body>
+</html>

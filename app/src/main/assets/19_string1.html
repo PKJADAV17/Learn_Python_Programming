@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello, World!<br/>Python is great!";
+    }
+    function myFunction1() {
+        document.getElementById("demo1").innerHTML = "This is a<br/>        multiline<br/>        string.";
+    }
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Hello World<br/>abcabcabc";
+    }
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "P";
+    }
+    function myFunction4() {
+        document.getElementById("demo4").innerHTML = "n";
+    }
+    function myFunction5() {
+        document.getElementById("demo5").innerHTML = "World<br/>        Hello<br/>        World!<br/>        World<br/>        Hlo ol!";
+    }
+    function myFunction6() {
+        document.getElementById("demo6").innerHTML = "13<br/>        HELLO, WORLD!<br/>        hello, world!<br/>        Hello, world!<br/>        Hello, World!<br/>        Hello, World!<br/>        7<br/>        True<br/>        False<br/>        Hi, World!";
+    }
+    function myFunction7() {
+        document.getElementById("demo7").innerHTML = "My name is Alice and I am 30 years old.";
+    }
+    function myFunction8() {
+        document.getElementById("demo8").innerHTML = "My name is Charlie and I am 35 years old.";
+    }
+    function myFunction9() {
+        document.getElementById("demo9").innerHTML = "My name is David and I am 40 years old.";
+    }
+</script>
+</head>
+<body class='tutpad'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <script src="prism.js"></script>
+           
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Creating Strings</div>
+            <p>You can create strings in Python using single quotes (') or double quotes (").</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">single_quoted_string = 'Hello, World!'
+double_quoted_string = "Python is great!"
+
+print(single_quoted_string)
+print(double_quoted_string)</code></pre>
+            <button onClick=myFunction()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo" class="output">
+                Click on try it to see output
+            </div>
+
+            <br />
+            <p>You can also use triple single or double quotes for multiline strings.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">multiline_string = '''This is a
+multiline
+string.'''
+
+print(multiline_string)</code></pre>
+            <button onClick=myFunction1()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo1" class="output">
+                Click on try it to see output
+            </div>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>String Operation</div>
+            <p><strong>Concatenation:</strong> You can concatenate strings using the + operator.</p>
+            <p><strong>Concatenation:</strong> You can concatenate strings using the + operator.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">str1 = 'Hello'
+str2 = 'World'
+result = str1 + ' ' + str2  
+print(result)
+
+repeated_str = 'abc' * 3  
+print(repeated_str)</code></pre>
+            <button onClick=myFunction2()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo2" class="output">
+                Click on try it to see output
+            </div>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>Accessing Characters</div>
+            <p>You can access individual characters in a string using indexing. Python uses zero-based indexing, so the first character is at index 0.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_string = 'Python'
+first_char = my_string[0]  
+
+print(first_char)</code></pre>
+            <button onClick=myFunction3()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo3" class="output">
+                Click on try it to see output
+            </div>
+            <br />
+            <p>You can also use negative indexing, where -1 represents the last character, -2 represents the second-to-last, and so on.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_string = 'Python'
+last_char = my_string[-1]  
+ 
+print(last_char)</code></pre>
+            <button onClick=myFunction4()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo4" class="output">
+                Click on try it to see output
+            </div>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>String Slicing</div>
+            <p>String slicing is the process of creating a substring (a portion of a string) by extracting a sequence of characters from the original string. The basic syntax for string slicing in Python is as follows.</p>
+            <b class="example">Syntax </b>
+            <pre><code class="language-python line-numbers">string[start:stop:step]</code></pre>
+            <ul><li>start: The index of the first character to include in the substring. It is inclusive, meaning the character at this index is part of the substring.</li><li>stop: The index of the first character to exclude from the substring. The character at this index is not included in the substring. The substring includes characters up to, but not including, the character at the stop index.</li><li>step: The step or interval between characters. It determines how many characters to skip between each inclusion. The default value is 1.</li></ul>
+            <p>Here are some examples to illustrate string slicing.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_string = "Hello, World!"
+
+substring1 = my_string[7:12]  
+print(substring1)
+
+substring2 = my_string[:5]    
+print(substring2)
+
+substring3 = my_string[7:]    
+print(substring3)
+
+substring4 = my_string[-6:-1] 
+print(substring4)
+
+substring5 = my_string[::2]   
+print(substring5)</code></pre>
+            <button onClick=myFunction5()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo5" class="output">
+                Click on try it to see output
+            </div>
+            <p>In this example</p>
+            <ul><li>substring1 extracts the characters from index 7 to index 11.</li><li>substring2 includes characters from the beginning of the string up to index 4.</li><li>substring3 includes characters from index 7 to the end of the string.</li><li>substring4 uses negative indices to extract characters from the sixth-to-last to the second-to-last position.</li><li>substring5 uses a step of 2 to include every second character.</li></ul>
+            <p>It's important to note that string slicing does not modify the original string; it creates a new string containing the specified substring. Strings in Python are immutable, meaning their contents cannot be changed after creation.</p>
+            <p>String slicing is a powerful feature that allows you to work with substrings efficiently, making it easier to manipulate and extract information from strings in your programs.</p>
+
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>String Formatting</div>
+            <p>Python supports different ways of formatting strings, such as the % operator, the format() method, and f-strings.</p>
+            <br/>
+            <b class='element'>% Operator</b>
+            <p>You can use the % operator for string formatting, similar to how it's done in C's printf function.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">name = 'Alice'
+age = 30
+formatted_string = 'My name is %s and I am %d years old.' % (name, age)
+print(formatted_string)</code></pre>
+            <button onClick=myFunction7()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo7" class="output">
+                Click on try it to see output
+            </div>
+            <ul><li>%s is a placeholder for a string.</li><li>%d is a placeholder for an integer.</li></ul>
+            
+            <br/>
+            <b class='element'>f-strings (Python 3.6 and later)</b>
+            <p>f-strings provide a concise and readable way to format strings.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">name = "Charlie"
+age = 35
+message = f"My name is {name} and I am {age} years old."
+print(message)</code></pre>
+            <button onClick=myFunction8()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo8" class="output">
+                Click on try it to see output
+            </div>
+            <p>In f-strings, expressions inside curly braces &#123; &#125; are evaluated and replaced with their values.</p>
+            
+            <br/>
+            <b class='element'>format() Method</b>
+            <p>The format() method is another way to format strings and provides more flexibility.</p>
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">name = "David"
+age = 40
+message = "My name is {} and I am {} years old.".format(name, age)
+print(message)</code></pre>
+            <button onClick=myFunction9()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo9" class="output">
+                Click on try it to see output
+            </div>
+            <p>You can also use positional and keyword arguments in the format() method for more control.</p>
+            <br/>
+            <p>Choose the string formatting method that fits your needs and the Python version you are working with. f-strings are recommended for Python 3.6 and later due to their readability and simplicity.</p>
+            <br />
+            <hr class='custom-hr' />
+            <div class='subhead1'>String Methods</div>
+            <p>String methods in Python are built-in functions that operate on strings and allow you to perform various operations such as searching, modifying, and formatting.</p>
+            <p>Here are some commonly used string methods.</p>
+            <ul>
+                <li><b class='element'>len(): </b>Returns the length of the string.</li>
+                <li><b class='element'>upper(): </b>Converts all characters in the string to uppercase.</li>
+                <li><b class='element'>lower(): </b>Converts all characters in the string to lowercase.</li>
+                <li><b class='element'>capitalize(): </b>Converts the first character to uppercase and the rest to lowercase.</li>
+                <li><b class='element'>title(): </b>Converts the first character of each word to uppercase.</li>
+                <li><b class='element'>strip(): </b>Removes leading and trailing whitespaces from the string.</li>
+                <li><b class='element'>replace(old, new): </b>Replaces occurrences of a substring (old) with another substring (new).</li>
+                <li><b class='element'>find(substring): </b>Returns the index of the first occurrence of the specified substring. Returns -1 if the substring is not found.</li>
+                <li><b class='element'>count(substring): </b>Returns the number of occurrences of the specified substring in the string.</li>
+                <li><b class='element'>startswith(prefix), endswith(suffix): </b>Checks if the string starts or ends with the specified prefix or suffix, respectively. Returns a Boolean.</li>
+                <li><b class='element'>split(separator): </b>Splits the string into a list of substrings based on the specified separator.</li>
+                <li><b class='element'>join(iterable): </b>Joins the elements of an iterable (e.g., a list) into a string using the current string as a separator.</li>
+            </ul>
+
+            <b class="example">Example </b>
+            <pre><code class="language-python line-numbers">my_string = "Hello, World!"
+length = len(my_string)  
+print(length)
+
+upper_case = my_string.upper() 
+print(upper_case)
+
+lower_case = my_string.lower() 
+print(lower_case)
+
+capitalized = my_string.capitalize() 
+print(capitalized)
+
+titled = my_string.title()
+print(titled)
+
+stripped = my_string.strip()
+print(stripped)
+
+index = my_string.find("World")
+print(index)
+
+starts_with_hello = my_string.startswith("Hello")  
+print(starts_with_hello)
+
+ends_with_world = my_string.endswith("World") 
+print(ends_with_world)
+
+new_string = my_string.replace("Hello", "Hi")
+print(new_string)</code></pre>
+            <button onClick=myFunction6()>Try it</button>
+            <div class="subhead">Output</div>
+            <div id="demo6" class="output">
+                Click on try it to see output
+            </div>
+            <p>These are just a few examples of the many string methods available in Python. String methods are powerful tools for manipulating and working with text data efficiently.</p>
+            <p>Here's a table listing different Python string methods.</p>
+            <table width='100%'><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>capitalize()</td><td>Converts the first character to uppercase.</td></tr><tr><td>casefold()</td><td>Converts the string to lowercase, suitable for case-insensitive comparisons.</td></tr><tr><td>center(width, char)</td><td>Returns a centered string of a specified width with a specified fill character.</td></tr><tr><td>count(substring)</td><td>Returns the number of occurrences of the specified substring in the string.</td></tr><tr><td>encode(encoding)</td><td>Returns an encoded version of the string.</td></tr><tr><td>endswith(suffix)</td><td>Checks if the string ends with the specified suffix. Returns a Boolean.</td></tr><tr><td>expandtabs(tabsize)</td><td>Expands tabs in the string to spaces.</td></tr><tr><td>find(substring)</td><td>Returns the index of the first occurrence of the specified substring. Returns -1 if not found.</td></tr><tr><td>format()</td><td>Formats the string.</td></tr><tr><td>format_map(mapping)</td><td>Formats the string using a mapping dictionary.</td></tr><tr><td>index(substring)</td><td>Like find(), but raises an exception if the substring is not found.</td></tr><tr><td>isalnum()</td><td>Returns True if all characters in the string are alphanumeric.</td></tr><tr><td>isalpha()</td><td>Returns True if all characters in the string are alphabetic.</td></tr><tr><td>isascii()</td><td>Returns True if all characters in the string are ASCII.</td></tr><tr><td>isdecimal()</td><td>Returns True if all characters in the string are decimals.</td></tr><tr><td>isdigit()</td><td>Returns True if all characters in the string are digits.</td></tr><tr><td>isidentifier()</td><td>Returns True if the string is a valid Python identifier.</td></tr><tr><td>islower()</td><td>Returns True if all characters in the string are lowercase.</td></tr><tr><td>isnumeric()</td><td>Returns True if all characters in the string are numeric.</td></tr><tr><td>isspace()</td><td>Returns True if all characters in the string are whitespace.</td></tr><tr><td>istitle()</td><td>Returns True if the string follows title casing.</td></tr><tr><td>isupper()</td><td>Returns True if all characters in the string are uppercase.</td></tr><tr><td>join(iterable)</td><td>Joins the elements of an iterable into a string using the string as a separator.</td></tr><tr><td>ljust(width, char)</td><td>Returns a left-justified string of a specified width with a specified fill character.</td></tr><tr><td>lower()</td><td>Converts all characters in the string to lowercase.</td></tr><tr><td>lstrip(chars)</td><td>Removes leading characters (default is whitespace) from the string.</td></tr><tr><td>maketrans(x, y, z)</td><td>Creates a translation table for use in translate().</td></tr><tr><td>partition(separator)</td><td>Splits the string at the first occurrence of the specified separator and returns a tuple.</td></tr><tr><td>replace(old, new)</td><td>Replaces occurrences of a substring with another substring.</td></tr><tr><td>rfind(substring)</td><td>Returns the highest index of the specified substring in the string. Returns -1 if not found.</td></tr><tr><td>rindex(substring)</td><td>Like rfind(), but raises an exception if the substring is not found.</td></tr><tr><td>rjust(width, char)</td><td>Returns a right-justified string of a specified width with a specified fill character.</td></tr><tr><td>rpartition(separator)</td><td>Splits the string at the last occurrence of the specified separator and returns a tuple.</td></tr><tr><td>rsplit(separator, maxsplit)</td><td>Splits the string from the right at the specified separator and returns a list.</td></tr><tr><td>rstrip(chars)</td><td>Removes trailing characters (default is whitespace) from the string.</td></tr><tr><td>split(separator, maxsplit)</td><td>Splits the string at the specified separator and returns a list.</td></tr><tr><td>splitlines(keepends)</td><td>Splits the string at line breaks and returns a list of lines. If keepends is True, line breaks are included.</td></tr><tr><td>startswith(prefix)</td><td>Checks if the string starts with the specified prefix. Returns a Boolean.</td></tr><tr><td>strip(chars)</td><td>Removes leading and trailing characters (default is whitespace) from the string.</td></tr><tr><td>swapcase()</td><td>Swaps the case of each character in the string.</td></tr><tr><td>title()</td><td>Converts the first character of each word to uppercase.</td></tr><tr><td>translate(table)</td><td>Applies a translation table to the string.</td></tr><tr><td>upper()</td><td>Converts all characters in the string to uppercase.</td></tr><tr><td>zfill(width)</td><td>Pads the string with zeros on the left to a specified width.</td></tr></tbody></table>
+        </body>
+</html>
