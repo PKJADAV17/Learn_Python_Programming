@@ -13,7 +13,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
-import com.github.barteksc.pdfviewer.PDFView;
 import com.google.android.ads.nativetemplates.NativeTemplateStyle;
 import com.google.android.ads.nativetemplates.TemplateView;
 import com.google.android.gms.ads.AdLoader;
@@ -279,7 +278,7 @@ public class PY_1 extends AppCompatActivity {
 
         ScheduledExecutorService scheduler =
                 Executors.newSingleThreadScheduledExecutor();
-        scheduler.scheduleAtFixedRate(new Runnable() {
+        scheduler.scheduleWithFixedDelay(new Runnable() {
 
             public void run() {
                 runOnUiThread(new Runnable() {
